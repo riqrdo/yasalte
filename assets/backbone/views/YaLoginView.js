@@ -1,6 +1,6 @@
 var YaLoginView = Backbone.View.extend({
 	tagName : 'li',
-	className : 'login',
+	className : 'content',
 	initialize : function(){
 		YaGlobals.on('onTemplateLoaded',this.onTemplateLoaded,this);
 	},
