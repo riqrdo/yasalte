@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="assets/_con/js"/>
+	<classpathentry kind="src" path="assets/angulajs-jvectormap"/>
+	<classpathentry excluding="plugins/" kind="src" path="assets/angularjs"/>
+	<classpathentry excluding="plugins/fixedcolumns/|plugins/fixedheader/|plugins/bootstrap/|plugins/colvis/|plugins/scroller/|plugins/columnfilter/|plugins/colreorder/|plugins/tabletools/" kind="src" path="assets/angularjs-dataTables"/>
+	<classpathentry kind="src" path="assets/angularjs-dataTables/plugins/bootstrap"/>
+	<classpathentry kind="src" path="assets/angularjs-dataTables/plugins/colreorder"/>
+	<classpathentry kind="src" path="assets/angularjs-dataTables/plugins/columnfilter"/>
+	<classpathentry kind="src" path="assets/angularjs-dataTables/plugins/colvis"/>
+	<classpathentry kind="src" path="assets/angularjs-dataTables/plugins/fixedcolumns"/>
+	<classpathentry kind="src" path="assets/angularjs-dataTables/plugins/fixedheader"/>
+	<classpathentry kind="src" path="assets/angularjs-dataTables/plugins/scroller"/>
+	<classpathentry kind="src" path="assets/angularjs-dataTables/plugins/tabletools"/>
+	<classpathentry excluding="example/" kind="src" path="assets/angularjs-flot"/>
+	<classpathentry kind="src" path="assets/angularjs-flot/example"/>
+	<classpathentry kind="src" path="assets/angularjs-materialize"/>
+	<classpathentry kind="src" path="assets/angularjs-nvd3"/>
+	<classpathentry kind="src" path="assets/angularjs-rickshaw"/>
+	<classpathentry kind="src" path="assets/angularjs-sparkline"/>
+	<classpathentry kind="src" path="assets/angularjs/plugins"/>
+	<classpathentry excluding="plugins/clipboard/dialogs/|plugins/link/dialogs/|plugins/dialog/|lang/|plugins/about/dialogs/" kind="src" path="assets/ckeditor"/>
+	<classpathentry kind="src" path="assets/ckeditor/lang"/>
+	<classpathentry kind="src" path="assets/ckeditor/plugins/about/dialogs"/>
+	<classpathentry kind="src" path="assets/ckeditor/plugins/clipboard/dialogs"/>
+	<classpathentry kind="src" path="assets/ckeditor/plugins/dialog"/>
+	<classpathentry kind="src" path="assets/ckeditor/plugins/link/dialogs"/>
+	<classpathentry kind="src" path="assets/d3"/>
+	<classpathentry kind="src" path="assets/dataTables/extensions/AutoFill/js"/>
+	<classpathentry kind="src" path="assets/dataTables/extensions/ColReorder/js"/>
+	<classpathentry kind="src" path="assets/dataTables/extensions/ColVis/js"/>
+	<classpathentry kind="src" path="assets/dataTables/extensions/FixedColumns/js"/>
+	<classpathentry kind="src" path="assets/dataTables/extensions/FixedHeader/js"/>
+	<classpathentry kind="src" path="assets/dataTables/extensions/KeyTable/js"/>
+	<classpathentry kind="src" path="assets/dataTables/extensions/Responsive/js"/>
+	<classpathentry kind="src" path="assets/dataTables/extensions/Scroller/js"/>
+	<classpathentry kind="src" path="assets/dataTables/extensions/TableTools/js"/>
+	<classpathentry kind="src" path="assets/dataTables/js"/>
+	<classpathentry kind="src" path="assets/dropzone"/>
+	<classpathentry kind="src" path="assets/flot"/>
+	<classpathentry kind="src" path="assets/fullcalendar"/>
+	<classpathentry kind="src" path="assets/gmaps"/>
+	<classpathentry kind="src" path="assets/google-code-prettify"/>
+	<classpathentry kind="src" path="assets/html5shiv"/>
+	<classpathentry kind="src" path="assets/isotope"/>
+	<classpathentry kind="src" path="assets/jquery"/>
+	<classpathentry kind="src" path="assets/jquery-clockpicker"/>
+	<classpathentry kind="src" path="assets/jquery-input-mask"/>
+	<classpathentry kind="src" path="assets/jquery-jvectormap"/>
+	<classpathentry kind="src" path="assets/jquery-tags-input"/>
+	<classpathentry kind="src" path="assets/jqueryRAF"/>
+	<classpathentry excluding="sets/default/" kind="src" path="assets/markitup"/>
+	<classpathentry kind="src" path="assets/markitup/sets/default"/>
+	<classpathentry kind="src" path="assets/materialize/js"/>
+	<classpathentry kind="src" path="assets/nanoScroller"/>
+	<classpathentry kind="src" path="assets/nvd3"/>
+	<classpathentry kind="src" path="assets/parsley"/>
+	<classpathentry kind="src" path="assets/PhotoSwipe"/>
+	<classpathentry kind="src" path="assets/pikaday"/>
+	<classpathentry kind="src" path="assets/rickshaw"/>
+	<classpathentry excluding="i18n/" kind="src" path="assets/select2/js"/>
+	<classpathentry kind="src" path="assets/select2/js/i18n"/>
+	<classpathentry kind="src" path="assets/simpleWeather"/>
+	<classpathentry kind="src" path="assets/sortable"/>
+	<classpathentry kind="src" path="assets/sparkline"/>
+	<classpathentry kind="src" path="assets/spectrum"/>
+	<classpathentry excluding="plugins/|lang/" kind="src" path="assets/video.js"/>
+	<classpathentry kind="src" path="assets/video.js/lang"/>
+	<classpathentry kind="src" path="assets/video.js/plugins"/>
+	<classpathentry kind="src" path="assets/wow.js"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

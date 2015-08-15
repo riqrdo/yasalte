@@ -54,101 +54,95 @@
 </head>
 
 <body class="yay-hide">
+  <nav class="navbar-top red">
+  	 	 	<!--
+			  Top Navbar
+			    Options:
+		      .navbar-dark - dark color scheme
+		      .navbar-static - static navbar
+		      .navbar-under - under sidebar
+			-->
+			<div class="nav-wrapper">
+			      <!-- Sidebar toggle -->
+			      <a href="#" class="yay-toggle">
+			        <div class="burg1"></div>
+			        <div class="burg2"></div>
+			        <div class="burg3"></div>
+			      </a>
+		      <!-- Sidebar toggle -->
+		      <!-- Logo -->
+		      <a href="#!" class="brand-logo">
+		        <img src="assets/custom/images/logo_full_w.png" alt="Con">
+		      </a>
+		      <!-- /Logo -->
+		
+		      <!-- Menu -->
+		      <ul>
+		        <li class="user">
+		          <a class="dropdown-button" href="#!" data-activates="user-dropdown">
+		            <img src="assets/_con/images/user.jpg" alt="John Doe" class="circle">John Doe<i class="mdi-navigation-expand-more right"></i>
+		          </a>
+		
+		          <ul id="user-dropdown" class="dropdown-content">
+		            <li><a href="page-profile.html"><i class="fa fa-user"></i> Profile</a>
+		            </li>
+		            <li><a href="mail-inbox.html"><i class="fa fa-envelope"></i> Messages <span class="badge new">2</span></a>
+		            </li>
+		            <li><a href="#!"><i class="fa fa-cogs"></i> Settings</a>
+		            </li>
+		            <li class="divider"></li>
+		            <li><a href="page-sign-in.html"><i class="fa fa-sign-out"></i> Logout</a>
+		            </li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <!-- /Menu -->
+		  </div>
+  	</nav>
+	  <!-- /Top Navbar -->
+	  <!--
+	  Yay Sidebar
+	  Options [you can use all of theme classnames]:
+	    .yay-hide-to-small         - no hide menu, just set it small with big icons
+	    .yay-static                - stop using fixed sidebar (will scroll with content)
+	    .yay-gestures              - to show and hide menu using gesture swipes
+	    .yay-light                 - light color scheme
+	    .yay-hide-on-content-click - hide menu on content click
+	
+	  Effects [you can use one of these classnames]:
+	    .yay-overlay  - overlay content
+	    .yay-push     - push content to right
+	    .yay-shrink   - shrink content width
+	-->
+  	<aside class="yaybar yay-gestures yay-light yay-overlay ">
+	      <div class="top">
+		      <div>
+			        <!-- Sidebar toggle -->
+			       <a href="#" class="yay-toggle">
+			          <div class="burg1"></div>
+			          <div class="burg2"></div>
+			          <div class="burg3"></div>
+			        </a>
+			        <!-- Sidebar toggle -->
+			
+			        <!-- Logo -->
+			         <a href="#!" class="brand-logo">
+			          <img src="assets/custom/images/logo_full_w.png" alt="Con">
+			        </a> 
+			        <!-- /Logo -->
+		        </div>
+	    </div>
 
-
-  <!--
-  Top Navbar
-    Options:
-      .navbar-dark - dark color scheme
-      .navbar-static - static navbar
-      .navbar-under - under sidebar
--->
-  <nav class="navbar-top">
-    <div class="nav-wrapper">
-      <!-- Sidebar toggle -->
-      <a href="#" class="yay-toggle">
-        <div class="burg1"></div>
-        <div class="burg2"></div>
-        <div class="burg3"></div>
-      </a>
-      <!-- Sidebar toggle -->
-
-      <!-- Logo -->
-      <a href="#!" class="brand-logo">
-        <img src="assets/_con/images/logo.png" alt="Con">
-      </a>
-      <!-- /Logo -->
-
-      <!-- Menu -->
-      <ul>
-        <li class="user">
-          <a class="dropdown-button" href="#!" data-activates="user-dropdown">
-            <img src="assets/_con/images/user.jpg" alt="John Doe" class="circle">John Doe<i class="mdi-navigation-expand-more right"></i>
-          </a>
-
-          <ul id="user-dropdown" class="dropdown-content">
-            <li><a href="page-profile.html"><i class="fa fa-user"></i> Profile</a>
-            </li>
-            <li><a href="mail-inbox.html"><i class="fa fa-envelope"></i> Messages <span class="badge new">2</span></a>
-            </li>
-            <li><a href="#!"><i class="fa fa-cogs"></i> Settings</a>
-            </li>
-            <li class="divider"></li>
-            <li><a href="page-sign-in.html"><i class="fa fa-sign-out"></i> Logout</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <!-- /Menu -->
-
-    </div>
-  </nav>
-  <!-- /Top Navbar -->
-
-
-  <!--
-  Yay Sidebar
-  Options [you can use all of theme classnames]:
-    .yay-hide-to-small         - no hide menu, just set it small with big icons
-    .yay-static                - stop using fixed sidebar (will scroll with content)
-    .yay-gestures              - to show and hide menu using gesture swipes
-    .yay-light                 - light color scheme
-    .yay-hide-on-content-click - hide menu on content click
-
-  Effects [you can use one of these classnames]:
-    .yay-overlay  - overlay content
-    .yay-push     - push content to right
-    .yay-shrink   - shrink content width
--->
-  <aside class="yaybar yay-gestures yay-light yay-overlay ">
-      <div class="top">
-      <div>
-        <!-- Sidebar toggle -->
-       <a href="#" class="yay-toggle">
-          <div class="burg1"></div>
-          <div class="burg2"></div>
-          <div class="burg3"></div>
-        </a>
-        <!-- Sidebar toggle -->
-
-        <!-- Logo -->
-         <a href="#!" class="brand-logo">
-          <img src="assets/_con/images/logo-white.png" alt="Con">
-        </a> 
-        <!-- /Logo -->
-        </div>
-    </div>
-
-    <div class="nano">
-      <div class="nano-content">
-        <ul>
-        </ul>
-      </div>
-    </div>
+	    <div class="nano">
+	      <div class="nano-content">
+		        <ul class="sidebar-view">
+		        </ul>
+	      </div>
+	    </div>
   </aside>
-  <!-- /Yay Sidebar -->
+ 	 <!-- /Yay Sidebar -->
 
-	<!--  Otra Yay Sidebar -->
+	<!--  Otra Sidebar -->
 	<aside class="static-sidebar">
 	<ul>
 		<li>
@@ -159,21 +153,43 @@
 		
 		<li>
 			<a href="#" class="static-sidebar-button grey-text tooltipped" data-position="right" data-delay="50" data-tooltip="Lo trendy">
-				<i class="ya-puntos"></i>
+				<i class="mdi-social-whatshot"></i>
 			</a>
 		</li>
 		
 		<li>
 			<a href="#" class="static-sidebar-button grey-text tooltipped" data-position="right" data-delay="50" data-tooltip="Eventos">
-				<i class="ya-calendar"></i>
+				<i class="mdi-editor-insert-invitation"></i>
 			</a>
 		</li>
 		
 		<li>
-			<a href="#" class="static-sidebar-button grey-text tooltipped" data-position="right" data-delay="50" data-tooltip="Eventos">
-				<i class="ya-calendar"></i>
+			<a href="#" class="static-sidebar-button grey-text tooltipped" data-position="right" data-delay="50" data-tooltip="Cupones">
+				<i class="mdi-maps-local-offer"></i>
 			</a>
 		</li>
+		
+		<li>
+			<a href="#" class="static-sidebar-button grey-text tooltipped" data-position="right" data-delay="50" data-tooltip="Gu&iacute;a">
+				<i class="mdi-maps-beenhere"></i>
+			</a>
+		</li>
+		
+		
+		
+		<li>
+			<a href="#" class="static-sidebar-button grey-text tooltipped" data-position="right" data-delay="50" data-tooltip="Recompensas">
+				<i class="mdi-av-new-releases"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a href="#" class="static-sidebar-button grey-text tooltipped" data-position="right" data-delay="50" data-tooltip="Recomendaciones">
+				<i class="ya-rate"></i>
+			</a>
+		</li>
+		
+		
 	</ul>
 		
 		
@@ -189,6 +205,8 @@
   <footer>
     YaSalte.com &copy; 2016. Meid in México
   </footer>
+  
+  
   <!-- jQuery -->
   <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
   <!-- Backbone JS -->
@@ -223,6 +241,8 @@
 </body>
 
 <script type="text/javascript" src="assets/custom/Globals.js"></script>
+<script type="text/javascript" src="assets/custom/views/MasterView.js"></script>
+<script type="text/javascript" src="assets/custom/views/MainContentView.js "></script>
 <script type="text/javascript" src="assets/custom/views/YaLoginView.js"></script>
 
 <script type="text/javascript" src="assets/custom/startLogic.js"></script>
