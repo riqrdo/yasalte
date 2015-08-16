@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>YaSalte.com</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'> -->
+<!--   <link rel="icon" type="image/png" href="assets/_con/images/icon.png"> -->
+  
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+  <!-- nanoScroller -->
+<!--   <link rel="stylesheet" type="text/css" href="assets/nanoScroller/nanoscroller.css" /> -->
+
+  <!-- FontAwesome -->
+<!--   <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css" /> -->
+
+  <!-- Material Design Icons -->
+<!--   <link rel="stylesheet" type="text/css" href="assets/material-design-icons/css/material-design-icons.min.css" /> -->
+
+  <!-- IonIcons -->
+<!--   <link rel="stylesheet" type="text/css" href="assets/ionicons/css/ionicons.min.css" /> -->
+
+  <!-- WeatherIcons -->
+<!--   <link rel="stylesheet" type="text/css" href="assets/weatherIcons/css/weather-icons.min.css" /> -->
+
+  <!-- Google Prettify -->
+<!--   <link rel="stylesheet" type="text/css" href="assets/google-code-prettify/prettify.css" /> -->
+  <!-- Main -->
+<!--   <link rel="stylesheet" type="text/css" href="assets/_con/css/_con.min.css" /> -->
+
+<!--   <link rel="stylesheet" type="text/css" href="assets/custom/css/custom-css.css" /> -->
+  
+  <!-- ya icons -->
+<!--    <link rel="stylesheet" type="text/css" href="assets/custom/css/ya_icon.css" /> -->
+  <!--[if lt IE 9]>
+    <script src="assets/html5shiv/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<nav>
+  <ul class="right hide-on-med-and-down">
+    <li><a href="#!">First Sidebar Link</a></li>
+    <li><a href="#!">Second Sidebar Link</a></li>
+  </ul>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="#!">Elemento 1</a></li>
+    <li><a href="#!">elemento 2</a></li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse">
+  <i class="mdi-navigation-menu"></i></a>
+</nav>
+</body>
+ <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
+ <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
+ 
+ <script>
+ 	$('document').ready(function(event){
+ 		 $('.button-collapse').sideNav({
+ 		      menuWidth: 300, // Default is 240
+ 		      edge: 'right', // Choose the horizontal origin
+ 		      closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
+ 		    }
+ 		  );
+ 		 
+ 		 $('.right a').on('click',function(){
+ 			$('.button-collapse').sideNav('show'); 
+ 		 });
+ 		      
+ 	});
+ 	
+ 	
+ 
+ </script>
+</html>

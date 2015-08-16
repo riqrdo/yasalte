@@ -11,6 +11,9 @@ var YaGlobals = {
 	 * URL'S para cargar los templates
 	 */
 	LOGIN_TEMPLATE : 'assets/custom/templates/login.html',
+	RECOMENDATIONS_TEMPLATE : 'assets/custom/templates/recomendations.html',
+	RECOMENDATION_ITEM : 'assets/custom/templates/recomendationItem.html',
+	
 	
 	getTemplate : function(templateURL){
 		 $.get(templateURL, function (data) {
@@ -25,5 +28,7 @@ var YaGlobals = {
 		isLogged : false
 	}
 };
+
+
 
 _.extend(YaGlobals, Backbone.Events);

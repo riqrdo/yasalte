@@ -8,7 +8,7 @@ var YaLoginView = MasterView.extend({
 	
 	render : function(){
 		this.$el.append(this.template());
-		this.trigger('onViewRendered');
+		this.trigger('onViewRendered',this);
 		return this;
 	},
 	
