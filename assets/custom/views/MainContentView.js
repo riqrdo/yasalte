@@ -1,14 +1,16 @@
 var MainContentView = MasterView.extend({
 	el : 'body',
 	events: {
-//		'click .yay-toggle' : 'toggleYaySidebar'
+		'click .btn-recomendaciones' : 'showRecomendations'
 	},
 	sideBarView : undefined,
 	initialize : function(){
+		_.bindAll(this,'showRecomendations','onSuccessLogin');
 		if(!YaGlobals.tmp.isLogged){
-			this.sideBarView = new YaLoginView().on('onViewRendered',function(view){
+			this.loginView = new YaLoginView().on('onViewRendered',function(view){
 				$('.sidebar-view',this.$el).append(view.$el);
 			},this);
+			this.loginView.on('loginSuccess',this.onSuccessLogin);
 		}
 		
 		this.recomendationsView = new RecomendationsView().on('onViewRendered',function(viewRecom){
@@ -18,5 +20,13 @@ var MainContentView = MasterView.extend({
 	
 	render : function(){
 		return this;
+	},
+	
+	showRecomendations : function(event){
+		this.recomendationsView.show();
+	},
+	
+	onSuccessLogin : function(){
+		this.loginView.close();
 	}
 });
