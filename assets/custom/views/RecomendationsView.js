@@ -20,7 +20,11 @@ var RecomendationsView = MasterView.extend({
 	className : 'side-recomendaciones grey lighten-3',
 	templateURL : YaGlobals.RECOMENDATIONS_TEMPLATE,
 	listView : undefined,
+	events : {
+		'click .close': 'onClosePressed'
+	},
 	initialize : function(){
+		_.bindAll(this,'onClosePressed');
 		this.collection =  new RecomendacionesCollection();
 		this.collection.on('reset',this.onCollectionFetched,this);
 		this.constructor.__super__.initialize.apply(this, []);
@@ -28,9 +32,23 @@ var RecomendationsView = MasterView.extend({
 	
 	render : function(){
 		this.trigger('onViewRendered',this);
+		/**
+		 * TODO: verificar si esto se puede hacer por estilo
+		 * sino, dejarlo.
+		 */
+		var heightForScrollContent = $('.content-wrap').height() - 
+									$('.topbar',this).height() -
+									parseFloat($('.content-wrap').css('padding-bottom'));
+		$('.nano',this.$el).css('height',heightForScrollContent);
+		
+		//END-TODO:
 		$(".nano").nanoScroller();
 		return this;
 		
+	},
+	
+	onClosePressed : function(event){
+		this.$el.addClass('animated slideOutRight');
 	},
 	
 	onCollectionFetched : function(collection){
@@ -49,5 +67,9 @@ var RecomendationsView = MasterView.extend({
 	onViewReady : function(){
 		this.$el.append(this.template());
 		this.collection.fetch({reset:true});
+	},
+	
+	show : function(){
+		this.$el.removeClass('slideOutRight').addClass('slideInRight');
 	}
 });
