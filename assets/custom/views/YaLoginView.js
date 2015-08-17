@@ -26,7 +26,15 @@ var YaLoginView = MasterView.extend({
 		 * login con facebook!!
 		 */
 		YaGlobals.tmp.isLogged = true;
-		this.trigger('loginSuccess');
+		var userModel = new UserModel();
+		
+		userModel.on('sync',function(model){
+			this.trigger('loginSuccess',model);
+		},this);
+		
+		userModel.fetch();
+		
+		
 	},
 	close : function(){
 		$('.login-content',this.$el).addClass('slideOutLeft');

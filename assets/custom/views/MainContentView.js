@@ -3,7 +3,8 @@ var MainContentView = MasterView.extend({
 	events: {
 		'click .btn-recomendaciones' : 'showRecomendations'
 	},
-	sideBarView : undefined,
+	loginView  :undefined,
+	userMenu : undefined,
 	initialize : function(){
 		_.bindAll(this,'showRecomendations','onSuccessLogin');
 		if(!YaGlobals.tmp.isLogged){
@@ -26,7 +27,13 @@ var MainContentView = MasterView.extend({
 		this.recomendationsView.show();
 	},
 	
-	onSuccessLogin : function(){
+	onSuccessLogin : function(modelUser){
 		this.loginView.close();
+		this.userMenu = new UserMenuView({
+			model : modelUser
+		});
+		this.userMenu.on('onViewRendered',function(view){
+			$('.sidebar-view',this.$el).replaceWith(view.$el);
+		},this);
 	}
 });

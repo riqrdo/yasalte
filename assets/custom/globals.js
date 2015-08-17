@@ -13,13 +13,7 @@ var YaGlobals = {
 	LOGIN_TEMPLATE : 'assets/custom/templates/login.html',
 	RECOMENDATIONS_TEMPLATE : 'assets/custom/templates/recomendations.html',
 	RECOMENDATION_ITEM : 'assets/custom/templates/recomendationItem.html',
-	
-	
-	getTemplate : function(templateURL){
-		 $.get(templateURL, function (data) {
-		        YaGlobals.trigger('onTemplateLoaded',data);
-		    }, 'html');
-	},
+	USER_MENU_TEMPLATE : 'assets/custom/templates/userMenu.html',
 	
 	/**
 	 * Objeto para control de flujo solo temporales
@@ -31,4 +25,3 @@ var YaGlobals = {
 
 
 
-_.extend(YaGlobals, Backbone.Events);
