@@ -22,7 +22,7 @@ var YaLoginView = MasterView.extend({
 	},
 	loginWithFacebook : function(event){
 		/**
-		 * TODO: Poner aqui la lógica para el
+		 * TODO: Poner aqui la lï¿½gica para el
 		 * login con facebook!!
 		 */
 		YaGlobals.tmp.isLogged = true;

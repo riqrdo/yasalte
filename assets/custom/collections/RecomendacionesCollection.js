@@ -1,15 +1,15 @@
 var RecomendacionesCollection = Backbone.Collection.extend({
 	/**
 	 * TODO: Reemplazar esta URL por la URL que 
-	 * proveerá las recomendaciones
+	 * proveerï¿½ las recomendaciones
 	 */
 	url  : 'assets/custom/test/recomendaciones.json',
 	model : RecomendationModel,
 	parse : function(response){
 		/**
-		 * TODO: Crear la lógica de la respuesta
-		 * del backend, como exlcluír los elementos
-		 * que no importan para la colección
+		 * TODO: Crear la lï¿½gica de la respuesta
+		 * del backend, como exlcluï¿½r los elementos
+		 * que no importan para la colecciï¿½n
 		 */
 	  	return response.items;
 	}
