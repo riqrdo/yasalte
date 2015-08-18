@@ -1,113 +1,67 @@
-.login-content{
-	/* overflow:hidden; */
-}
-
-.login-content object{
-	width: 114%;
-	margin: -5% -7% 3%;
-}
-
-.login-content .btn{
-	text-align: center;
-    text-transform: none;
-	margin-top: 0;
-	width:100%;
-}
-
-
-.login-content span{
-	display: block;
-	width: 100%;
-	text-align: center;
-	color: black;
-	font-size: 10px;
-}
-
-.login-form{
-	margin-top: 10px;
-	overflow: hidden;
-}
-
-.waves-effect.waves-dark.btn.gray{
-	background-color: #E6E6E6;
-}
-
-.static-sidebar{
-	height: 100%;
-    position: fixed;
-    
-	width: 60px;
-    border-right: solid #E4E4E4;
-    padding-top: 55px;
-}
-
-
-.static-sidebar ul {
-	margin: 0;
-}
-.static-sidebar ul li{
-	display:block;
-	overflow: hidden;
-}
-
-
-.static-sidebar ul li a{
-	display:block;
-	overflow: hidden;
-	padding: 12px 0 11px;
-    text-align: center;
-}
-
-.static-sidebar ul li a:HOVER{
-	background-color: red;
-	color:white !important;
-}
-
-.static-sidebar-button i{
-	line-height: 1;
-    
-	font-size: 25px;
-}
-
-.side-recomendaciones{
-	position:fixed;
-	right:0;
-	max-width:300px;
-
-	height: calc(100% - 55px);
-	top: 55px;
-	overflow: hidden;
-	background-color: #e6e6e6!important;
-	
-    
-	right: 0;
-	z-index: 23445;
-	
-	-webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-}
-
-.side-recomendaciones ul{
-	width:100%;
-}
-
-.side-recomendaciones ul li{
-	width:100%;
-}
-
-
-
 .content-wrap{min-height:calc(100vh);width: calc(100% - 60px);margin-left: 60px!important;position: relative;}
+
 footer{ position:absolute; bottom:0; left:0; width: 100%;}
+
+aside.yaybar .nano>.nano-content{margin-bottom: 55px;}
+
+.dropdown-content{ width: 20%!important; right: 0; left: inherit!important;}
+.login-content{}
+.login-content h4{ text-align:center; font-size: 1.2em; margin: 7% 0 8%; color:#555;}
+.login-content object{width: 114%;margin: -5% -7% 3%;}
+.login-content .btn{text-align: center;text-transform: none;margin-top: 0;width:100%;height: 2.5em;}
+.login-content p{text-align: center;color:#555; font-size:1.2em; line-height:1.2em;height: 55px;}
+.login-content .menu-footer p {font-size: .8em;padding: 6px;}
+.login-content .btn.grey{padding:0}
+.login-content .btn.facebook-login i{float:left;position: absolute;left: 5%;font-size: 1.5em;left: 3%;top: -1px;}
+.login-content span{display: block;width: 100%;text-align: center;color: black;font-size: 10px;margin: 5px 0;}
+.login-content .input-field{ border:1px solid #999;}
+.login-content .input-field .prefix~input,.login-content .input-field .prefix~textarea{}
+.login-content .menu-footer{ position:fixed; left: 0; bottom: 0; height: 55px;}
+.login-content .menu-footer .btn{ position:absolute; top: -35px;}
+.login-content .menu-footer p a{ color:#555; text-decoration:underline;}
+.login-form{margin: 10px 0 10px -7%;overflow: hidden;padding: 1% 6% 7%;width: 114%;border-bottom: 1px solid #ddd;}
+.login-form input{margin: 0px;overflow: hidden;border-bottom:0;float: right;width: 85%;height: 2.5em;}
+.login-form button{color:#656565;text-transform:lowercase!important;margin-bottom:10px}
+.login-form div{border:1px solid #bbb;overflow:hidden;margin-bottom:10px}
+.login-form div i{float:left;width:9%;margin:0;font-size:1.5em;color:#4d4d4d;margin: 3% 0 0 3%;}
+.login-form a{text-transform:lowercase;text-align:center; color:#666;display: block;text-decoration: underline;font-size: .8em;}
+.waves-effect.waves-dark.btn.gray{background-color: #E6E6E6;}
+.static-sidebar{height: 100%;position: fixed;width: 60px;border-right: solid #E4E4E4;padding-top: 55px;}
+
+.static-sidebar ul {margin: 0;}
+.static-sidebar ul li{display:block;overflow: hidden;}
+.static-sidebar ul li a{display:block;overflow: hidden;padding: 12px 0 11px;text-align: center;}
+.static-sidebar ul li a:hover{background-color: red;color:white !important;}
+.static-sidebar-button i{line-height: 1;font-size: 25px;}
+.side-recomendaciones{position:fixed;right:0;max-width:300px;height: calc(100% - 55px);top: 55px;overflow: hidden;background-color: #e6e6e6!important;right: 0;z-index: 23445;-webkit-transform: translate3d(100%, 0, 0);transform: translate3d(100%, 0, 0);}
+
+
+nav ul li.active, nav ul li:hover{ background:transparent}
+.stats-card>i.principal{ font-size: 2.5em; text-align:center; left: 4%; width: 50px; height: 50px; background-color: #ddd; border-radius: 100em; color: #fff; top: 10%; line-height: 1.6em;}
+.stats-card>i.option{ font-size: 1.5em; text-align:center; right: 3%; top: 0; color: #cccccc;}
+.stats-card>i.option.mdi-action-favorite{right: 13%;}
+.side-recomendaciones ul{width: 95%;}
+.side-recomendaciones ul li{width:100%;border:none;}
+.side-recomendaciones .topbar{padding:15px;line-height: normal;border-bottom:1px solid #cbcbcb;margin-bottom:10px}
+.side-recomendaciones .text{font-size: 1.2em;color: #333!important;}
+.side-recomendaciones .close{font-size: 1.4em;color: #888!important;margin-right: 4%;}
+.side-recomendaciones .topbar i{line-height:0}
+.side-recomendaciones .card-panel{border:none;box-shadow:0 0 5px #e8e8e8;margin-bottom: 10px;padding: 15px 10px 15px 70px;border-left-width:5px;border-left-style:solid;overflow: hidden;}
+.side-recomendaciones .stats-card .name,.side-recomendaciones .stats-card span{ margin:0; line-height: initial; float: left; clear: left;}
+
+.side-recomendaciones .restaurant .card-panel{ border-color:#ed1b23;}
+.side-recomendaciones .bar .card-panel{ border-color:#9d07ed;}
+.side-recomendaciones .cafe .card-panel{ border-color:#795548;}
+.restaurant .stats-card>i.principal{ background:#ed1b23;}
+.bar .stats-card>i.principal{ background:#9d07ed;}
+.cafe .stats-card>i.principal{ background:#795548;}
+
+
 .yay-toggle div:after,.yay-toggle div:before{ background:#fff;}
 .navbar-top .user{ min-width:inherit;}
 .navbar-top .nav-wrapper>.sp-cancel i, .navbar-top .nav-wrapper>a i, .navbar-top .nav-wrapper>ul i{ font-size:2.2em; color:#fff;}
-#user-dropdown i{ color:#42A5F5; font-size: 1.2em; margin-right: 4%;}
 .navbar-top .user img{ margin-right:0;}
-.dropdown-content{ width: 20%!important; right: 0; left: inherit!important;}
+#user-dropdown i{ color:#42A5F5; font-size: 1.2em; margin-right: 4%;}
 
-.login-content .input-field{ border:1px solid #999;}
-.login-content .input-field .prefix~input,.login-content .input-field .prefix~textarea{}
 
-@media only screen and (min-width: 601px){
-}
+@media only screen and (min-width: 601px){}
