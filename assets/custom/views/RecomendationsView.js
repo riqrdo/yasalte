@@ -17,7 +17,7 @@
 
 var RecomendationsView = MasterView.extend({
 	tagName : 'nav',
-	className : 'side-recomendaciones grey lighten-3',
+	className : 'side-recomendaciones grey lighten-3 animated',
 	templateURL : YaGlobals.RECOMENDATIONS_TEMPLATE,
 	listView : undefined,
 	events : {
