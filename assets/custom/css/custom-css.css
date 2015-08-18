@@ -1,17 +1,19 @@
 .login-content{
-	overflow:hidden;
+	/* overflow:hidden; */
 }
 
 .login-content object{
-	max-width: 100%;
+	width: 114%;
+	margin: -5% -7% 3%;
 }
 
 .login-content .btn{
-	text-align: left;
+	text-align: center;
     text-transform: none;
-	margin-top: 10px;
+	margin-top: 0;
 	width:100%;
 }
+
 
 .login-content span{
 	display: block;
@@ -33,7 +35,8 @@
 .static-sidebar{
 	height: 100%;
     position: fixed;
-    width: 60px;
+    
+	width: 60px;
     border-right: solid #E4E4E4;
     padding-top: 55px;
 }
@@ -51,7 +54,7 @@
 .static-sidebar ul li a{
 	display:block;
 	overflow: hidden;
-	margin: 12px 0;
+	padding: 12px 0 11px;
     text-align: center;
 }
 
@@ -62,14 +65,26 @@
 
 .static-sidebar-button i{
 	line-height: 1;
-    font-size: 50px;
+    
+	font-size: 25px;
 }
 
 .side-recomendaciones{
 	position:fixed;
 	right:0;
 	max-width:300px;
-/* 	height:100%; */
+
+	height: calc(100% - 55px);
+	top: 55px;
+	overflow: hidden;
+	background-color: #e6e6e6!important;
+	
+    
+	right: 0;
+	z-index: 23445;
+	
+	-webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
 }
 
 .side-recomendaciones ul{
@@ -78,4 +93,21 @@
 
 .side-recomendaciones ul li{
 	width:100%;
+}
+
+
+
+.content-wrap{min-height:calc(100vh);width: calc(100% - 60px);margin-left: 60px!important;position: relative;}
+footer{ position:absolute; bottom:0; left:0; width: 100%;}
+.yay-toggle div:after,.yay-toggle div:before{ background:#fff;}
+.navbar-top .user{ min-width:inherit;}
+.navbar-top .nav-wrapper>.sp-cancel i, .navbar-top .nav-wrapper>a i, .navbar-top .nav-wrapper>ul i{ font-size:2.2em; color:#fff;}
+#user-dropdown i{ color:#42A5F5; font-size: 1.2em; margin-right: 4%;}
+.navbar-top .user img{ margin-right:0;}
+.dropdown-content{ width: 20%!important; right: 0; left: inherit!important;}
+
+.login-content .input-field{ border:1px solid #999;}
+.login-content .input-field .prefix~input,.login-content .input-field .prefix~textarea{}
+
+@media only screen and (min-width: 601px){
 }
