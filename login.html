@@ -81,23 +81,53 @@
 		        <img src="assets/custom/images/logo_full_w.png" alt="Con">
 		      </a>
 		      <!-- /Logo -->
-		
+		      
+		     <form class="search">
+		      	<i class="mdi-action-search"></i>
+		      	<input type="text" name="searchInput" />
+		      	<i class="mdi-device-gps-fixed"></i>
+		     </form>
+				
 		      <!-- Menu -->
+		      
+		     <a href="#!" class="btn-open-notifications">
+		            <i class="mdi-social-notifications"></i>
+		     </a>
+<!-- 		     <a href="#!"> -->
+<!-- 		            <img src="assets/custom/images/default-user.png"  class="circle image-profile"> -->
+<!-- 		     </a> -->
+		     
 		      <ul>
 		        <li class="user">
-		          <a class="dropdown-button" href="#!" data-activates="user-dropdown">
-		            <img src="assets/_con/images/user.jpg" alt="John Doe" class="circle"><i class="mdi-navigation-more-vert right"></i>
-		          </a>
-		
+				    <a href="#!" class="dropdown-button"  data-activates="user-dropdown">
+				            <img src="assets/custom/images/default-user.png"  class="circle image-profile">
+				     </a>
 		          <ul id="user-dropdown" class="dropdown-content">
-		            <li><a href="page-profile.html"><i class="fa fa-user"></i> Profile</a>
-		            </li>
-		            <li><a href="mail-inbox.html"><i class="fa fa-envelope"></i> Messages <span class="badge new">2</span></a>
-		            </li>
-		            <li><a href="#!"><i class="fa fa-cogs"></i> Settings</a>
+		            <li><a href="page-profile.html"><i class="fa fa-user"></i> Mi perfil</a>
 		            </li>
 		            <li class="divider"></li>
-		            <li><a href="page-sign-in.html"><i class="fa fa-sign-out"></i> Logout</a>
+		            <li><a href="#!"><i class="fa fa-cogs"></i> Configuraci&oacute;n</a>
+		            </li>
+		            <li class="divider"></li>
+		            <li><a href="page-sign-in.html"><i class="fa fa-sign-out"></i> Salir</a>
+		            </li>
+		          </ul>
+		        </li>
+		      </ul>
+		      
+		      <ul>
+		        <li class="settings">
+					<a class="dropdown-button"  data-activates="settings-dropdown">
+						<i class="mdi-navigation-more-vert right"></i>
+					</a>
+		          <ul id="settings-dropdown" class="dropdown-content">
+		            <li><a href="page-profile.html">Idioma</a>
+		            </li>
+		            <li class="divider"></li>
+		            <li><a href="#!"> Fullscreen</a>
+		            </li>
+		            <li class="divider"></li>
+		            <li><a href="page-sign-in.html"> Compartir</a>
 		            </li>
 		          </ul>
 		        </li>
@@ -156,13 +186,11 @@
 				<i class="ya-exp"></i>
 			</a>
 		</li>
-		
 		<li>
 			<a href="#" class="static-sidebar-button grey-text tooltipped" data-position="right" data-delay="50" data-tooltip="Lo trendy">
 				<i class="mdi-social-whatshot"></i>
 			</a>
 		</li>
-		
 		<li>
 			<a href="#" class="static-sidebar-button grey-text tooltipped" data-position="right" data-delay="50" data-tooltip="Eventos">
 				<i class="mdi-editor-insert-invitation"></i>
@@ -174,43 +202,43 @@
 				<i class="mdi-maps-local-offer"></i>
 			</a>
 		</li>
-		
 		<li>
 			<a href="#" class="static-sidebar-button grey-text tooltipped" data-position="right" data-delay="50" data-tooltip="Gu&iacute;a">
 				<i class="mdi-maps-beenhere"></i>
 			</a>
 		</li>
-		
 		<li>
 			<a href="#" class="static-sidebar-button grey-text tooltipped" data-position="right" data-delay="50" data-tooltip="Recompensas">
 				<i class="mdi-av-new-releases"></i>
 			</a>
 		</li>
-		
 		<li>
 			<a href="#" class="static-sidebar-button grey-text tooltipped btn-recomendaciones" data-position="right" data-delay="50" data-tooltip="Recomendaciones">
 				<i class="ya-rate"></i>
 			</a>
 		</li>
-		
-		
 	</ul>
   	</aside>
 	<!--  /Otra YaY SideBar -->
   <!-- Main Content -->
   <section class="content-wrap">
-	<!-- <nav class="side-recomendaciones grey lighten-3">
-		<div class="topbar">
-          <a href="#!" class="text black-text">Recomendaciones</a>
-          <a href="#!" class="chat-toggle black-text"><i class="mdi-navigation-close"></i></a>
-        </div>
-		<ul>
-			
-		</ul>
-	</nav> -->
-    
+  		<section class="icons-bar">
+  			<a href="#" id="help">
+  				<i class="ya-help"></i>
+  			</a>
+  			<a href="#" id="share">
+  				<i class="ya-share"></i>
+  			</a>
+  			<a href="#" id="user">
+  				<i class="mdi-maps-location-history"></i>
+  			</a>
+  			<a href="#" id="more">
+  				<i class="mdi-navigation-more-vert"></i>
+  			</a>
+  			
+  		</section>
 		<footer>
-        YaSalte.com &copy; 2016. Meid in México
+        	YaSalte.com &copy; 2016. Meid in México
 		</footer>
   </section>
   <!-- /Main Content -->

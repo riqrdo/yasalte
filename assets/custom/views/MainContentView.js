@@ -35,5 +35,6 @@ var MainContentView = MasterView.extend({
 		this.userMenu.on('onViewRendered',function(view){
 			$('.sidebar-view',this.$el).replaceWith(view.$el);
 		},this);
+		$('.image-profile',this.$el).attr('src',modelUser.get('profileImage'));
 	}
 });
