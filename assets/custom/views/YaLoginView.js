@@ -27,7 +27,6 @@ var YaLoginView = MasterView.extend({
 		 */
 		YaGlobals.tmp.isLogged = true;
 		var userModel = new UserModel();
-		
 		userModel.on('sync',function(model){
 			this.trigger('loginSuccess',model);
 		},this);
