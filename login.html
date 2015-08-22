@@ -84,7 +84,7 @@
 		      
 		     <form class="search">
 		      	<i class="mdi-action-search"></i>
-		      	<input type="text" name="searchInput" />
+		      	<input type="text" name="searchInput" placeholder="¿de qué traes ganas?"/>
 		      	<i class="mdi-device-gps-fixed"></i>
 		     </form>
 				
@@ -97,6 +97,23 @@
 <!-- 		            <img src="assets/custom/images/default-user.png"  class="circle image-profile"> -->
 <!-- 		     </a> -->
 		     
+             <ul class="dots-settings">
+		        <li class="settings">
+					<a class="dropdown-button"  data-activates="settings-dropdown">
+						<i class="mdi-navigation-more-vert right"></i>
+					</a>
+		          <ul id="settings-dropdown" class="dropdown-content">
+		            <li><a href="page-profile.html">Idioma</a>
+		            </li>
+		            <li class="divider"></li>
+		            <li><a href="#!"> Fullscreen</a>
+		            </li>
+		            <li class="divider"></li>
+		            <li><a href="page-sign-in.html"> Compartir</a>
+		            </li>
+		          </ul>
+		        </li>
+		      </ul>
 		      <ul>
 		        <li class="user">
 				    <a href="#!" class="dropdown-button"  data-activates="user-dropdown">
@@ -115,23 +132,7 @@
 		        </li>
 		      </ul>
 		      
-		      <ul>
-		        <li class="settings">
-					<a class="dropdown-button"  data-activates="settings-dropdown">
-						<i class="mdi-navigation-more-vert right"></i>
-					</a>
-		          <ul id="settings-dropdown" class="dropdown-content">
-		            <li><a href="page-profile.html">Idioma</a>
-		            </li>
-		            <li class="divider"></li>
-		            <li><a href="#!"> Fullscreen</a>
-		            </li>
-		            <li class="divider"></li>
-		            <li><a href="page-sign-in.html"> Compartir</a>
-		            </li>
-		          </ul>
-		        </li>
-		      </ul>
+		      
 		      <!-- /Menu -->
 		  </div>
   	</nav>
@@ -222,21 +223,24 @@
 	<!--  /Otra YaY SideBar -->
   <!-- Main Content -->
   <section class="content-wrap">
-  		<section class="icons-bar">
-  			<a href="#" id="help">
-  				<i class="ya-help"></i>
-  			</a>
-  			<a href="#" id="share">
-  				<i class="ya-share"></i>
-  			</a>
-  			<a href="#" id="user">
-  				<i class="mdi-maps-location-history"></i>
-  			</a>
-  			<a href="#" id="more">
-  				<i class="mdi-navigation-more-vert"></i>
-  			</a>
+  
   			
-  		</section>
+        
+        <section class="fixed-action-btn icons-bar">
+            <a id="more" class="btn-floating btn-large red">
+              <i class="large mdi-navigation-more-vert"></i>
+            </a>
+            <ul>
+              <li><a id="help" class="btn-floating red" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="large ya-help"></i></a>
+              </li>
+              <li><a id="share" class="btn-floating red" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="large ya-share"></i></a>
+              </li>
+              <li><a id="user" class="btn-floating green" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="large mdi-maps-location-history"></i></a>
+              </li>
+            </ul>
+          </section>
+        
+  		
 		<footer>
         	YaSalte.com &copy; 2016. Meid in México
 		</footer>
