@@ -1,19 +1,15 @@
-<li class="content">
-	<img src="<%=profileImage%>">
+<li class="content user-menu">
+	<img src="<%=profileImage%>" class="circle image-profile">
 	<h1><%=name%></h1>
 	<span><%=profile%></span>
+	<b><%=points%> puntos</b>
 </li>
 
-<li class="">
-            <a class="yay-sub-toggle">
-            		<div class="button-expand">
-            			<span class="yay-collapse-icon mdi-navigation-expand-more">
-            		</div>
-            		
-            		</span>
-            		<span><%=points%> puntos</span>
-            </a>
-            <ul style="display: none;">
+<li class="user-options">
+    <a class="yay-sub-toggle">
+            <span class="yay-collapse-icon mdi-navigation-expand-more">
+    </a>
+            <ul class="">
      			<li>
     				<a href="#" class="mnuEditProfile">	
 						<i class="mdi-content-create"></i>
@@ -84,7 +80,7 @@
 	</a>
 </li>
 
-<li class="active">
+<li class="red text-white">
 	<a href="#" class="mnuNegocio">
 		<i class="mdi-maps-store-mall-directory"></i>
 		Mi negocio
