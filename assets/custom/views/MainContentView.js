@@ -1,12 +1,17 @@
 var MainContentView = MasterView.extend({
 	el : 'body',
 	events: {
-		'click .btn-recomendaciones' : 'showRecomendations'
+		'click .btn-recomendaciones' : 'showRecomendations',
+		'click .login' : 'onLoginPressed',
+		'focus input[name="searchInput"]' : 'onSearchFocused',
+		'focusout input[name="searchInput"]' : 'onSearchFocusout'
 	},
 	loginView  :undefined,
 	userMenu : undefined,
 	initialize : function(){
-		_.bindAll(this,'showRecomendations','onSuccessLogin');
+		_.bindAll(this,'showRecomendations','onSuccessLogin',
+						'onLoginPressed','onSearchFocused',
+						'onSearchFocusout');
 		if(!YaGlobals.tmp.isLogged){
 			this.loginView = new YaLoginView().on('onViewRendered',function(view){
 				$('.sidebar-view',this.$el).append(view.$el);
@@ -36,5 +41,30 @@ var MainContentView = MasterView.extend({
 			$('.sidebar-view',this.$el).replaceWith(view.$el);
 		},this);
 		$('.image-profile',this.$el).attr('src',modelUser.get('profileImage'));
+		console.log($('#template-menu-logged').html());
+		//Reemplaza el menu del usuario una vez que ya se loggeo
+		$('#user-dropdown').empty().append($('#template-menu-logged').html());
+	},
+	
+	onLoginPressed : function(event){
+		this.$el.removeClass('yay-hide');
+	},
+	
+	onSearchFocused : function(event){
+		this.$el.addClass('yay-hide');
+		if(this.searchSuggestView){
+			if(!this.searchSuggestView.isVisible)
+				this.searchSuggestView.show();
+		}else{
+			this.searchSuggestView = new SearchSuggestView();
+			this.searchSuggestView.on('onViewRendered',function(view){
+				$('.content-wrap',this.$el).append(view.$el);
+				this.searchSuggestView.show();
+			},this);
+		}
+	},
+	
+	onSearchFocusout : function(event){
+		this.searchSuggestView.hide();
 	}
 });

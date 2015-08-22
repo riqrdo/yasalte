@@ -120,14 +120,7 @@
 				            <img src="assets/custom/images/default-user.png"  class="circle image-profile">
 				     </a>
 		          <ul id="user-dropdown" class="dropdown-content">
-		            <li><a href="page-profile.html"><i class="fa fa-user"></i> Mi perfil</a>
-		            </li>
-		            <li class="divider"></li>
-		            <li><a href="#!"><i class="fa fa-cogs"></i> Configuraci&oacute;n</a>
-		            </li>
-		            <li class="divider"></li>
-		            <li><a href="page-sign-in.html"><i class="fa fa-sign-out"></i> Salir</a>
-		            </li>
+		          	<li><a href="#" class="login">Inicia Sesi&oacute;n</a></li>
 		          </ul>
 		        </li>
 		      </ul>
@@ -223,9 +216,6 @@
 	<!--  /Otra YaY SideBar -->
   <!-- Main Content -->
   <section class="content-wrap">
-  
-  			
-        
         <section class="fixed-action-btn icons-bar">
             <a id="more" class="btn-floating btn-large red">
               <i class="large mdi-navigation-more-vert"></i>
@@ -295,8 +285,33 @@
 <script type="text/javascript" src="assets/custom/views/YaLoginView.js"></script>
 <script type="text/javascript" src="assets/custom/views/UserMenuView.js"></script>
 <script type="text/javascript" src="assets/custom/views/ConfigurationView.js"></script>
+<script type="text/javascript" src="assets/custom/views/SearchSuggestView.js"></script>
+
 <script type="text/javascript" src="assets/custom/views/MainContentView.js"></script>
 <script type="text/javascript" src="assets/custom/startLogic.js"></script>
 
+<!-- templates -->
+<script type="text/template" id="template-menu-logged">
+	<li>
+		<a href="#!">
+			<i class="fa fa-user"></i> Mi perfil
+		</a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#!">
+			<i class="fa fa-cogs"></i> Configuraci&oacute;n
+		</a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#!">
+			<i class="fa fa-sign-out"></i>Salir
+		</a>
+	</li>
+</script> 
+ 
+ 
+<!-- templates -->
 
 </html>
