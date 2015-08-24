@@ -116,258 +116,114 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 /**
 * AGREGADOS POR CHEPO PARA CARDS  
 */
-.card {
-    padding: 7em 0 0 !important;
+.card { padding: 7em 0 0 !important; margin: 10px !important; padding-top: 5em; background-image : url('../images/p4.jpg');}
+.card .indicador{border-radius : 100em;border: 2px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;bottom: 20%}
+.card .likes{display : block;width : 100%;color : #ffffff;padding: 0px 10px;}
+.card .card-title{overflow: hidden; display: block;line-height: 0;padding: 0 0 10px;}
+/*
+ * Bordes de los cards
+ */
+.card.restaurant .card-title{border-left: 5px solid #ED1B23;}
+.card.cultura .card-title{border-left: 5px solid #2196F3;}
+.card.cafeteria .card-title{border-left: 5px solid #795548;}
+.card.night-life .card-title{border-left: 5px solid #2196F3;}
+.card.eventos .card-title{border-left: 5px solid #63BD10;}
+.card.recreativo .card-title{border-left: 5px solid #673AB7;}
+.card.promociones .card-title{border-left: 5px solid #F57C00;}
+.card.cines .card-title{border-left: 5px solid #E91E63;}
+.card.sitios-interes .card-title{border-left: 5px solid #009688;}
+.card.trendy .card-title{border-left: 5px solid #FFC107;}
+.card.guia .card-title{border-left: 5px solid #212121;}
 
-    margin: 10px !important;
-    padding-top: 5em;
-    background-image : url('../images/p4.jpg');
-}
-
-
-
-.card .likes{
-	display : block;
-	width : 100%;
-	color : #ffffff;
-	padding: 0px 10px;
-}
-
-.card .card-title{
-	    overflow: hidden;
-    display: block;
-    line-height: 0;
-    padding: 0 0 10px;
-},
-.card.restaurant .card-title{
-    border-left: 5px solid #ED1B23;
-
-}
-
-.card .indicador{
-  	border-radius : 100em;
-  	border: 2px solid #fff;
-    color: white;
-    font-size: 1.5em;
-    position: absolute;
-    right: 10px;
-    bottom: 20%
-}
-
-.card.restaurant .indicador{
-	    background-color: #ED1B23;
-}
-
-.card .card-title h4 {
-    font-size: 8pt;
-    font-weight: bold;
-    margin:5px;
-    max-width: 80%;
-}
-
-.card .card-title span{
-    font-size: 8pt;
-    margin: 5px;
-    display: inline-block;
-}
-
-.card .card-title .navigation{
-	float : right;
-	font-size : 1.5rem;
-	 color: #808080;
-}
+/*
+ * Colores de los iconos en cards
+ */
+.card.restaurant .indicador{background-color: #ED1B23;}
+.card.cultura .indicador{background-color: #2196F3;}
+.card.cafeteria .indicador{background-color: #795548;}
+.card.night-life .indicador{background-color: #2196F3;}
+.card.eventos .indicador{background-color: #63BD10;}
+.card.recreativo .indicador{background-color: #673AB7;}
+.card.promociones .indicador{background-color: #F57C00;}
+.card.cines .indicador{background-color: #E91E63;}
+.card.sitios-interes .indicador{background-color: #009688;}
+.card.trendy .indicador{background-color: #FFC107;}
+.card.guia .indicador{background-color: #212121;}
 
 
-.row.destacados {
-    width: 100%;
-    background-color: #1B1819;
-    padding: 0% 11%;
-}
+.card .card-title h4 {font-size: 8pt;font-weight: bold;margin:5px;max-width: 80%;}
+.card .card-title span{font-size: 8pt;margin: 5px;display: inline-block;}
+.card .card-title .navigation{float : right;font-size : 1.5rem;color: #808080;}
+.row.destacados {width: 100%;background-color: #1B1819;padding: 0% 11%;}
 
-.row.destacados .col {
-	padding : 0;
-}
+.row.destacados .col {padding : 0;}
+.content-wrap.search-result{padding-top: 0;overflow:hidden;padding-right: 0;padding-left: 0;}
+.combo-filters .col .select-wrapper{position:absolute;}
+.combo-filters .col .select-wrapper ul{width:100%!important;}
+.combo-filters .col .select-wrapper input{border-bottom:none;}
+.basic-filters{margin-top : 0!important;padding: 0% 11% !important;border-bottom: 2px solid #B2B2B2;}
+.result-counter{display: block;margin-top: 1%;font-size: 1.5rem;}
+.row.resultados {padding: 1% 11%;}
+.search-suggest ul li.search-result-item {display: block;overflow: hidden;border-left: 5px solid;margin-bottom: 4%;}
+.card-search-result{margin:0 !important;padding:0 !important;border : 2px solid #f1f1f1;max-width:90%;margin-right: 1%!important;background-color: #fffffd;}
+.result-item {border-left : 5px solid;}
+.card-search-result .indicador{font-size: 3em;border-radius : 100em;color: #fff;display: inline-block;margin: 2% 5%;}
+.card-search-result span.category {color: #000;font-weight: normal;display: block;}
+.card-search-result h4 {display: inline-block;font-weight: bold;font-size: 10pt;color: #000;margin : 0!important;padding:0!important;}
+.card-search-result .col.s4{margin: 0!important;padding:0!important;}
+.card-search-result h4 span{display: block;font-weight: normal;font-size:8pt;line-height: 1;}
+.card-search-result a{margin: 0 !important;padding:0 !important;}
+.card-search-result .direccion i{display: inline-block;font-size: 1em; color: #4d4d4d;float: left;margin-top: 5%;}
+.card-search-result .indicadores li {display : inline-block;overflow : hidden;margin : 0 10px;text-align: center;}
+.card-search-result .indicadores{text-align:center;}
+.card-search-result .indicadores li i{font-size: 2em;}
+.card-search-result .direccion{margin: 0;padding: 0;}
+.card-search-result .direccion h4{margin: 0;padding: 0;}
+.search-suggest li{margin-bottom : 1em;display: block;overflow: hidden;}
+li.result-item .favorite-section{border: 2px solid #f1f1f1;position: relative;text-align: center;vertical-align: middle;background-color: #fffffd;}
+li.result-item .favorite-section{margin: 0;padding: 0;}
+li.result-item .favorite-section i{font-size : 1.5em;display:block;}
+li.result-item .favorite-section span{	font-size : 1rem;}
+li.result-item ul.indicadores li span {font-size: 1rem;}
+li.result-item ul.indicadores li i {display: block;}
+li.result-item ul.indicadores li i.ya-clock-o.open {color: #5baf0e;}
+li.result-item ul.indicadores li i.ya-clock-o.forclose{color: #ff6600;}
+li.result-item ul.indicadores li i.ya-rate {color: #ffc107;}
+/*
+ * Colores para los cards search-result-item
+ */
+li.result-item.restaurant{border-left-color: #ED1B23!important;}
+li.result-item.restaurant .card-search-result .indicador{background-color:#ED1B23!important;}
+li.result-item.cultura{border-left-color: #2196F3!important;}
+li.result-item.cultura .card-search-result .indicador{background-color:#2196F3!important;}
+li.result-item.cafeteria{border-left-color: #795548!important;}
+li.result-item.cafeteria .card-search-result .indicador{background-color:#795548!important;}
+li.result-item.night-life{border-left-color: #2196F3!important;}
+li.result-item.night-life .card-search-result .indicador{background-color:#2196F3!important;}
+li.result-item.eventos{border-left-color: #63BD10!important;}
+li.result-item.eventos .card-search-result .indicador{background-color:#63BD10!important;}
+li.result-item.recreativo{border-left-color: #673AB7!important;}
+li.result-item.recreativo .card-search-result .indicador{background-color:#673AB7!important;}
+li.result-item.promociones{border-left-color: #F57C00!important;}
+li.result-item.promociones .card-search-result .indicador{background-color:#F57C00!important;}
+li.result-item.cines{border-left-color: #E91E63!important;}
+li.result-item.cines .card-search-result .indicador{background-color:#E91E63!important;}
+li.result-item.sitios-interes{border-left-color: #009688!important;}
+li.result-item.sitios-interes .card-search-result .indicador{background-color:#009688!important;}
+li.result-item.trendy{border-left-color: #FFC107!important;}
+li.result-item.trendy .card-search-result .indicador{background-color:#FFC107!important;}
+li.result-item.guia{border-left-color: #212121!important;}
+li.result-item.guia .card-search-result .indicador{background-color:#212121!important;}
 
-.content-wrap.search-result{
-	padding-top: 0;
-	overflow:hidden;
-	padding-right: 0;
-	padding-left: 0;
-}
+ul.filter-section{display:block; overflow: hidden;border:2px solid #e6e6e6}
+ul.filter-section li{color: #9c9c9c; text-align:center; margin:0!important; padding: 4% 0 !important;}
+ul.filter-section li.border-top{border-top: 2px solid #e6e6e6}
+ul.filter-section li.border-bottom{border-bottom: 1px solid #e6e6e6;}
+ul.filter-section li.border-left{border-left: 2px solid #e6e6e6}
+ul.filter-section li.border-right{border-right: 2px solid #e6e6e6}
+ul.filter-section li i{font-size:2em;}
 
-.combo-filters .col .select-wrapper{
-	position:absolute;
-}
-
-.combo-filters .col .select-wrapper ul{
-	width:100%!important;
-}
-
-.combo-filters .col .select-wrapper input{
-	border-bottom:none;
-}
-
-.basic-filters{
-	margin-top : 0!important; 
-	/* margin-bottom : 0!important; */
-	padding: 0% 11% !important;
-	border-bottom: 2px solid #B2B2B2;
-}
-
-.result-filters{
-/* 	padding: 1% 12%; */
-}
-
-.result-counter{
-	display: block;
-    margin-top: 1%;
-    font-size: 1.5rem;
-}
-
-.row.resultados {
-	padding: 1% 11%;
-}
-
-.search-suggest ul li.search-result-item {
-    display: block;
-    overflow: hidden;
-    border-left: 5px solid;
-   	margin-bottom: 4%;
-}
-
-.card-search-result{
-/* 	border-left: 5px solid; */
-	margin:0 !important;
-	padding:0 !important;
-	border : 2px solid #f1f1f1;
-	max-width:90%;
-	
-margin-right: 1%!important;
-background-color: #fffffd;
-}
-
-.result-item {
-	border-left : 5px solid;
-}
-
-li.result-item.restaurant{
-	border-left-color: #ED1B23!important;
-}
-
-li.result-item.restaurant .card-search-result .indicador{
-	background-color:#ED1B23!important;
-}
-
-.card-search-result .indicador{
-	font-size: 3em;
-	border-radius : 100em;
-	color: #fff;
-	display: inline-block;
-	margin: 2% 5%;
-}
+.filtros-avanzados .card {margin-left:0!important;margin-right:0!important; padding-left:0!important; padding-right: 0!important;display:block;}
 
 
-.card-search-result span.category {
-    color: #000;
-    font-weight: normal;
-    display: block;
-}
-
-.card-search-result h4 {
-    display: inline-block;
-    font-weight: bold;
-    font-size: 10pt;
-    color: #000;
-    margin : 0!important;
-    padding:0!important;
-}
-
-.card-search-result .col.s4{
-	margin: 0!important;
-	padding:0!important;
-}
-.card-search-result h4 span{
-	display: block;
-    font-weight: normal;
-    font-size:8pt;
-        line-height: 1;
-}
-.card-search-result a{
-	margin: 0 !important;
-	padding:0 !important;
-}
-.card-search-result .direccion i{
-	display: inline-block;
-    
-	font-size: 1em;
-    color: #4d4d4d;
-    
-	float: left;
-	margin-top: 5%;
-}
-
-.card-search-result .indicadores li {
-	display : inline-block;
-	overflow : hidden;
-	margin : 0 10px;
-	text-align: center;
-}
-
-.card-search-result .indicadores{
-	text-align:center;
-}
-
-.card-search-result .indicadores li i{
-	font-size: 2em;
-}
-
-.card-search-result .direccion{
-	    margin: 0;
-    	padding: 0;
-}
-
-.card-search-result .direccion h4{
-	    margin: 0;
-    	padding: 0;
-}
-
-
-.search-suggest li{
-	margin-bottom : 1em;
-	display: block;
-	overflow: hidden;
-}
-
-ul.indicadores li span {
-    font-size: 1rem;
-}
-
-li.result-item .favorite-section{
-	border: 2px solid #f1f1f1;
-    position: relative;
-    
-    text-align: center;
-    vertical-align: middle;
-    
-	background-color: #fffffd;
-}
-
-li.result-item .favorite-section{
-	 margin: 0;
-    padding: 0;
-}
-
-li.result-item  .favorite-section i{
-	font-size : 1.5em;
-	display:block;
-}
-
-
-li.result-item  .favorite-section span{
-	font-size : 1rem;
-}
-
-ul.indicadores li i {
-    display: block;
-}
 @media only screen and (min-width: 601px){}
