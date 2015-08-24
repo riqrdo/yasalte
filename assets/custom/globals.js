@@ -15,6 +15,7 @@ var YaGlobals = {
 	RECOMENDATION_ITEM : 'assets/custom/templates/recomendationItem.html',
 	USER_MENU_TEMPLATE : 'assets/custom/templates/userMenu.html',
 	CONFIG_MENU_TEMPLATE : 'assets/custom/templates/configuration.html',
+	SEARCH_SUGGEST_TEMPLATE : 'assets/custom/templates/searchSuggest.html',
 	
 	/**
 	 * Objeto para control de flujo solo temporales
