@@ -34,65 +34,13 @@
    <!-- materialize icons -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
+
+  
   <!-- ya icons -->
    <link rel="stylesheet" type="text/css" href="assets/custom/css/ya_icon.css" />
   <!--[if lt IE 9]>
     <script src="assets/html5shiv/html5shiv.min.js"></script>
   <![endif]-->
-  
-  <!-- templates -->
-  		<script type="text/template" id="card-template"> 
-			 <!-- <div class="card <%=type%>">-->
-  					<span class="likes"><%=likes%><i class="mdi-action-favorite"></i></span>
- 					<div class="card-title white black-text">
-	  					<i class="<%=iconIndicator%> indicador"></i>
-	  					<h4><%=name%></h4>
-	  					<span><%=clasificacion%></span>
-	  					<i class="mdi-navigation-more-vert navigation"></i>
-  					</div>
-  			<!--</div>-->
-		</script>
-		
-		<script type="text/template" id="search-result-template">
-			<div class="col s11 card-search-result">
-	  						<a href="#" class="col s4">
-		  						<i class="<%=iconIndicator%> indicador"></i>
-		  						<h4 class="place-name"><%=nombre%>
-		  							<span class="category"><%=categoria%></span>
-		  						</h4>
-	  						</a>
-	  						<div class="col s4 direccion">
-	  							<i class="mdi-action-room"></i>
-	  							<h4><%=direccion1%>
-	  								<span><%=direccion2%></span>
-	  								<span><%=direccion3%></span>
-	  							</h4>
-	  							
-	  						</div>
-	  						<div class="col s4">
-	  							<ul class="indicadores">
-	  								<li>
-	  									<i class="ya-c<%=rangoprecio%>"></i>
-	  									<span><%=precio%></span>
-	  								</li>
-	  								<li>
-	  									<i class="ya-clock-o <%=status%>"></i>
-	  									<span>abierto</span>
-	  									<!-- ya-clock-c -->
-	  								</li>
-	  								<li>
-	  									<i class="ya-rate rate"></i>
-	  									<span><%=rate%></span>
-	  								</li>
-	  							</ul>
-	  						</div>
-	  					</div>
-	  					<div class="col s1 favorite-section">
-	  						<i class="mdi-action-favorite active red-text"></i>
-	  						<span><%=likes%></span>
-	  					</div>
-		</script>
-  <!-- /templates -->
 </head>
 <body>
 
@@ -100,12 +48,49 @@
   <section class="content-wrap search-result">
   		<div class="row destacados">
   			<div class="col s12 m6 l3">
+  				<div class="card restaurant">
+  					<span class="likes">100 <i class="mdi-action-favorite"></i></span>
+ 					<div class="card-title white black-text">
+	  					<i class="ya-food indicador"></i>
+	  					<h4>Los mejores antros de la Condesa</h4>
+	  					<span>Nuestra seleci&oacute;n</span>
+	  					<i class="mdi-navigation-more-vert navigation"></i>
+  					</div>
+  				</div>
+  				
   			</div>
   			<div class="col s12 m6 l3">
+  				<div class="card cafeteria">
+  					<span class="likes">100 <i class="mdi-action-favorite"></i></span>
+ 					<div class="card-title white black-text">
+	  					<i class="ya-food indicador"></i>
+	  					<h4>Los mejores antros de la Condesa</h4>
+	  					<span>Nuestra seleci&oacute;n</span>
+	  					<i class="mdi-navigation-more-vert navigation"></i>
+  					</div>
+  				</div>
   			</div>
   			<div class="col s12 m6 l3">
+  				<div class="card night-life">
+  					<span class="likes">100 <i class="mdi-action-favorite"></i></span>
+ 					<div class="card-title white black-text">
+	  					<i class="ya-food indicador"></i>
+	  					<h4>Los mejores antros de la Condesa</h4>
+	  					<span>Nuestra seleci&oacute;n</span>
+	  					<i class="mdi-navigation-more-vert navigation"></i>
+  					</div>
+  				</div>
   			</div>
   			<div class="col s12 m6 l3">
+  				<div class="card guia">
+  					<span class="likes">100 <i class="mdi-action-favorite"></i></span>
+ 					<div class="card-title white black-text">
+	  					<i class="ya-food indicador"></i>
+	  					<h4>Los mejores antros de la Condesa</h4>
+	  					<span>Nuestra seleci&oacute;n</span>
+	  					<i class="mdi-navigation-more-vert navigation"></i>
+  					</div>
+  				</div>
   			</div>
   		</div>
   		<div class="row basic-filters">
@@ -202,6 +187,46 @@
   			</div>
   			<div class="col s12 s12 l9 search-suggest ">
   				<ul>
+	  				<li class="result-item restaurant">
+	  					<div class="col s11 card-search-result">
+	  						<a href="#" class="col s4">
+		  						<i class="ya-food indicador"></i>
+		  						<h4 class="place-name">La lagartona
+		  							<span class="category">Restaurante Mexicano</span>
+		  						</h4>
+	  						</a>
+	  						<div class="col s4 direccion">
+	  							<i class="mdi-action-room"></i>
+	  							<h4>Calzada del hueso
+	  								<span>Condesa</span>
+	  								<span>M&eacute;xico D.F.</span>
+	  							</h4>
+	  							
+	  						</div>
+	  						<div class="col s4">
+	  							<ul class="indicadores">
+	  								<li>
+	  									<i class="ya-c4"></i>
+	  									<span>+500</span>
+	  									<!-- ya-c1, ya-c2, ya-c3 -->
+	  								</li>
+	  								<li>
+	  									<i class="ya-clock-o open"></i>
+	  									<span>abierto</span>
+	  									<!-- ya-clock-c -->
+	  								</li>
+	  								<li>
+	  									<i class="ya-rate rate"></i>
+	  									<span>4.5</span>
+	  								</li>
+	  							</ul>
+	  						</div>
+	  					</div>
+	  					<div class="col s1 favorite-section">
+	  						<i class="mdi-action-favorite active red-text"></i>
+	  						<span>215</span>
+	  					</div>
+	  				</li>
 	  				<li class="result-item cultura">
 	  					<div class="col s11 card-search-result">
 	  						<a href="#" class="col s4">
@@ -280,6 +305,5 @@
   <script type="text/javascript" src="assets/_con/js/_con.min.js"></script>
   <!-- Google Prettify -->
   <script type="text/javascript" src="assets/google-code-prettify/prettify.js"></script>
-  <script type="text/javascript" src="assets/custom/views/SearchResultsView.js"></script>
 </body>
 </html>
