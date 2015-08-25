@@ -2,7 +2,7 @@
 
 footer{ position:absolute; bottom:0; left:0; width: 100%;}
 
-aside.yaybar .nano>.nano-content{margin-bottom: 55px;}
+aside.yaybar .nano>.nano-content{margin-bottom: 100px;}
 
 .dropdown-content{ width: 20%!important; right: 0; left: inherit!important;}
 .login-content{}
@@ -83,14 +83,14 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 
 .icons-bar .mdi-navigation-more-vert{ font-size:3em}
 
-.content.user-menu{overflow: hidden;color:#fff;background: #999 url(../images/bg-user.png) no-repeat top left/cover; padding: 25px 15px 20%!important;position:relative}
+.content.user-menu{overflow: hidden;color:#fff;background: #999 url(../images/bg-user.png) no-repeat top left/cover; padding: 25px 15px 20%!important;position:relative;height: 130px;}
 .content.user-menu img{ width: 27%;float:left; margin-right: 8%;}
 .content.user-menu h1{ font-size:1.2em; width: 65%; float:left;margin: 0; clear: none; line-height: normal; margin-top: 5%; color: #fff;}
 .content.user-menu span{ font-size:.9em; width: 65%; float:left;margin: 0; clear: none; line-height: normal; color: #fff;}
 .content.user-menu b{ font-size:.9em; width: 100%; color:#fff;text-align:center; position:absolute; bottom:0; left:0; background: rgba(0,0,0,.3); padding: 3%; font-weight: normal;}
 
 .user-options{}
-.user-options a.yay-sub-toggle{ display: block!important; width:30px; height:30px; text-align:center; font-size:2em; padding: 0!important; position: absolute; top: 9%; right: 2%; color: #fff!important;font-size: 2em!important;}
+.user-options a.yay-sub-toggle{ display: block!important; width:30px; height:30px; text-align:center; font-size:2em; padding: 0!important; position: absolute; top: 75px; right: 2%; color: #fff!important;font-size: 2em!important;}
 .user-options ul{ display:none; width:100%!important; background:transparent!important}
 .user-options.open,.user-options.open a{ background: #f9f9f9!important;}
 .user-options.open a.yay-sub-toggle{ background:none!important; color:#fff!important; font-size: 2em!important;}
@@ -225,5 +225,26 @@ ul.filter-section li i{font-size:2em;}
 
 .filtros-avanzados .card {margin-left:0!important;margin-right:0!important; padding-left:0!important; padding-right: 0!important;display:block;}
 
+.content-wrap:after{ height:60px; content:''; width:100%; display:block;}
+
+.icons-search{ margin:0 auto; width:100%;}
+.icons-search li{display:inline-block;}
+.icons-search li{ margin: 0% 2% 0;}
+.icons-search a{ width: 40px; height: 40px; color:#fff; font-size: 2em; text-align:center; display:block; background:#ddd; border-radius:100em; overflow:hidden;}
+.icons-search a i{color:#fff}
+
+.search-suggest-view .card-panel{ margin-bottom:4%;}
+.search-suggest-view .stats-card .name{ margin: 0 0 0 20%; font-weight:bold; color:#333}
+.search-suggest-view .stats-card span{ margin-left:20%;  color:#333}
+.search-suggest-view .stats-card>i.principal{ width:40px; height:40px; font-size: 2.1em; top: 15%;}
+.search-suggest-view .stats-card>i.option.mdi-action-favorite{right: 4%;top: 30%;}
+.search-suggest-view .restaurant .card-panel{ border-left:4px solid #ed1b23;}
+.search-suggest-view .bar .card-panel{ border-left:4px solid #9d07ed;}
+.search-suggest-view .cafe .card-panel{ border-left:4px solid #795548;}
+
+
+.search-suggest-view .frecuentes .card-panel{ border-left:none;}
+.search-suggest-view .gua .card-panel{ border-left:4px solid #000;}
+.search-suggest-view .gua .stats-card>i.principal{background:#000}
 
 @media only screen and (min-width: 601px){}
