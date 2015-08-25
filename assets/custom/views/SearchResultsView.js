@@ -22,14 +22,20 @@ var SearchResultModel  = Backbone.Model.extend({
 		response.searchResults.forEach(function(item){
 			item.iconIndicator = that.icons[item.type];
 		});
+		
+		response.destacados2.forEach(function(item){
+			item.iconIndicator = that.icons[item.type];
+		});
+		
 		return response;
 	}
 }); 
 
-var CardView = Backbone.View.extend({
+var CardView = MasterView.extend({
 	className : 'card',
+	templateURL : YaGlobals.CARD_VIEW,
 	initialize : function(){
-		this.template = _.template($('#card-template').html());
+		this.constructor.__super__.initialize.apply(this, []);
 	},
 	
 	render : function(){
@@ -37,14 +43,24 @@ var CardView = Backbone.View.extend({
 		this.$el.addClass(this.model.get('type'));
 		this.$el.css('background-image',"url('"+this.model.get('mainImage')+"')");
 		return this;
+	},
+	
+	onViewReady : function(textTemplate){
+		this.trigger('onViewRendered',this);
 	}
+	
 });
 
-var CardSearchView = Backbone.View.extend({
+var CardSearchView = MasterView.extend({
 	className : 'result-item',
 	tagName : 'li',
+	templateURL : YaGlobals.CARD_RESULT_ITEM_VIEW,
 	initialize : function(){
-		this.template = _.template($("#search-result-template").html());
+		this.constructor.__super__.initialize.apply(this, []);
+	},
+	
+	onViewReady : function(textTemplate){
+		this.trigger('onViewRendered',this);
 	},
 	
 	render : function(){
@@ -55,13 +71,12 @@ var CardSearchView = Backbone.View.extend({
 	
 });
 
-var SearchResultsView = Backbone.View.extend({
-	el:".content-wrap",
-	className : 'search-result',
+var SearchResultsView = MasterView.extend({
+	className : 'searchView animated',
+	templateURL : YaGlobals.SEARCH_RESULT_VIEW,
+	isVisible : false,
 	initialize : function(searchString){
-		this.model = new SearchResultModel();
-		this.model.on('sync',this.onModelReady,this);
-		this.model.fetch();
+		this.constructor.__super__.initialize.apply(this, []);
 	},
 	
 	render : function(){
@@ -71,6 +86,7 @@ var SearchResultsView = Backbone.View.extend({
 		//render destacados top!
 		this.renderDestacados1();
 		this.renderSearchresults();
+		this.renderDestacados2();
 		return this;
 	},
 	
@@ -78,7 +94,9 @@ var SearchResultsView = Backbone.View.extend({
 		this.searchResults.forEach(function(searchResultModel){
 			var resultCard = new CardSearchView({model: searchResultModel});
 			//TODO: Agregar aquí TODOS los eventos a escuchar!!!
-			$('.search-suggest>ul',this.$el).append(resultCard.render().$el);
+			resultCard.on('onViewRendered',function(view){
+				$('.search-suggest>ul',this.$el).append(resultCard.render().$el);
+			},this);
 		},this);
 	},
 	
@@ -86,14 +104,44 @@ var SearchResultsView = Backbone.View.extend({
 		var that = this;
 		$(".destacados>.col.s12.m6.l3",this.$el).each(function(index,DOMElement){
 			var destacadosView = new CardView({model:that.destacadosCollection1.at(index)});
-			$(DOMElement).append(destacadosView.render().$el);
+			/**
+			 * TODO: Agregar eventos necesarios!!
+			 */
+			destacadosView.on('onViewRendered',function(view){
+				$(DOMElement).append(view.render().$el);
+			});
 		});
+	},
+	
+	renderDestacados2 : function(){
+		this.destacadosCollection2.forEach(function(destacadoModel){
+			var destacadosView = new CardView({model:destacadoModel});
+			var that = this;
+			destacadosView.on('onViewRendered',function(view){
+				$(".filtros-avanzados",that.$el).append(view.render().$el);
+			});
+		},this);
+	},
+	onModelReady : function(model){
+		this.render();
+		//TODO:simular retardo de petición
+//		var that=this;
+//		setTimeout(function(){
+//			that.render();
+//		},2000);
 		
 	},
 	
-	onModelReady : function(model){
-		this.render();
+	performSearch : function(searchText){
+			this.model = new SearchResultModel();
+			this.model.on('sync',this.onModelReady,this);
+			this.model.fetch();
+	},
+	
+	onViewReady : function(textTemplate){
+		this.$el.append(this.template());
+		this.$el.hide();
+		this.trigger('onViewRendered',this);
 	}
+	
 });
-
-var mainView = new SearchResultsView();

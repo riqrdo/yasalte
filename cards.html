@@ -41,63 +41,7 @@
   <![endif]-->
   
   <!-- templates -->
-  		<script type="text/template" id="card-template"> 
-			 <!-- <div class="card <%=type%>">-->
-  					<span class="likes"><%=likes%><i class="mdi-action-favorite"></i></span>
- 					<div class="card-title white black-text">
-	  					<i class="<%=iconIndicator%> indicador"></i>
-	  					<h4><%=name%></h4>
-	  					<span><%=clasificacion%></span>
-	  					<i class="mdi-navigation-more-vert navigation"></i>
-  					</div>
-  			<!--</div>-->
-		</script>
-		
-		<script type="text/template" id="search-result-template">
-			<div class="col s11 card-search-result">
-	  						<a href="#" class="col s4">
-		  						<i class="<%=iconIndicator%> indicador"></i>
-		  						<h4 class="place-name"><%=nombre%>
-		  							<span class="category"><%=categoria%></span>
-		  						</h4>
-	  						</a>
-	  						<div class="col s4 direccion">
-	  							<i class="mdi-action-room"></i>
-	  							<h4><%=direccion1%>
-	  								<span><%=direccion2%></span>
-	  								<span><%=direccion3%></span>
-	  							</h4>
-	  							
-	  						</div>
-	  						<div class="col s4">
-	  							<ul class="indicadores">
-	  								<li>
-	  									<i class="ya-c<%=rangoprecio%>"></i>
-	  									<span><%=precio%></span>
-	  								</li>
-	  								<li>
-	  									<i class="ya-clock-o <%=status%>"></i>
-	  									<span>abierto</span>
-	  									<!-- ya-clock-c -->
-	  								</li>
-	  								<li>
-	  									<i class="ya-rate rate"></i>
-	  									<span><%=rate%></span>
-	  								</li>
-	  							</ul>
-	  						</div>
-	  					</div>
-	  					<div class="col s1 favorite-section">
-	  						<i class="mdi-action-favorite active red-text"></i>
-	  						<span><%=likes%></span>
-	  					</div>
-		</script>
-  <!-- /templates -->
-</head>
-<body>
-
-<!-- Main Content -->
-  <section class="content-wrap search-result">
+  	<script type="text/template" id="searchViewTemplate">
   		<div class="row destacados">
   			<div class="col s12 m6 l3">
   			</div>
@@ -202,50 +146,71 @@
   			</div>
   			<div class="col s12 s12 l9 search-suggest ">
   				<ul>
-	  				<li class="result-item cultura">
-	  					<div class="col s11 card-search-result">
+	  				
+  				</ul>
+  			</div>
+  		
+  		</div>
+  	</script>
+  	
+  		<script type="text/template" id="card-template"> 
+			 <!-- <div class="card <%=type%>">-->
+  					<span class="likes"><%=likes%><i class="mdi-action-favorite"></i></span>
+ 					<div class="card-title white black-text">
+	  					<i class="<%=iconIndicator%> indicador"></i>
+	  					<h4><%=name%></h4>
+	  					<span><%=clasificacion%></span>
+	  					<i class="mdi-navigation-more-vert navigation"></i>
+  					</div>
+  			<!--</div>-->
+		</script>
+		
+		<script type="text/template" id="search-result-template">
+			<div class="col s11 card-search-result">
 	  						<a href="#" class="col s4">
-		  						<i class="ya-food indicador"></i>
-		  						<h4 class="place-name">La lagartona
-		  							<span class="category">Restaurante Mexicano</span>
+		  						<i class="<%=iconIndicator%> indicador"></i>
+		  						<h4 class="place-name"><%=nombre%>
+		  							<span class="category"><%=categoria%></span>
 		  						</h4>
 	  						</a>
 	  						<div class="col s4 direccion">
 	  							<i class="mdi-action-room"></i>
-	  							<h4>Calzada del hueso
-	  								<span>Condesa</span>
-	  								<span>M&eacute;xico D.F.</span>
+	  							<h4><%=direccion1%>
+	  								<span><%=direccion2%></span>
+	  								<span><%=direccion3%></span>
 	  							</h4>
 	  							
 	  						</div>
 	  						<div class="col s4">
 	  							<ul class="indicadores">
 	  								<li>
-	  									<i class="ya-c4"></i>
-	  									<span>+500</span>
-	  									<!-- ya-c1, ya-c2, ya-c3 -->
+	  									<i class="ya-c<%=rangoprecio%>"></i>
+	  									<span><%=precio%></span>
 	  								</li>
 	  								<li>
-	  									<i class="ya-clock-o forclose"></i>
+	  									<i class="ya-clock-o <%=status%>"></i>
 	  									<span>abierto</span>
 	  									<!-- ya-clock-c -->
 	  								</li>
 	  								<li>
 	  									<i class="ya-rate rate"></i>
-	  									<span>4.5</span>
+	  									<span><%=rate%></span>
 	  								</li>
 	  							</ul>
 	  						</div>
 	  					</div>
 	  					<div class="col s1 favorite-section">
 	  						<i class="mdi-action-favorite active red-text"></i>
-	  						<span>215</span>
+	  						<span><%=likes%></span>
 	  					</div>
-	  				</li>
-  				</ul>
-  			</div>
+		</script>
+  <!-- /templates -->
+</head>
+<body>
+
+<!-- Main Content -->
+  <section class="content-wrap">
   		
-  		</div>
   </section>
 <!-- Main Content -->
 
