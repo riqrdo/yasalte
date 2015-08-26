@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>YaSalte.com</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/png" href="assets/_con/images/icon.png">
+  <!-- nanoScroller -->
+  <link rel="stylesheet" type="text/css" href="assets/nanoScroller/nanoscroller.css" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css" />
+
+  <!-- Material Design Icons -->
+  <link rel="stylesheet" type="text/css" href="assets/material-design-icons/css/material-design-icons.min.css" />
+
+  <!-- IonIcons -->
+  <link rel="stylesheet" type="text/css" href="assets/ionicons/css/ionicons.min.css" />
+
+  <!-- WeatherIcons -->
+  <link rel="stylesheet" type="text/css" href="assets/animate.css/animate.css"/>
+
+  <!-- Google Prettify -->
+  <link rel="stylesheet" type="text/css" href="assets/google-code-prettify/prettify.css" />
+  
+  <!-- Main -->
+  <link rel="stylesheet" type="text/css" href="assets/_con/css/_con.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="assets/custom/css/custom-css.css" />
+  
+   <!-- materialize icons -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- ya icons -->
+   <link rel="stylesheet" type="text/css" href="assets/custom/css/ya_icon.css" />
+  <!--[if lt IE 9]>
+    <script src="assets/html5shiv/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<!-- Main Content -->
+ <section class="content-wrap">
+ 	<div class="parallax-container top mnt-17 mnl-17 mnr-17 mb-17" style=" height: 200px;">
+       <div class="parallax" style="height: 200px;">
+           <img src="assets/custom/images/black.jpg" style="display: block; transform: translate3d(-50%, 1485px, 0px);">
+           <span class=" card-profile-direccion left ">rockstar</span>
+       </div>
+ 	</div>
+ 	<div class="card-content">
+       	<img id="iconlugar" class=" white card-profile-image left " src="assets/_con/images/user.jpg">
+        <a class=" btn-floating-edit waves-effect waves-light right">
+        	<i class="mdi-editor-mode-edit"></i>
+        </a>
+     </div>
+     
+     <div class="page-title">
+	       <div class="row" style="height: 40px;">
+                 <div class="col s12 m9 l10">            
+                 	<div class="row">
+	                      <div class="col s4 ">
+	                          <h3 class="profile-username">Cha Niembro</h3>
+	                      </div>
+                          <div class="col s2 center-align point-indicator">
+                              <h4>1000</h4>
+                              <li>puntos</li>
+                          </div>
+                          <div class="col s2 center-align point-indicator ">
+                              <h4>125</h4>
+                              <li>favoritos</li>
+                          </div>
+                           <div class="col s2 center-align point-indicator">
+                               <h4>562</h4>
+                               <li>fotos</li>
+                           </div>
+                            <div class="col s2 center-align point-indicator">
+                                <h4>152</h4>
+                                <li>Reseñas</li>
+                            </div>
+            		</div>
+                 </div>
+            </div>
+	 </div>
+	 
+	 <div class="row ">
+	   <div class="col s12 m12 tabs-wrapper">
+	      <ul class="tabs z-depth-1 tabs-profile border-top">
+	         <li class="tab col s6 m2 l2 border-right" ><a class="active" href="#favoritos" ><i class="mdi-action-favorite"></i> Mis Favoritos </a></li>
+	         <li class="tab col s6 m2 l2 border-right"><a href="#"><i class="tiny2 mdi-action-event"></i>  Mis eventos</a></li>
+	         <li class="tab col s6 m2 l2 border-right"><a href="#"><i class="tiny2 mdi-maps-local-offer"></i>  Mis cupones</a></li>
+	         <li class="tab col s6 m2 l2 border-right"><a href="#"><i class="tiny2 mdi-action-grade"></i>  Mis Recompensas</a></li>
+	         <li class="tab col s6 m2 l2 border-right"><a href="#"><i class="tiny2 mdi-image-camera-alt"></i>  Mis fotos</a></li>
+	         <li class="tab col s6 m2 l2  border-right"><a href="#"><i class="tiny2 mdi-maps-store-mall-directory"></i>  Mi Timeline</a></li>
+	         <li class="tab col s6 m2 l2"><a href="#"><i class="tiny2 mdi-maps-store-mall-directory"></i>  Mi Perfil</a></li>
+	      </ul>
+	   </div>
+	</div>
+	
+	<!-- contenido para cada tab!! -->
+	<div id="favoritos" class="row sortable">
+		<div class="col s12 tab-content-list-title">
+			<span>Esta es tu lista de lugares favoritos</span>
+			<i class="ya-help"></i>
+		</div>
+		<div class="col s12 tab-content-list-filters">
+			<div class="col s12 l8 m8 filters-combo">
+				<ul class="filter-list">
+					<li>
+						<div class="div btn-group">
+							  <a href="#!" class="btn transparent dark-text">Ciudad</a>
+							  <a href="#!" class="btn transparent dark-text dropdown-button" 
+							  			   data-activates='ciudad'>
+							  		<span class="mdi-navigation-expand-more"></span>
+							  </a>
+						</div>
+						<!-- Dropdown Structure -->
+						<ul id='ciudad' class='dropdown-content'>
+							  <li><a href="#!">M&eacute;xico</a></li>
+							  <li class="divider"></li>
+							  <li><a href="#!">Guadalajara</a></li>
+							  <li class="divider"></li>
+							  <li><a href="#!">Monterrey</a></li>
+							  <li class="divider"></li>
+							  <li><a href="#!">Queretaro</a></li>
+						</ul>
+					</li>
+					<li>	
+						<div class="div btn-group">
+						  <a href="#!" class="btn transparent dark-text">Zona</a>
+						  <a href="#!" class="btn transparent dark-text dropdown-button" 
+						  			   data-activates='zona'>
+						  		<span class="mdi-navigation-expand-more"></span>
+						  </a>
+						</div>
+						<!-- Dropdown Structure -->
+						<ul id='zona' class='dropdown-content'>
+						  <li><a href="#!">Centro</a></li>
+						  <li class="divider"></li>
+						  <li><a href="#!">Sur</a></li>
+						  <li class="divider"></li>
+						  <li><a href="#!">Poniente</a></li>
+						  <li class="divider"></li>
+						  <li><a href="#!">Oriente</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="div btn-group">
+						  <a href="#!" class="btn transparent dark-text">Categor&iacute;a</a>
+						  <a href="#!" class="btn transparent dark-text dropdown-button" 
+						  			   data-activates='categoria'>
+						  		<span class="mdi-navigation-expand-more"></span>
+						  </a>
+						</div>
+						<!-- Dropdown Structure -->
+						<ul id='categoria' class='dropdown-content'>
+						  <li><a href="#!">Comida</a></li>
+						  <li class="divider"></li>
+						  <li><a href="#!">Night Life</a></li>
+						  <li class="divider"></li>
+						  <li><a href="#!">Eventos</a></li>
+						  <li class="divider"></li>
+						  <li><a href="#!">Cultura</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="div btn-group">
+						  <a href="#!" class="btn transparent dark-text">Sub-Categor&iacute;a</a>
+						  <a href="#!" class="btn transparent dark-text dropdown-button" 
+						  			   data-activates='subcategoria'>
+						  		<span class="mdi-navigation-expand-more"></span>
+						  </a>
+						</div>
+						<!-- Dropdown Structure -->
+						<ul id='subcategoria' class='dropdown-content'>
+						  <li><a href="#!">Mexicana</a></li>
+						  <li class="divider"></li>
+						  <li><a href="#!">Argentina</a></li>
+						  <li class="divider"></li>
+						  <li><a href="#!">Española</a></li>
+						  <li class="divider"></li>
+						  <li><a href="#!">Brasileña</a></li>
+						</ul>
+					
+					</li>
+				
+				</ul>
+									
+					
+	 			
+	 				<!-- <div class="col s3">
+	 					<select class="col s12" name="subcategoria">
+							    <option value="" disabled selected>sub-categor&iacute;a</option>
+							    <option value="press">Comida</option>
+							    <option value="internet">Night Life</option>
+							    <option value="mouth">Eventos</option>
+							    <option value="other">Cultura</option>
+	 					</select>
+	 				</div>-->
+	 				
+			</div>
+			<!-- widget de busqueda -->
+			<div class="col s12 l4 m4 search-filter">
+					<div class="input-field">
+					  <i class="mdi-action-search prefix"></i>
+					  <input id="input_text_icon" type="text" class="validate">
+					</div>
+			</div>
+		</div>
+		
+	
+	</div>
+ 	
+ </section>
+<!-- Main Content -->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
+  <!-- Backbone JS -->
+  <script type="text/javascript" src="assets/backbone/underscore-min.js"></script>
+  <script type="text/javascript" src="assets/backbone/backbone-min.js"></script>
+  <!-- jQuery RAF (improved animation performance) -->
+  <script type="text/javascript" src="assets/jqueryRAF/jquery.requestAnimationFrame.min.js"></script>
+  <!-- nanoScroller -->
+  <script type="text/javascript" src="assets/nanoScroller/jquery.nanoscroller.min.js"></script>
+  <!-- Materialize -->
+  <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
+  <!-- Simple Weather -->
+  <script type="text/javascript" src="assets/simpleWeather/jquery.simpleWeather.min.js"></script>
+  <!-- Sparkline -->
+  <script type="text/javascript" src="assets/sparkline/jquery.sparkline.min.js"></script>
+  <!-- Flot -->
+  <script type="text/javascript" src="assets/flot/jquery.flot.tooltip.min.js"></script>
+  <!-- d3 -->
+  <script type="text/javascript" src="assets/d3/d3.min.js"></script>
+  <!-- Rickshaw -->
+  <script type="text/javascript" src="assets/rickshaw/rickshaw.min.js"></script>
+  <!-- jvectormap -->
+  <script type="text/javascript" src="assets/jquery-jvectormap/jquery-jvectormap.min.js"></script>
+  <script type="text/javascript" src="assets/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <script type="text/javascript" src="assets/jquery-jvectormap/gdp-data.js"></script>
+  <!-- Sortable -->
+  <script type="text/javascript" src="assets/sortable/Sortable.min.js"></script>
+  <!-- Main -->
+  <script type="text/javascript" src="assets/_con/js/_con.min.js"></script>
+  <!-- Google Prettify -->
+  <script type="text/javascript" src="assets/google-code-prettify/prettify.js"></script>
+  
+  <!-- <script>$(document).on('ready',function(){
+	  $('.dropdown-button').dropdown({ constrain_width: true});  
+  });</script> -->
+</body>
+</html>

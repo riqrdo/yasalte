@@ -84,6 +84,7 @@ var MainContentView = MasterView.extend({
 				$('.content-wrap',this.$el).append(view.$el);
 				this.searchResultsView.show('slideInLeft');
 				this.searchResultsView.performSearch();
+				$('.combo-filters select',view.$el).material_select();
 			},this);
 		}		
 	}
