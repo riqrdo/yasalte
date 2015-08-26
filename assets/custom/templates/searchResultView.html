@@ -18,13 +18,20 @@
 	</div>
 	<div class="col s12 m6 l6 combo-filters">
 		<div class="col s4">
-			<select name="zona">
-			    <option value="" disabled selected>zona</option>
-			    <option value="press">centro</option>
-			    <option value="internet">sur</option>
-			    <option value="mouth">poniente</option>
-			    <option value="other">oriente</option>
-		</select>
+        
+              	<a href="#!" class="btn-flat transparent dark-text" data-activates='zona-filter'>Zona 
+                    <span class="fa fa-caret-down"></span>
+				</a>
+                <ul id='zona-filter' class='dropdown-content'>
+                  <li><a href="#!">Centro</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#!">Sur</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#!">Poniente</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#!">Oriente</a></li>
+                </ul>
+        
 		</div>
 		<div class="col s4">
 			<select name="categoria">

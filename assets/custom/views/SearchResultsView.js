@@ -119,6 +119,7 @@ var SearchResultsView = MasterView.extend({
 			var that = this;
 			destacadosView.on('onViewRendered',function(view){
 				$(".filtros-avanzados",that.$el).append(view.render().$el);
+				$('.dropdown-content',that.$el).dropdown();
 			});
 		},this);
 	},
