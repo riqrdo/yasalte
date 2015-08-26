@@ -18,6 +18,7 @@ var MainContentView = MasterView.extend({
 		if(!YaGlobals.tmp.isLogged){
 			this.loginView = new YaLoginView().on('onViewRendered',function(view){
 				$('.sidebar-view',this.$el).append(view.$el);
+				$('aside.yaybar').addClass('login');
 			},this);
 			this.loginView.on('loginSuccess',this.onSuccessLogin);
 		}
@@ -37,11 +38,13 @@ var MainContentView = MasterView.extend({
 	
 	onSuccessLogin : function(modelUser){
 		this.loginView.close();
+		$('aside.yaybar').removeClass('login');
 		this.userMenu = new UserMenuView({
 			model : modelUser
 		});
 		this.userMenu.on('onViewRendered',function(view){
 			$('.sidebar-view',this.$el).replaceWith(view.$el);
+			$('aside.yaybar').addClass('usermenu');
 		},this);
 		$('.image-profile',this.$el).attr('src',modelUser.get('profileImage'));
 		console.log($('#template-menu-logged').html());

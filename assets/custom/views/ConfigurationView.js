@@ -31,6 +31,8 @@ var ConfigurationView = MasterView.extend({
 	},
 	
 	show : function(){
+		$('aside.yaybar').removeClass('usermenu');
+		$('aside.yaybar').addClass('config');
 		var _that = this;
 		this.$el.show();
 		this.$el.one('webkitAnimationEnd mozAnimationEnd '+
@@ -42,6 +44,8 @@ var ConfigurationView = MasterView.extend({
 	},
 	
 	hide : function(){
+		$('aside.yaybar').removeClass('config');
+		$('aside.yaybar').addClass('usermenu');
 		var _that = this;
 		this.$el.one('webkitAnimationEnd mozAnimationEnd '+
 				  'MSAnimationEnd oanimationend animationend',function(event){
