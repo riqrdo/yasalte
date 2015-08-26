@@ -24,6 +24,33 @@ var MasterView = Backbone.View.extend({
 		this.template = _.template(textTemplate,{});
 		this.viewTools.off('onTemplateLoaded');
 		this.onViewReady();
+	},
+	
+	show : function(effect){
+		var that = this;
+		this.$el.one('webkitAnimationEnd mozAnimationEnd '+
+					 'MSAnimationEnd oanimationend animationend',
+					 function(event){
+			that.$el.removeClass(effect);
+			event.stopPropagation();
+			that.isVisible = true;
+		});
+		this.$el.addClass(effect);
+		this.$el.show();
+		this.isVisible = true;
+	},
+	
+	hide : function(effect){
+		this.isVisible = false;
+		var that = this;
+		this.$el.one('webkitAnimationEnd mozAnimationEnd '+
+				 'MSAnimationEnd oanimationend animationend',function(){
+			that.$el.hide();
+			that.$el.removeClass(effect);
+			event.stopPropagation();
+			that.isVisible = false;
+		});
+		this.$el.addClass(effect);
 	}
 });
 

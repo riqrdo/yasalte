@@ -27,6 +27,7 @@ var SearchSuggestView = MasterView.extend({
 					 function(event){
 			that.$el.removeClass("fadeInDown");
 			event.stopPropagation();
+			that.isVisible = true;
 		});
 		this.$el.addClass('fadeInDown');
 		this.$el.show();
@@ -34,15 +35,16 @@ var SearchSuggestView = MasterView.extend({
 	},
 	
 	hide : function(){
+		this.isVisible = false;
 		var that = this;
 		this.$el.one('webkitAnimationEnd mozAnimationEnd '+
 				 'MSAnimationEnd oanimationend animationend',function(){
 			that.$el.hide();
 			that.$el.removeClass('fadeOutUp');
 			event.stopPropagation();
+			that.isVisible = false;
 		});
 		this.$el.addClass('fadeOutUp');
-		this.isVisible = false;
 	}
 	
 	
