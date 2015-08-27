@@ -34,7 +34,11 @@
   
    <!-- materialize icons -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
+
+  <!--photoswipe-->
+	<link rel="stylesheet" type="text/css" href="assets/PhotoSwipe/photoswipe.css">
+	<link rel="stylesheet" type="text/css" href="assets/PhotoSwipe/default-skin/default-skin.css">
+
   <!-- ya icons -->
    <link rel="stylesheet" type="text/css" href="assets/custom/css/ya_icon.css" />
   <!--[if lt IE 9]>
@@ -145,7 +149,7 @@
 	</script>
 	
 	<script type="text/template" id="template-misfotos">
-		<div class="col s12 tab-content-list-title">
+			<div class="col s12 tab-content-list-title">
 				<span></span>
 				<i class="ya-help"></i>
 			</div>
@@ -173,7 +177,9 @@
     			<div class="photo-toolbar">
 					
 				</div>
-				<img src="images/misfotos1.jpg"/>
+				<div class="photo-containner">
+					<img src="images/misfotos1.jpg"/>
+				</div>
 				<div class="photo-footer">
 					<span id="descripcion">#Este es un texto de prueba</span>
 					<span id="ubicacion">#Este es un texto de prueba</span>
@@ -245,11 +251,158 @@
 		   </div>
 		</div>
 		
-		<!-- contenido para cada tab!! -->
-<!-- 		<div id="favoritos" class="row sortable"> -->
-			
-<!-- 		</div> -->
-		<!-- div favoritos -->
+		<div id="fotos" class="row sortable">
+			<div class="col s12 tab-content-list-title">
+				<span>Fotos cargadas</span>
+				<i class="ya-help"></i>
+			</div>
+			<div class="col s12 tab-content-list-filters">
+				<div class="col s12 m6 l6 filters-combo">
+					<div class="input-field col s12 m3 l3">
+					  <input class="datepicker" id="input_date" type="date">
+					  <label for="input_date">Fecha</label>
+					  <span class="mdi-navigation-expand-more"></span>
+					</div>
+				</div>
+				<!-- widget de busqueda -->
+				<div class="col s12 m6 l6 search-filter">
+						<div class="input-field">
+						  <i class="mdi-action-search prefix"></i>
+						  <input id="input_text_icon" type="text" class="validate">
+						</div>
+				</div>
+			</div>
+<!--mygallery-->
+			<div class="card-panel of-h">
+      <div class="row photoswipe-gallery isotope mt-0" data-pswp-uid="1" style="position: relative; height: 422.671875px;">
+        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-1.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-1-med.jpg" data-med-size="1440x900" data-author="John Doe" style="position: absolute; left: 0px; top: 0px;">
+          <img src="assets/_con/images/gallery-1-small.jpg" alt="">
+          <figure>Magna tollit mei te</figure>
+        </a>
+
+        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-2.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-2-med.jpg" data-med-size="1440x900" data-author="Felicia Castro" style="position: absolute; left: 215px; top: 0px;">
+          <img src="assets/_con/images/gallery-2-small.jpg" alt="">
+          <figure>Ex graeco deserunt posidonium pri, mei oblique bonorum recusabo te. Id mea diceret constituto, numquam persequeris per te. Eam no veri verear quaerendum, eam graecis adolescens dissentiunt eu, summo quaeque corpora ex eam. Libris molestiae an
+            vix.</figure>
+        </a>
+
+        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-7.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-7-med.jpg" data-med-size="1440x900" data-author="Max Brooks" style="position: absolute; left: 430px; top: 0px;">
+          <img src="assets/_con/images/gallery-7-small.jpg" alt="">
+          <figure>Pri quem blandit intellegebat</figure>
+        </a>
+
+        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-4.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-4-med.jpg" data-med-size="1440x900" data-author="Patsy Griffin" style="position: absolute; left: 645px; top: 0px;">
+          <img src="assets/_con/images/gallery-4-small.jpg" alt="">
+          <figure>Vim ut eirmod minimum placerat</figure>
+        </a>
+
+        <a class="col s12 l9 item" href="assets/_con/images/gallery-9.jpg" data-size="5184x1034" data-med="assets/_con/images/gallery-9-med.jpg" data-med-size="4512x900" data-author="Chloe Morgan" style="position: absolute; left: 0px; top: 140px;">
+          <img src="assets/_con/images/gallery-9-small.jpg" alt="">
+          <figure>Te eos velit graece</figure>
+        </a>
+
+        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-5.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-5-med.jpg" data-med-size="1440x900" data-author="Vernon Garrett" style="position: absolute; left: 645px; top: 140px;">
+          <img src="assets/_con/images/gallery-5-small.jpg" alt="">
+          <figure>His ullum fastidii ea</figure>
+        </a>
+
+        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-6.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-6-med.jpg" data-med-size="1440x900" data-author="Greg Mcdonalid" style="position: absolute; left: 0px; top: 281px;">
+          <img src="assets/_con/images/gallery-6-small.jpg" alt="">
+          <figure>Te solum viris vix</figure>
+        </a>
+
+        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-8.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-8-med.jpg" data-med-size="1440x900" data-author="Christian Jackson" style="position: absolute; left: 215px; top: 281px;">
+          <img src="assets/_con/images/gallery-8-small.jpg" alt="">
+          <figure>Simul voluptua salutandi in pri</figure>
+        </a>
+
+        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-10.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-10-med.jpg" data-med-size="1440x900" data-author="Willie Kelly" style="position: absolute; left: 430px; top: 281px;">
+          <img src="assets/_con/images/gallery-10-small.jpg" alt="">
+          <figure>An mea inani essent</figure>
+        </a>
+
+        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-3.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-3-med.jpg" data-med-size="1440x900" data-author="Jenny Phillips" style="position: absolute; left: 645px; top: 281px;">
+          <img src="assets/_con/images/gallery-3-small.jpg" alt="">
+          <figure>Nam nisl diam graeci ex</figure>
+        </a>
+      </div>
+    </div>
+<!--my-gallery-->
+
+
+
+
+
+
+			<!-- Root element of PhotoSwipe. Must have class pswp. -->
+			<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+			    <!-- Background of PhotoSwipe. 
+			         It's a separate element as animating opacity is faster than rgba(). -->
+			    <div class="pswp__bg"></div>
+
+			    <!-- Slides wrapper with overflow:hidden. -->
+			    <div class="pswp__scroll-wrap">
+
+			        <!-- Container that holds slides. 
+			            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+			            Don't modify these 3 pswp__item elements, data is added later on. -->
+			        <div class="pswp__container">
+			            <div class="pswp__item"></div>
+			            <div class="pswp__item"></div>
+			            <div class="pswp__item"></div>
+			        </div>
+
+			        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+			        <div class="pswp__ui pswp__ui--hidden">
+
+			            <div class="pswp__top-bar">
+
+			                <!--  Controls are self-explanatory. Order can be changed. -->
+
+			                <div class="pswp__counter"></div>
+
+			                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+			                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+			                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+			                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+			                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+			                <!-- element will get class pswp__preloader--active when preloader is running -->
+			                <div class="pswp__preloader">
+			                    <div class="pswp__preloader__icn">
+			                      <div class="pswp__preloader__cut">
+			                        <div class="pswp__preloader__donut"></div>
+			                      </div>
+			                    </div>
+			                </div>
+			            </div>
+
+			            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+			                <div class="pswp__share-tooltip"></div> 
+			            </div>
+
+			            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+			            </button>
+
+			            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+			            </button>
+
+			            <div class="pswp__caption">
+			                <div class="pswp__caption__center"></div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+
+
+
+
+
+		</div>
 	 </div>	
  </section>
 <!-- Main Content -->
@@ -282,6 +435,10 @@
   <!-- Sortable -->
   <script type="text/javascript" src="assets/sortable/Sortable.min.js"></script>
   <!-- Main -->
+  <!-- PhotoSwipe -->
+  <script type="text/javascript" src="assets/PhotoSwipe/photoswipe.min.js"></script>
+  <script type="text/javascript" src="assets/PhotoSwipe/photoswipe-ui-default.min.js"></script>
+
   <script type="text/javascript" src="assets/_con/js/_con.min.js"></script>
   <!-- Google Prettify -->
   <script type="text/javascript" src="assets/google-code-prettify/prettify.js"></script>
@@ -289,6 +446,7 @@
   <script type="text/javascript" src="assets/custom/views/MasterView.js"></script>
   <script type="text/javascript" src="assets/custom/views/SearchResultsView.js"></script>
   <script type="text/javascript" src="assets/custom/views/ProfileView.js"></script>
+
   <script>
   	var view = new ProfileView();
   </script> 

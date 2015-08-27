@@ -64,3 +64,18 @@
 #fotos .filters-combo .picker--focused .picker__day--selected, .picker__day--selected, .picker__day--selected{
 	background: #EA202C!important;
 }
+
+#full-photo {
+	width: auto;
+	max-height: 100%;
+	top:5% !important;
+}
+
+#full-photo .photo-toolbar, #full-photo .photo-containner, #full-photo .photo-footer{
+	max-width: 60%;
+    margin: auto;
+}
+
+#full-photo .photo-footer span{
+	display: block;
+}
