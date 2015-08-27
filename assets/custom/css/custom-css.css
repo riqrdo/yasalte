@@ -424,6 +424,97 @@ border-left : 10px; border-right:10px;
     border-bottom: 1px solid #f36a6f;
     box-shadow: 0 1px 0 0 #f36a6f; }
  
-            
+/*modals*/
+
+.modal.yasalte{ border:1px solid #cdcdcd; border-radius:0;width:95%; max-width:370px; background:#fff;}
+.modal.yasalte .page-title{padding:0;margin: -8% -8% 2%;padding: 3% 5% 2%; background:transparent;overflow: hidden;font-size: 1.2em;}
+.modal.yasalte .page-title .right{ font-size: 1.4em; line-height: 1em;}
+
+.modal.login-register{ background:#fafafa;}
+.modal.login-register .modal-footer{ padding:0; height:auto; overflow:hidden;}
+.modal.login-register .modal-footer .btn{ margin:0; width:50%; border-radius:0; text-transform:lowercase}
+.modal.login-register .modal-footer .btn.red{box-shadow: inset -1px 0 0 #fff;}
+.modal.login-register p.center-block{ margin: 11% auto 6%;}
+
+.modal.login{ background:#fafafa;}
+.modal.login .login-content{ padding: 6% 6% 0;}
+.modal.login .login-form{ border:none; margin:0; padding: 0; width: 100%;}
+
+.modal.register .register-content{padding: 0 8%;}
+.modal.register .register-content .btn{ width:100%; margin-bottom: 4%; text-transform:lowercase}
+.modal.register .register-content figure{ border:2px solid #000; width:80px; height:80px; font-size: 4em; margin: 3% auto 6%;}
+.modal.register .register-content div{border:1px solid #dedede;overflow:hidden;margin-bottom:10px}
+.modal.register .register-content div span{ float:left;}
+.modal.register .register-content input,.modal.register .register-content input:focus{ border:none;margin: 0px;overflow: hidden;float: left; width: 74%;height: 2.5em; padding-left: 2%;}
+.modal.register .register-content div i{float:left;width: 15%;margin:0;font-size:1.5em;color:#b3b3b3;margin: 4% 0% 0 3%;}
+.modal.register .register-content .names span:first-child{ width:55%}
+.modal.register .register-content .names span:last-child{ width:44%; border-left:1px solid #dedede}
+.modal.register .register-content .names span:last-child input{ width:95%}
+.modal.register .register-content .birth-gender span:first-child{ width:65%}
+.modal.register .register-content .birth-gender span:last-child{ width:34%; border-left:1px solid #dedede}
+.modal.register .register-content .birth-gender span:last-child i{ line-height: 1.5em; margin-right: 8%;}
+.modal.register .register-content .birth-gender span input{ width: 72%;}
+.modal.register .register-content .phone span{ width: 18%;border-right:1px solid #dedede; color:#b3b3b3}
+.modal.register .register-content .phone span i{ float:none; line-height: 1.7em; width: auto; margin: 0 6%;}
+.modal.register .register-content .pass i{width: auto;margin-right: 3%;}
+.modal.register .register-content a{ text-decoration:underline;}
+.modal.register .register-content a.btn{ text-decoration:none;}
+
+
+.modal.personalize .personalize-content{padding: 0 8%;}
+.modal.personalize .personalize-content figure{ width:80px; height:80px;margin: 3% auto 6%; overflow:hidden;}
+.modal.personalize .personalize-content figure img{ width:100%; height:auto;}
+.modal.personalize .personalize-content .btn{ width:100%; margin-bottom: 4%; box-shadow: none; border: 1px solid #c8c8c8; text-transform:lowercase}
+.modal.personalize .personalize-content .tags{ text-align:center;}
+.modal.personalize .personalize-content .btn.tag{width: auto;height: auto;line-height: normal;text-transform: lowercase;padding: 5px; display:inline-block}
+.modal.personalize .personalize-content .btn.tag i{ /* margin-left:2%; */ font-size:.9em}
+.modal.personalize .personalize-content .divider{ margin: 10% 0; background:#c8c8c8; width: 140%; margin-left: -21%;}
+.modal.personalize .personalize-content div.tagsinput span.tag {margin-right: 5px;margin-top: 6px;margin-bottom: 0;padding: 3px 10px;border:1px solid #c8c8c8;color: #333;background-color: #fff; border-radius:none;}
+.modal.personalize .personalize-content div.tagsinput span.tag .sp-cancel, div.tagsinput span.tag a{color:#c8c8c8}
+.modal.personalize .personalize-content .tagsinput{ margin-bottom:4%}
+.modal.personalize .personalize-content .btn.ver_mas{width: 48%;margin: 2% auto 7%;display: block;border-width: 2px;}
+.modal.personalize .personalize-content .gusto { border:1px solid #dedede; overflow:hidden; margin-bottom:6%}
+.modal.personalize .personalize-content .gusto span{ width: 12%;border-right:1px solid #dedede; color:#b3b3b3; float:left; text-align: center; line-height: 2em; font-size: 1.4em;}
+.modal.personalize .personalize-content .gusto span i{ line-height: 1.8em;}
+.modal.personalize .personalize-content .gusto input{ border:none;margin: 0px;overflow: hidden;float: left; width: 74%;height: 2.5em; padding-left: 2%;}
+
+.modal.profile-select .profile-select-content{/* padding: 0 8%; */}
+.modal.profile-select .profile-select-content figure{ width:80px; height:80px;margin: 3% auto 6%; overflow:hidden;}
+.modal.profile-select .profile-select-content p{  margin: 2% 12%;}
+.modal.profile-select .profile-select-content p.exp{ font-size:1.2em; margin:4% 0}
+.modal.profile-select .profile-select-content figure img{ width:100%; height:auto;}
+.modal.profile-select .profile-select-content .btn{ width:100%; margin-bottom: 4%; box-shadow: none; border: 1px solid #c8c8c8; margin-top:6%; text-transform:lowercase}
+.modal.profile-select .profile-select-content .btn-floating{ width:20px; height:20px; line-height: 20px; font-size: 1em; text-align: center; font-weight: 700; box-shadow: none;}
+.modal.profile-select .profile-select-content .btn-floating i{ font-size:.5em}
+.modal.profile-select .profile-select-content [type=radio].with-gap:checked+label:after{ background:#b3b3b3; border:2px solid #b3b3b3}
+.modal.profile-select .profile-select-content [type=radio].with-gap:checked+label:before{ border:1px solid #b3b3b3}
+.modal.profile-select .profile-select-content [type=radio]:not(:checked)+label:before{ border:1px solid #b3b3b3}
+
+.profile-description-content{}
+.profile-description-content figure{ width:80px; height:80px;margin: 3% auto 6%; overflow:hidden;}
+.profile-description-content figure img{ width:100%}
+.profile-description-content figure i{ font-size: 4em; line-height: 1.5em;}
+.profile-description-content p{  margin: 4% 12%;}
+.profile-description-content p.exp{ font-size:1.2em; margin:4% 0}
+.profile-description-content figure img{ width:100%; height:auto;}
+.profile-description-content .btn{ margin-bottom: 4%; box-shadow: none; border: 1px solid #fff; margin-top:6%; text-transform:lowercase}
+.profile-description-content [type=radio].with-gap:checked+label:after{ background:#D32F2F; border:2px solid #D32F2F}
+.profile-description-content [type=radio].with-gap:checked+label:before{ border:1px solid #D32F2F}
+.profile-description-content [type=radio]:not(:checked)+label:before{ border:1px solid #D32F2F}
+.modal-footer.profile-description-footer{ padding:0; height:auto; overflow:hidden; background:#fff; padding-bottom:4%}
+.modal-footer.profile-description-footer .btn{ margin:0; text-transform:lowercase; width:60%; border-radius:0;}
+.modal-footer.profile-description-footer .btn:last-child{box-shadow: inset -1px 0 0 #fff;}
+.modal-footer.profile-description-footer .btn:first-child{box-shadow: inset 1px 0 0 #fff;}
+.modal-footer.profile-description-footer .btn:first-child,.modal-footer.profile-description-footer .btn:last-child{ width:20%}
+.modal-footer.profile-description-footer .btn-group{ width:100%;}
+
+.modal.welcome{ background:#fafafa;}
+.modal.welcome .welcome-content{padding: 0 8%;}
+.modal.welcome .welcome-content figure{ width:80px; height:80px;margin: 3% auto 6%; overflow:hidden;}
+.modal.welcome .welcome-content figure img{ width:100%; height:auto;}
+.modal.welcome .welcome-content .btn{ width:100%; margin:4% 0;}
+
+
+
             
 @media only screen and (min-width: 601px){}
