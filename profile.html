@@ -30,6 +30,7 @@
   <link rel="stylesheet" type="text/css" href="assets/_con/css/_con.min.css" />
 
   <link rel="stylesheet" type="text/css" href="assets/custom/css/custom-css.css" />
+  <link rel="stylesheet" type="text/css" href="assets/custom/css/aux.css" />
   
    <!-- materialize icons -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -40,6 +41,7 @@
     <script src="assets/html5shiv/html5shiv.min.js"></script>
   <![endif]-->
   <!-- templates!! -->
+
 	<script type="text/template" id="template-favoritos">
 		<div class="col s12 tab-content-list-title">
 				<span></span>
@@ -142,6 +144,45 @@
 			</ul>
 	</script>
 	
+	<script type="text/template" id="template-misfotos">
+		<div class="col s12 tab-content-list-title">
+				<span></span>
+				<i class="ya-help"></i>
+			</div>
+			<div class="col s12 tab-content-list-filters">
+				<div class="col s12 m6 l6 filters-combo">
+					<div class="input-field col s12 m3 l3">
+					  <input class="datepicker" id="input_date" type="date">
+					  <label for="input_date">Fecha</label>
+					  <span class="mdi-navigation-expand-more"></span>
+					</div>
+				</div>
+				<!-- widget de busqueda -->
+				<div class="col s12 m6 l6 search-filter">
+						<div class="input-field">
+						  <i class="mdi-action-search prefix"></i>
+						  <input id="input_text_icon" type="text" class="validate">
+						</div>
+				</div>
+			</div>
+			
+			<ul class="col s12 fotos-wrapper">
+			</ul>
+
+			<div id="full-photo" class="modal">
+    			<div class="photo-toolbar">
+					
+				</div>
+				<img src="images/misfotos1.jpg"/>
+				<div class="photo-footer">
+					<span id="descripcion">#Este es un texto de prueba</span>
+					<span id="ubicacion">#Este es un texto de prueba</span>
+					<span id="fecha">12.05.2015</span>
+				</div>
+    		</div>
+  	</div>
+	</script>
+	
 	<!-- /templates!! -->
 </head>
 <body>
@@ -193,40 +234,15 @@
 		 <div class="row ">
 		   <div class="col s12 m12 tabs-wrapper">
 		      <ul class="tabs z-depth-1 tabs-profile border-top">
-		         <li class="tab col s6 m2 l2 border-right" ><a class="active" href="#favoritos" ><i class="mdi-action-favorite"></i> Mis Favoritos </a></li>
+		         <li class="tab col s6 m2 l2 border-right" ><a href="#favoritos" ><i class="mdi-action-favorite"></i> Mis Favoritos </a></li>
 		         <li class="tab col s6 m2 l2 border-right"><a href="#eventos"><i class="tiny2 mdi-action-event"></i>  Mis eventos</a></li>
 		         <li class="tab col s6 m2 l2 border-right"><a href="#cupones"><i class="tiny2 mdi-maps-local-offer"></i>Mis cupones</a></li>
 		         <li class="tab col s6 m2 l2 border-right"><a href="#recompensas"><i class="tiny2 mdi-action-grade"></i>Mis Recompensas</a></li>
-		         <li class="tab col s6 m2 l2 border-right"><a href="#fotos"><i class="tiny2 mdi-image-camera-alt"></i>Mis fotos</a></li>
+		         <li class="tab col s6 m2 l2 border-right"><a href="#fotos" class="active"><i class="tiny2 mdi-image-camera-alt"></i>Mis fotos</a></li>
 		         <li class="tab col s6 m2 l2  border-right"><a href="#"><i class="tiny2 mdi-maps-store-mall-directory"></i>Mi Timeline</a></li>
 		         <li class="tab col s6 m2 l2"><a href="#"><i class="tiny2 mdi-maps-store-mall-directory"></i>Mi Perfil</a></li>
 		      </ul>
 		   </div>
-		</div>
-		
-		<div id="fotos" class="row sortable">
-			<div class="col s12 tab-content-list-title">
-				<span></span>
-				<i class="ya-help"></i>
-			</div>
-			<div class="col s12 tab-content-list-filters">
-				<div class="col s3 filters-combo">
-					<div class="input-field">
-					  <input class="datepicker" id="input_date" type="date">
-					  <label for="input_date">Fecha</label>
-					  <i class=""></i>
-					</div>
-				</div>
-				<!-- widget de busqueda -->
-				<div class="col s8 search-filter">
-						<div class="input-field">
-						  <i class="mdi-action-search prefix"></i>
-						  <input id="input_text_icon" type="text" class="validate">
-						</div>
-				</div>
-			</div>
-			
-			
 		</div>
 		
 		<!-- contenido para cada tab!! -->
