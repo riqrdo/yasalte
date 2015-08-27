@@ -33,11 +33,11 @@ var ProfileModel = Backbone.Model.extend({
 	}
 });
 
-
 var FavoritesView = Backbone.View.extend({
 	className: "row sortable",
+	templateText : $('#template-favoritos').html(),
 	initialize : function(){
-		this.template = _.template($('#template-favoritos').html(),{});
+		this.template = _.template(this.templateText,{});
 		this.$el.append(this.template({id:this.id}));
 	},
 	render: function(){
@@ -67,8 +67,84 @@ var FavoritesView = Backbone.View.extend({
 			$('.dropdown-button',this.$el).dropdown();
 			this.pluginsReady = true;
 	}
+});
+
+var FotoItemView = Backbone.View.extend({
+	tagName : 'li',
+	htmlText : '<a href="#full-photo"><img src="<%=url%>" /></a>',
+	events : {
+		'click' : 'onClicked'
+	},
+	initialize  : function(){
+		this.template = _.template(this.htmlText,{});
+		this.render();
+	},
 	
+	render : function(){
+		this.$el.append(this.template(this.model.toJSON()));
+		return this;
+	},
 	
+	onClicked : function(){
+		this.trigger('itemClicked',this.model);
+	}
+});
+
+//var FullFotoView = Backbone.View.extend({
+//	el : '#full-photo',
+//	templateText : '<div class="photo-toolbar">'+
+//						
+//				   '</div>'
+//});
+
+var FotosView = FavoritesView.extend({
+	templateText : $('#template-misfotos').html(),
+	initialize : function(){
+		this.constructor.__super__.initialize.apply(this, []);
+	},
+	
+	events : {
+//		"click #full-photo li>a" : 'openModal'
+	},
+	renderList : function(){
+		this.collection.forEach(function(fotosModel){
+			var scope = this;
+			var photoView = new FotoItemView({model:fotosModel});
+			photoView.on('itemClicked',scope.onImageClicked,scope);
+//			var imgElement = $('<li><a href="#full-photo"><img src="'+fotosModel.get('url')+'" /></a></li>');
+//			imgElement.on('click',function(e){
+//				scope.trigger('onModel')
+//			});
+			$('.fotos-wrapper',scope.$el).append(photoView.$el);
+		},this);
+	},
+	
+	initializePlugins : function(config){
+		var scope = this;
+		this.setTitle(config.message);
+		$('.datepicker').pickadate();
+		$('.fotos-wrapper li>a').leanModal({
+			  dismissible: true, // Modal can be dismissed by clicking outside of the modal
+		      opacity: .5, // Opacity of modal background
+		      in_duration: 300, // Transition in duration
+		      out_duration: 200, // Transition out duration
+		      complete:scope.onModalClosed // Callback for Modal close
+		});
+	},
+	
+	onImageClicked : function(model){
+		console.log(model);
+	},
+	
+	onModalClosed : function(e){
+		console.log('SE CIERRA EL MODAL!!');
+		$('#full-photo').empty();
+		$('#full-photo').closeModal();
+	},
+	
+	onModalOpen : function(e){
+		console.log(e);
+	}
 });
 
 var ProfileView = Backbone.View.extend({
@@ -86,6 +162,7 @@ var ProfileView = Backbone.View.extend({
 		this.makeEventsView();
 		this.makeCuponesView();
 		this.makeRecompensasView();
+		this.makeFotosView();
 		this.initializePlugins();
 		return this;
 	},
@@ -136,6 +213,20 @@ var ProfileView = Backbone.View.extend({
 		this.$el.append(this.recompensasView.render().$el);
 		this.initializePlugins();
 		this.recompensasView.initializePlugins({message:"Estas son tus recompensas"});
+	},
+	
+	makeFotosView : function(){
+		var scope = this;
+		this.fotosView = new FotosView({
+			collection : new Backbone.Collection(scope.model.get('fotos')),
+			id:'fotos'
+		});
+		this.fotosView.on('onFotoClicked',function(model){
+			console.log(model.toJSON());
+		},this);
+		this.$el.append(this.fotosView.render().$el);
+		this.initializePlugins();
+		this.fotosView.initializePlugins({message:"Estas son las fotos que has tomado"});
 	},
 	
 	initializePlugins : function(){
