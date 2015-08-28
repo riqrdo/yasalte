@@ -85,8 +85,10 @@ var FotoItemView = Backbone.View.extend({
 		return this;
 	},
 	
-	onClicked : function(){
+	onClicked : function(event){
 		this.trigger('itemClicked',this.model);
+		event.stopPropagation();
+		event.preventDefault();
 	}
 });
 
@@ -95,19 +97,23 @@ var FotosView = FavoritesView.extend({
 	initialize : function(){
 		this.constructor.__super__.initialize.apply(this, []);
 	},
-	
-	events : {
-//		"click #full-photo li>a" : 'openModal'
-	},
+	photoSwipeItems : [],
 	renderList : function(){
 		this.collection.forEach(function(fotosModel){
 			var scope = this;
+			var photoSwipeItem = {
+				src : fotosModel.get('url'),
+				w : 600,
+				h : 600,
+				//msrc : fotosModel.get('thumbUrl'),
+				title : '<span class="descripcion">'+fotosModel.get('descripcion')+'</span>'+
+						'<span class="ubicacion"><i class="mdi-action-room"></i>'+fotosModel.get('ubicacion')+'</span>'+
+						'<span class="fecha">'+fotosModel.get('fecha')+'</i>'
+			};
+			
+			this.photoSwipeItems.push(photoSwipeItem);
 			var photoView = new FotoItemView({model:fotosModel});
 			photoView.on('itemClicked',scope.onImageClicked,scope);
-//			var imgElement = $('<li><a href="#full-photo"><img src="'+fotosModel.get('url')+'" /></a></li>');
-//			imgElement.on('click',function(e){
-//				scope.trigger('onModel')
-//			});
 			$('.fotos-wrapper',scope.$el).append(photoView.$el);
 		},this);
 	},
@@ -116,30 +122,28 @@ var FotosView = FavoritesView.extend({
 		var scope = this;
 		this.setTitle(config.message);
 		$('.datepicker').pickadate();
-		$('.fotos-wrapper li>a').leanModal({
-			  dismissible: true, // Modal can be dismissed by clicking outside of the modal
-		      opacity: .5, // Opacity of modal background
-		      in_duration: 300, // Transition in duration
-		      out_duration: 200, // Transition out duration
-		      complete:scope.onModalClosed // Callback for Modal close
-		});
+	},
+	
+	showPhotoSwipe : function(model){
+		var modelIndex = this.collection.indexOf(model);
+		var options = {
+				index : modelIndex
+		};
+		var gallery = new PhotoSwipe( $('.pswp')[0], PhotoSwipeUI_Default, this.photoSwipeItems,options);
+		gallery.init();
 	},
 	
 	onImageClicked : function(model){			
-		
+		this.showPhotoSwipe(model);
 	},
 	
-	onModalClosed : function(e){
-		console.log('SE CIERRA EL MODAL!!');
-		$('#full-photo').closeModal();
-	}
+	
 });
 
 var ProfileView = Backbone.View.extend({
 	el : '.profile-view',
 	
 	initialize : function(){
-		console.log("Se acaba de crear la vista!!");
 		this.model = new ProfileModel();
 		this.model.on('sync',this.onModelReady,this);
 		this.model.fetch();
@@ -204,7 +208,7 @@ var ProfileView = Backbone.View.extend({
 	},
 	
 	makeFotosView : function(){
-		/*var scope = this;
+		var scope = this;
 		this.fotosView = new FotosView({
 			collection : new Backbone.Collection(scope.model.get('fotos')),
 			id:'fotos'
@@ -214,57 +218,9 @@ var ProfileView = Backbone.View.extend({
 		},this);
 		this.$el.append(this.fotosView.render().$el);
 		this.initializePlugins();
-		this.fotosView.initializePlugins({message:"Estas son las fotos que has tomado"});*/
-
-		/**Testing photo swipe**/
-		var pswpElement = document.querySelectorAll('.pswp')[0];
-
-		// build items array
-		var items = [
-		   {
-
-        src: 'images/misfotos1.jpg', // path to image
-        w: 1024, // image width
-        h: 768, // image height
-
-        msrc: 'images/mifotos1.jpg', // small image placeholder,
-                        // main (large) image loads on top of it,
-                        // if you skip this parameter - grey rectangle will be displayed,
-                        // try to define this property only when small image was loaded before
-
-
-
-        title: 'Image Caption'  // used by Default PhotoSwipe UI
-                                // if you skip it, there won't be any caption
-
-
-        // You may add more properties here and use them.
-        // For example, demo gallery uses "author" property, which is used in the caption.
-        // author: 'John Doe'
-
-    },
-
-    // slide 2
-    {
-        src: 'path/to/image2.jpg', 
-        w: 600, 
-        h: 600
-
-        // etc.
-    }
-		];
-
-		// define options (if needed)
-		var options = {
-		    // optionName: 'option value'
-		    // for example:
-		    index: 0 // start at first slide
-		};
-
-		// Initializes and opens PhotoSwipe
-		var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-		gallery.init();
+		this.fotosView.initializePlugins({message:"Estas son las fotos que has tomado"});
 	},
+	
 	
 	initializePlugins : function(){
 		$('ul.tabs',this.$el).tabs();

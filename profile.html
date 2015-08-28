@@ -30,7 +30,6 @@
   <link rel="stylesheet" type="text/css" href="assets/_con/css/_con.min.css" />
 
   <link rel="stylesheet" type="text/css" href="assets/custom/css/custom-css.css" />
-  <link rel="stylesheet" type="text/css" href="assets/custom/css/aux.css" />
   
    <!-- materialize icons -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -47,7 +46,7 @@
   <!-- templates!! -->
 
 	<script type="text/template" id="template-favoritos">
-		<div class="col s12 tab-content-list-title">
+			<div class="col s12 tab-content-list-title">
 				<span></span>
 				<i class="ya-help"></i>
 			</div>
@@ -173,20 +172,74 @@
 			<ul class="col s12 fotos-wrapper">
 			</ul>
 
-			<div id="full-photo" class="modal">
-    			<div class="photo-toolbar">
-					
+			<!--PhotoSwipe Elementos -->
+				<!-- Root element of PhotoSwipe. Must have class pswp. -->
+			<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+				<!-- Background of PhotoSwipe. 
+					 It's a separate element as animating opacity is faster than rgba(). -->
+				<div class="pswp__bg"></div>
+
+				<!-- Slides wrapper with overflow:hidden. -->
+				<div class="pswp__scroll-wrap">
+
+					<!-- Container that holds slides. 
+						PhotoSwipe keeps only 3 of them in the DOM to save memory.
+						Don't modify these 3 pswp__item elements, data is added later on. -->
+					<div class="pswp__container">
+						<div class="pswp__item"></div>
+						<div class="pswp__item"></div>
+						<div class="pswp__item"></div>
+					</div>
+
+					<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+					<div class="pswp__ui pswp__ui--hidden">
+
+						<div class="pswp__top-bar">
+
+							<!--  Controls are self-explanatory. Order can be changed. -->
+
+							<div class="pswp__counter"></div>
+
+							<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+							<button class="pswp__button pswp__button--share" title="Share"></button>
+
+							<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+							<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+							<!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+							<!-- element will get class pswp__preloader--active when preloader is running -->
+							<div class="pswp__preloader">
+								<div class="pswp__preloader__icn">
+								  <div class="pswp__preloader__cut">
+									<div class="pswp__preloader__donut"></div>
+								  </div>
+								</div>
+							</div>
+						</div>
+
+						<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+							<div class="pswp__share-tooltip"></div> 
+						</div>
+
+						<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+						</button>
+
+						<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+						</button>
+
+						<div class="pswp__caption">
+							<div class="pswp__caption__center"></div>
+						</div>
+
+					</div>
+
 				</div>
-				<div class="photo-containner">
-					<img src="images/misfotos1.jpg"/>
-				</div>
-				<div class="photo-footer">
-					<span id="descripcion">#Este es un texto de prueba</span>
-					<span id="ubicacion">#Este es un texto de prueba</span>
-					<span id="fecha">12.05.2015</span>
-				</div>
-    		</div>
-  	</div>
+
+			</div>
+			<!--/END PHOTO SWIPE ELEMENTS -->
 	</script>
 	
 	<!-- /templates!! -->
@@ -237,171 +290,176 @@
 	            </div>
 		 </div>
 		 
-		 <div class="row ">
+		 <div class="row">
 		   <div class="col s12 m12 tabs-wrapper">
 		      <ul class="tabs z-depth-1 tabs-profile border-top">
 		         <li class="tab col s6 m2 l2 border-right" ><a href="#favoritos" ><i class="mdi-action-favorite"></i> Mis Favoritos </a></li>
 		         <li class="tab col s6 m2 l2 border-right"><a href="#eventos"><i class="tiny2 mdi-action-event"></i>  Mis eventos</a></li>
 		         <li class="tab col s6 m2 l2 border-right"><a href="#cupones"><i class="tiny2 mdi-maps-local-offer"></i>Mis cupones</a></li>
 		         <li class="tab col s6 m2 l2 border-right"><a href="#recompensas"><i class="tiny2 mdi-action-grade"></i>Mis Recompensas</a></li>
-		         <li class="tab col s6 m2 l2 border-right"><a href="#fotos" class="active"><i class="tiny2 mdi-image-camera-alt"></i>Mis fotos</a></li>
-		         <li class="tab col s6 m2 l2  border-right"><a href="#"><i class="tiny2 mdi-maps-store-mall-directory"></i>Mi Timeline</a></li>
+		         <li class="tab col s6 m2 l2 border-right"><a href="#fotos"><i class="tiny2 mdi-image-camera-alt"></i>Mis fotos</a></li>
+		         <li class="tab col s6 m2 l2  border-right"><a href="#timeline" class="active"><i class="tiny2 mdi-maps-store-mall-directory"></i>Mi Timeline</a></li>
 		         <li class="tab col s6 m2 l2"><a href="#"><i class="tiny2 mdi-maps-store-mall-directory"></i>Mi Perfil</a></li>
 		      </ul>
 		   </div>
 		</div>
 		
-		<div id="fotos" class="row sortable">
+		<div id="timeline" class="row sortable">
 			<div class="col s12 tab-content-list-title">
-				<span>Fotos cargadas</span>
+				<span></span>
 				<i class="ya-help"></i>
 			</div>
-			<div class="col s12 tab-content-list-filters">
-				<div class="col s12 m6 l6 filters-combo">
-					<div class="input-field col s12 m3 l3">
-					  <input class="datepicker" id="input_date" type="date">
-					  <label for="input_date">Fecha</label>
-					  <span class="mdi-navigation-expand-more"></span>
-					</div>
-				</div>
-				<!-- widget de busqueda -->
-				<div class="col s12 m6 l6 search-filter">
-						<div class="input-field">
-						  <i class="mdi-action-search prefix"></i>
-						  <input id="input_text_icon" type="text" class="validate">
-						</div>
-				</div>
-			</div>
-<!--mygallery-->
-			<div class="card-panel of-h">
-      <div class="row photoswipe-gallery isotope mt-0" data-pswp-uid="1" style="position: relative; height: 422.671875px;">
-        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-1.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-1-med.jpg" data-med-size="1440x900" data-author="John Doe" style="position: absolute; left: 0px; top: 0px;">
-          <img src="assets/_con/images/gallery-1-small.jpg" alt="">
-          <figure>Magna tollit mei te</figure>
-        </a>
+			
+			<!-- timeline content -->
+			<div class="timeline col s12">
 
-        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-2.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-2-med.jpg" data-med-size="1440x900" data-author="Felicia Castro" style="position: absolute; left: 215px; top: 0px;">
-          <img src="assets/_con/images/gallery-2-small.jpg" alt="">
-          <figure>Ex graeco deserunt posidonium pri, mei oblique bonorum recusabo te. Id mea diceret constituto, numquam persequeris per te. Eam no veri verear quaerendum, eam graecis adolescens dissentiunt eu, summo quaeque corpora ex eam. Libris molestiae an
-            vix.</figure>
-        </a>
+      <!-- Timeline Notification -->
+      <div class="timeline-block">
+        <!-- icon -->
+        <div class="timeline-icon red lighten-2 white-text">
+          <i class="ion ion-chatbubbles"></i>
+        </div>
+        <!-- /icon -->
 
-        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-7.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-7-med.jpg" data-med-size="1440x900" data-author="Max Brooks" style="position: absolute; left: 430px; top: 0px;">
-          <img src="assets/_con/images/gallery-7-small.jpg" alt="">
-          <figure>Pri quem blandit intellegebat</figure>
-        </a>
-
-        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-4.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-4-med.jpg" data-med-size="1440x900" data-author="Patsy Griffin" style="position: absolute; left: 645px; top: 0px;">
-          <img src="assets/_con/images/gallery-4-small.jpg" alt="">
-          <figure>Vim ut eirmod minimum placerat</figure>
-        </a>
-
-        <a class="col s12 l9 item" href="assets/_con/images/gallery-9.jpg" data-size="5184x1034" data-med="assets/_con/images/gallery-9-med.jpg" data-med-size="4512x900" data-author="Chloe Morgan" style="position: absolute; left: 0px; top: 140px;">
-          <img src="assets/_con/images/gallery-9-small.jpg" alt="">
-          <figure>Te eos velit graece</figure>
-        </a>
-
-        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-5.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-5-med.jpg" data-med-size="1440x900" data-author="Vernon Garrett" style="position: absolute; left: 645px; top: 140px;">
-          <img src="assets/_con/images/gallery-5-small.jpg" alt="">
-          <figure>His ullum fastidii ea</figure>
-        </a>
-
-        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-6.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-6-med.jpg" data-med-size="1440x900" data-author="Greg Mcdonalid" style="position: absolute; left: 0px; top: 281px;">
-          <img src="assets/_con/images/gallery-6-small.jpg" alt="">
-          <figure>Te solum viris vix</figure>
-        </a>
-
-        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-8.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-8-med.jpg" data-med-size="1440x900" data-author="Christian Jackson" style="position: absolute; left: 215px; top: 281px;">
-          <img src="assets/_con/images/gallery-8-small.jpg" alt="">
-          <figure>Simul voluptua salutandi in pri</figure>
-        </a>
-
-        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-10.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-10-med.jpg" data-med-size="1440x900" data-author="Willie Kelly" style="position: absolute; left: 430px; top: 281px;">
-          <img src="assets/_con/images/gallery-10-small.jpg" alt="">
-          <figure>An mea inani essent</figure>
-        </a>
-
-        <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-3.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-3-med.jpg" data-med-size="1440x900" data-author="Jenny Phillips" style="position: absolute; left: 645px; top: 281px;">
-          <img src="assets/_con/images/gallery-3-small.jpg" alt="">
-          <figure>Nam nisl diam graeci ex</figure>
-        </a>
+        <!-- content -->
+        <div class="timeline-content card-panel">
+          <h4>Notification</h4>
+          <p>We invite you to test-drive the new service <a href="#!">Lorem</a>. Confirm the invitation and we will send you notes and hints.</p>
+          <a href="#!" class="btn waves-effect">Confirm</a>
+          <a href="#!" class="btn-flat waves-effect">Cancel</a>
+          <span class="timeline-date">20 minutes ago</span>
+        </div>
+        <!-- content -->
       </div>
+      <!-- /Timeline Notification -->
+
+      <!-- Timeline New Order -->
+      <div class="timeline-block">
+        <!-- icon -->
+        <div class="timeline-icon blue lighten-2 white-text">
+          <i class="mdi mdi-action-shopping-cart"></i>
+        </div>
+        <!-- /icon -->
+
+        <!-- content -->
+        <div class="timeline-content card-panel">
+          <h4>New Order <small class="right">#0004324</small></h4>
+
+          <div class="row">
+            <div class="col s12 m5 l4">
+              <img width="100" src="assets/_con/images/user4.jpg" alt="Patsy Griffin" class="circle photo">
+            </div>
+            <div class="col s12 m7 l8">
+              <h4>Patsy Griffin</h4>
+              6008 Cotton Nook, Arminto,
+              <br>Montana, 59114-7319, US,
+              <br><i class="mdi-communication-phone"></i> (406) 500-7506
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s6">
+              <a href="ecommerce-order-single.html" class="btn waves-effect">See</a>
+            </div>
+            <div class="col s6 right-align">
+              <h4>$2,100.00</h4>
+            </div>
+          </div>
+
+          <span class="timeline-date">4 hours ago</span>
+        </div>
+        <!-- /content -->
+      </div>
+      <!-- /Timeline New Order -->
+
+      <!-- Timeline Message -->
+      <div class="timeline-block">
+        <!-- icon -->
+        <div class="timeline-icon blue lighten-2 white-text">
+          <img src="assets/_con/images/user.jpg" alt="Joht Doe" title="John Doe">
+        </div>
+        <!-- /icon -->
+
+        <!-- content -->
+        <div class="timeline-content card-panel">
+          Received a <a href="main-inbox.html">message</a> from <strong>Max Brooks</strong>
+          <span class="timeline-date">Saturday, March 8, 2015</span>
+        </div>
+        <!-- /content -->
+      </div>
+      <!-- /Timeline Message -->
+
+      <!-- Timeline Video -->
+      <div class="timeline-block">
+        <!-- icon -->
+        <div class="timeline-icon teal lighten-2 white-text">
+          <i class="fa fa-youtube-play"></i>
+        </div>
+        <!-- /icon -->
+
+        <!-- content -->
+        <div class="timeline-content card-panel">
+          <div class="responsive-embed responsive-embed-16x9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aJNEbmFeFgg" frameborder="0" allowfullscreen=""></iframe>
+          </div>
+          <h4>New Electro &amp; House</h4>
+          2015 Party Music Collab Mix
+          <span class="timeline-date">Published on Jan 10, 2015</span>
+        </div>
+        <!-- /content -->
+      </div>
+      <!-- /Timeline Video -->
+
+      <!-- Timeline Map -->
+      <div class="timeline-block">
+        <!-- icon -->
+        <div class="timeline-icon indigo lighten-2 white-text">
+          <i class="mdi mdi-maps-place"></i>
+        </div>
+        <!-- /icon -->
+
+        <!-- content -->
+        <div class="timeline-content card-panel">
+          <h4>My New Location</h4>
+
+          <div class="map" id="map1" style="height: 300px; position: relative; overflow: hidden; transform: translateZ(0px); background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0; cursor: url(http://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 188px; top: -172px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 188px; top: 84px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 444px; top: -172px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 444px; top: 84px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: -68px; top: -172px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: -68px; top: 84px;"></div></div></div></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: 188px; top: -172px;"></div><div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: 188px; top: 84px;"><canvas draggable="false" height="231" width="231" style="-webkit-user-select: none; position: absolute; left: 0px; top: 0px; height: 256px; width: 256px;"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: 444px; top: -172px;"></div><div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: 444px; top: 84px;"></div><div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: -68px; top: -172px;"></div><div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: -68px; top: 84px;"></div></div></div></div><div style="position: absolute; z-index: 0; transform: translateZ(0px); left: 0px; top: 0px;"><div style="overflow: hidden; width: 717px; height: 300px;"><img src="http://maps.googleapis.com/maps/api/js/StaticMapService.GetMapImage?1m2&amp;1i76868&amp;2i98476&amp;2e1&amp;3u10&amp;4m2&amp;1u717&amp;2u300&amp;5m5&amp;1e0&amp;5ses-419&amp;6sus&amp;10b1&amp;12b1&amp;token=105931" style="width: 717px; height: 300px;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="transform: translateZ(0px); position: absolute; left: 188px; top: 84px; width: 256px; height: 256px; transition: opacity 200ms ease-out;"><img src="http://mt1.googleapis.com/vt?pb=!1m4!1m3!1i10!2i301!3i385!2m3!1e0!2sm!3i318328487!3m9!2ses-419!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!4e0" draggable="false" style="-webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 256px; height: 256px;"></div><div style="transform: translateZ(0px); position: absolute; left: 188px; top: -172px; width: 256px; height: 256px; transition: opacity 200ms ease-out;"><img src="http://mt1.googleapis.com/vt?pb=!1m4!1m3!1i10!2i301!3i384!2m3!1e0!2sm!3i318328487!3m9!2ses-419!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!4e0" draggable="false" style="-webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 256px; height: 256px;"></div><div style="transform: translateZ(0px); position: absolute; left: 444px; top: -172px; width: 256px; height: 256px; transition: opacity 200ms ease-out;"><img src="http://mt0.googleapis.com/vt?pb=!1m4!1m3!1i10!2i302!3i384!2m3!1e0!2sm!3i318328487!3m9!2ses-419!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!4e0" draggable="false" style="-webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 256px; height: 256px;"></div><div style="transform: translateZ(0px); position: absolute; left: 444px; top: 84px; width: 256px; height: 256px; transition: opacity 200ms ease-out;"><img src="http://mt0.googleapis.com/vt?pb=!1m4!1m3!1i10!2i302!3i385!2m3!1e0!2sm!3i318328487!3m9!2ses-419!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!4e0" draggable="false" style="-webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 256px; height: 256px;"></div><div style="transform: translateZ(0px); position: absolute; left: -68px; top: -172px; width: 256px; height: 256px; transition: opacity 200ms ease-out;"><img src="http://mt0.googleapis.com/vt?pb=!1m4!1m3!1i10!2i300!3i384!2m3!1e0!2sm!3i318328487!3m9!2ses-419!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!4e0" draggable="false" style="-webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 256px; height: 256px;"></div><div style="transform: translateZ(0px); position: absolute; left: -68px; top: 84px; width: 256px; height: 256px; transition: opacity 200ms ease-out;"><img src="http://mt0.googleapis.com/vt?pb=!1m4!1m3!1i10!2i300!3i385!2m3!1e0!2sm!3i318328487!3m9!2ses-419!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!4e0" draggable="false" style="-webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 256px; height: 256px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 2; width: 100%; height: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 3; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a target="_blank" href="https://maps.google.com/maps?ll=40.645244,-73.957357&amp;z=10&amp;t=m&amp;hl=es-419&amp;gl=US&amp;mapclient=apiv3" title="Haz clic para ver esta área en Google Maps" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 62px; height: 26px; cursor: pointer;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/google_white2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 62px; height: 26px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></a></div><div style="padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 200px; top: 60px; background-color: white;"><div style="padding: 0px 0px 10px; font-size: 16px;">Datos del mapa</div><div style="font-size: 13px;">Datos del mapa ©2015 Google</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 355px; bottom: 0px; width: 150px;"><div draggable="false" class="gm-style-cc" style="-webkit-user-select: none;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a style="color: rgb(68, 68, 68); text-decoration: none; cursor: pointer; display: none;">Datos del mapa</a><span>Datos del mapa ©2015 Google</span></div></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Datos del mapa ©2015 Google</div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; -webkit-user-select: none; position: absolute; right: 156px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a href="https://www.google.com/intl/es-419_US/help/terms_maps.html" target="_blank" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Condiciones del servicio</a></div></div><div draggable="false" class="gm-style-cc" style="-webkit-user-select: none; position: absolute; right: 17px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a target="_new" title="Informar a Google errores en las imágenes o el mapa de carreteras." href="https://www.google.com/maps/@40.645244,-73.9573571,10z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Informar un error en el mapa</a></div></div><div class="gmnoprint" draggable="false" style="-webkit-user-select: none; margin-left: 5px; margin-top: 5px; position: absolute; width: 13px; height: 13px; right: 0px; bottom: 0px;"><div style="overflow: hidden; width: 120px; height: 120px; display: none; background-color: rgb(255, 255, 255);"><div style="position: relative; left: 3px; top: 3px; width: 117px; height: 117px; overflow: hidden; transform: translateZ(0px); background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0; cursor: url(http://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: -180px; top: -40px;"></div></div></div></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"></div><div style="position: absolute; z-index: 0; transform: translateZ(0px); left: 0px; top: 0px;"><div style="overflow: hidden;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 2; width: 100%; height: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 3; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div style="border: 1px solid rgb(255, 255, 255); outline: rgb(0, 0, 0) solid 1px; opacity: 0.35; position: absolute; margin-top: -18px; margin-left: -43px; width: 87px; height: 37px; left: 0px; top: 0px;"><div style="position: absolute; opacity: 0.7; width: 87px; height: 37px; background: rgb(0, 0, 0);"></div></div><div style="border: 1px solid rgb(255, 255, 255); outline: rgb(0, 0, 0) solid 1px; opacity: 0.35; position: absolute; cursor: url(http://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default; margin-top: -18px; margin-left: -43px; width: 87px; height: 37px; left: 0px; top: 0px;"><div style="position: absolute; width: 87px; height: 37px;"></div></div></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div></div></div><div style="width: 13px; height: 13px; position: absolute; cursor: pointer; left: 0px; top: 0px;"><div title="Abre vista general del mapa." style="width: 13px; height: 13px; overflow: hidden; position: absolute;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false" style="position: absolute; left: -2px; top: -364px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></div></div><div class="gmnoprint" draggable="false" controlwidth="78" controlheight="169" style="margin: 5px; -webkit-user-select: none; position: absolute; left: 0px; top: 0px;"><div class="gmnoprint" controlwidth="78" controlheight="80" style="cursor: url(http://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default; width: 78px; height: 78px; position: absolute; left: 0px; top: 0px;"><div class="gmnoprint" controlwidth="78" controlheight="80" style="width: 78px; height: 78px; position: absolute; left: 0px; top: 0px;"><div style="visibility: hidden;"><svg version="1.1" overflow="hidden" width="78px" height="78px" viewBox="0 0 78 78" style="position: absolute; left: 0px; top: 0px;"><circle cx="39" cy="39" r="35" stroke-width="3" fill-opacity="0.2" fill="#f2f4f6" stroke="#f2f4f6"></circle><g transform="rotate(0 39 39)"><rect x="33" y="0" rx="4" ry="4" width="12" height="11" stroke="#a6a6a6" stroke-width="1" fill="#f2f4f6"></rect><polyline points="36.5,8.5 36.5,2.5 41.5,8.5 41.5,2.5" stroke-linejoin="bevel" stroke-width="1.5" fill="#f2f4f6" stroke="#000"></polyline></g></svg></div></div><div class="gmnoprint" controlwidth="59" controlheight="59" style="position: absolute; left: 10px; top: 11px;"><div style="width: 59px; height: 59px; overflow: hidden; position: relative;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"><div title="Desplazarse a la izquierda" style="position: absolute; left: 0px; top: 20px; width: 19.6666666666667px; height: 19.6666666666667px; cursor: pointer;"></div><div title="Desplazarse a la derecha" style="position: absolute; left: 39px; top: 20px; width: 19.6666666666667px; height: 19.6666666666667px; cursor: pointer;"></div><div title="Desplazarse hacia arriba" style="position: absolute; left: 20px; top: 0px; width: 19.6666666666667px; height: 19.6666666666667px; cursor: pointer;"></div><div title="Desplazarse hacia abajo" style="position: absolute; left: 20px; top: 39px; width: 19.6666666666667px; height: 19.6666666666667px; cursor: pointer;"></div></div></div></div><div controlwidth="32" controlheight="40" style="cursor: url(http://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default; position: absolute; left: 23px; top: 85px;"><div aria-label="Control del hombrecito naranja en Street View" style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/cb_scout2.png" draggable="false" style="position: absolute; left: -9px; top: -102px; width: 1028px; height: 214px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div aria-label="El hombrecito naranja está inhabilitado." style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/cb_scout2.png" draggable="false" style="position: absolute; left: -107px; top: -102px; width: 1028px; height: 214px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div aria-label="El hombrecito naranja está en la parte superior del mapa." style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/cb_scout2.png" draggable="false" style="position: absolute; left: -58px; top: -102px; width: 1028px; height: 214px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div aria-label="Control del hombrecito naranja en Street View" style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/cb_scout2.png" draggable="false" style="position: absolute; left: -205px; top: -102px; width: 1028px; height: 214px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></div><div class="gmnoprint" controlwidth="0" controlheight="0" style="opacity: 0.6; display: none; position: absolute;"><div title="Rotar mapa 90 grados" style="width: 22px; height: 22px; overflow: hidden; position: absolute; cursor: pointer;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false" style="position: absolute; left: -38px; top: -360px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></div><div class="gmnoprint" controlwidth="20" controlheight="39" style="position: absolute; left: 29px; top: 130px;"><div style="width: 20px; height: 39px; overflow: hidden; position: absolute;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false" style="position: absolute; left: -39px; top: -401px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div title="Acercar" style="position: absolute; left: 0px; top: 2px; width: 20px; height: 17px; cursor: pointer;"></div><div title="Alejar" style="position: absolute; left: 0px; top: 19px; width: 20px; height: 17px; cursor: pointer;"></div></div></div><div class="gmnoprint" style="margin: 5px; z-index: 0; position: absolute; cursor: pointer; right: 0px; top: 0px;"><div class="gm-style-mtc" style="float: left;"><div draggable="false" title="Mostrar mapa de calles" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 1px 6px; border-bottom-left-radius: 2px; border-top-left-radius: 2px; -webkit-background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.14902); box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; min-width: 30px; font-weight: 500; background-color: rgb(255, 255, 255); background-clip: padding-box;">Mapa</div><div style="z-index: -1; padding-top: 2px; -webkit-background-clip: padding-box; border-width: 0px 1px 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: rgba(0, 0, 0, 0.14902); border-bottom-color: rgba(0, 0, 0, 0.14902); border-left-color: rgba(0, 0, 0, 0.14902); box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; position: absolute; left: 0px; top: 21px; text-align: left; display: none; background-color: white; background-clip: padding-box;"><div draggable="false" title="Mostrar mapa de calles con relieve" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 3px 8px 3px 3px; direction: ltr; text-align: left; white-space: nowrap; background-color: rgb(255, 255, 255);"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle; background-color: rgb(255, 255, 255);"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img src="http://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Relieve</label></div></div></div><div class="gm-style-mtc" style="float: left;"><div draggable="false" title="Mostrar imágenes satelitales" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(86, 86, 86); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 1px 6px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; -webkit-background-clip: padding-box; border-width: 1px 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-top-color: rgba(0, 0, 0, 0.14902); border-right-color: rgba(0, 0, 0, 0.14902); border-bottom-color: rgba(0, 0, 0, 0.14902); box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; min-width: 38px; background-color: rgb(255, 255, 255); background-clip: padding-box;">Satélite</div><div style="z-index: -1; padding-top: 2px; -webkit-background-clip: padding-box; border-width: 0px 1px 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: rgba(0, 0, 0, 0.14902); border-bottom-color: rgba(0, 0, 0, 0.14902); border-left-color: rgba(0, 0, 0, 0.14902); box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; position: absolute; right: 0px; top: 21px; text-align: left; display: none; background-color: white; background-clip: padding-box;"><div draggable="false" title="Acerca para mostrar la vista de 45 grados" style="color: rgb(184, 184, 184); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 3px 8px 3px 3px; direction: ltr; text-align: left; white-space: nowrap; display: none; background-color: rgb(255, 255, 255);"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; border: 1px solid rgb(241, 241, 241); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle; background-color: rgb(255, 255, 255);"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img src="http://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">45°</label></div><div draggable="false" title="Mostrar imágenes con nombres de calles" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 3px 8px 3px 3px; direction: ltr; text-align: left; white-space: nowrap; background-color: rgb(255, 255, 255);"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle; background-color: rgb(255, 255, 255);"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img src="http://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Etiquetas</label></div></div></div></div><div draggable="false" class="gm-style-cc" style="position: absolute; -webkit-user-select: none; right: 276px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><span>5 km&nbsp;</span><div style="position: relative; display: inline-block; height: 8px; bottom: -1px; width: 43px;"><div style="width: 100%; height: 4px; position: absolute; left: 0px; top: 0px; background-color: rgb(255, 255, 255);"></div><div style="width: 4px; height: 8px; left: 0px; top: 0px; background-color: rgb(255, 255, 255);"></div><div style="width: 4px; height: 8px; position: absolute; left: 0px; bottom: 0px; background-color: rgb(255, 255, 255);"></div><div style="position: absolute; height: 2px; left: 1px; bottom: 1px; right: 1px; background-color: rgb(102, 102, 102);"></div><div style="position: absolute; width: 2px; height: 6px; left: 1px; top: 1px; background-color: rgb(102, 102, 102);"></div><div style="width: 2px; height: 6px; position: absolute; bottom: 1px; right: 1px; background-color: rgb(102, 102, 102);"></div></div></div></div></div></div>
+
+          <span class="timeline-date">Jan 24</span>
+        </div>
+        <!-- /content -->
+      </div>
+      <!-- /Timeline Map -->
+
+      <!-- Timeline Images -->
+      <div class="timeline-block">
+        <!-- icon -->
+        <div class="timeline-icon deep-orange lighten-2 white-text">
+          <i class="fa fa-send"></i>
+        </div>
+        <!-- /icon -->
+
+        <!-- content -->
+        <div class="timeline-content card-panel">
+          <h4>Clickable Images</h4>
+          <div class="row">
+            <div class="col s12 l6">
+              <div class="material-placeholder"><img class="materialboxed intialized" width="100%" src="assets/_con/images/timeline-img-1.jpg" alt="Timeline Image"></div>
+            </div>
+            <div class="col s12 l6">
+              <div class="material-placeholder"><img class="materialboxed intialized" width="100%" src="assets/_con/images/timeline-img-2.jpg" alt="Timeline Image"></div>
+            </div>
+          </div>
+          <span class="timeline-date">Dec 26</span>
+        </div>
+        <!-- /content -->
+      </div>
+      <!-- /Timeline Images -->
+
     </div>
-<!--my-gallery-->
-
-
-
-
-
-
-			<!-- Root element of PhotoSwipe. Must have class pswp. -->
-			<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-			    <!-- Background of PhotoSwipe. 
-			         It's a separate element as animating opacity is faster than rgba(). -->
-			    <div class="pswp__bg"></div>
-
-			    <!-- Slides wrapper with overflow:hidden. -->
-			    <div class="pswp__scroll-wrap">
-
-			        <!-- Container that holds slides. 
-			            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-			            Don't modify these 3 pswp__item elements, data is added later on. -->
-			        <div class="pswp__container">
-			            <div class="pswp__item"></div>
-			            <div class="pswp__item"></div>
-			            <div class="pswp__item"></div>
-			        </div>
-
-			        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-			        <div class="pswp__ui pswp__ui--hidden">
-
-			            <div class="pswp__top-bar">
-
-			                <!--  Controls are self-explanatory. Order can be changed. -->
-
-			                <div class="pswp__counter"></div>
-
-			                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-			                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-			                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-			                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-			                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-			                <!-- element will get class pswp__preloader--active when preloader is running -->
-			                <div class="pswp__preloader">
-			                    <div class="pswp__preloader__icn">
-			                      <div class="pswp__preloader__cut">
-			                        <div class="pswp__preloader__donut"></div>
-			                      </div>
-			                    </div>
-			                </div>
-			            </div>
-
-			            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-			                <div class="pswp__share-tooltip"></div> 
-			            </div>
-
-			            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-			            </button>
-
-			            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-			            </button>
-
-			            <div class="pswp__caption">
-			                <div class="pswp__caption__center"></div>
-			            </div>
-			        </div>
-			    </div>
-			</div>
-
-
-
-
-
+			
+			
+			<!-- /time line content -->
+			
 		</div>
 	 </div>	
  </section>
