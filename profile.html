@@ -28,13 +28,17 @@
   
   <!-- Main -->
   <link rel="stylesheet" type="text/css" href="assets/_con/css/_con.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/_con/css/_con-red.css" />
 
   <link rel="stylesheet" type="text/css" href="assets/custom/css/custom-css.css" />
-  <link rel="stylesheet" type="text/css" href="assets/custom/css/aux.css" />
   
    <!-- materialize icons -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
+
+  <!--photoswipe-->
+	<link rel="stylesheet" type="text/css" href="assets/PhotoSwipe/photoswipe.css">
+	<link rel="stylesheet" type="text/css" href="assets/PhotoSwipe/default-skin/default-skin.css">
+
   <!-- ya icons -->
    <link rel="stylesheet" type="text/css" href="assets/custom/css/ya_icon.css" />
   <!--[if lt IE 9]>
@@ -43,7 +47,7 @@
   <!-- templates!! -->
 
 	<script type="text/template" id="template-favoritos">
-		<div class="col s12 tab-content-list-title">
+			<div class="col s12 tab-content-list-title">
 				<span></span>
 				<i class="ya-help"></i>
 			</div>
@@ -145,7 +149,7 @@
 	</script>
 	
 	<script type="text/template" id="template-misfotos">
-		<div class="col s12 tab-content-list-title">
+			<div class="col s12 tab-content-list-title">
 				<span></span>
 				<i class="ya-help"></i>
 			</div>
@@ -169,20 +173,106 @@
 			<ul class="col s12 fotos-wrapper">
 			</ul>
 
-			<div id="full-photo" class="modal">
-    			<div class="photo-toolbar">
-					
+			<!--PhotoSwipe Elementos -->
+				<!-- Root element of PhotoSwipe. Must have class pswp. -->
+			<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+				<!-- Background of PhotoSwipe. 
+					 It's a separate element as animating opacity is faster than rgba(). -->
+				<div class="pswp__bg"></div>
+
+				<!-- Slides wrapper with overflow:hidden. -->
+				<div class="pswp__scroll-wrap">
+
+					<!-- Container that holds slides. 
+						PhotoSwipe keeps only 3 of them in the DOM to save memory.
+						Don't modify these 3 pswp__item elements, data is added later on. -->
+					<div class="pswp__container">
+						<div class="pswp__item"></div>
+						<div class="pswp__item"></div>
+						<div class="pswp__item"></div>
+					</div>
+
+					<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+					<div class="pswp__ui pswp__ui--hidden">
+
+						<div class="pswp__top-bar">
+
+							<!--  Controls are self-explanatory. Order can be changed. -->
+
+							<div class="pswp__counter"></div>
+
+							<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+							<button class="pswp__button pswp__button--share" title="Share"></button>
+
+							<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+							<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+							<!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+							<!-- element will get class pswp__preloader--active when preloader is running -->
+							<div class="pswp__preloader">
+								<div class="pswp__preloader__icn">
+								  <div class="pswp__preloader__cut">
+									<div class="pswp__preloader__donut"></div>
+								  </div>
+								</div>
+							</div>
+						</div>
+
+						<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+							<div class="pswp__share-tooltip"></div> 
+						</div>
+
+						<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+						</button>
+
+						<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+						</button>
+
+						<div class="pswp__caption">
+							<div class="pswp__caption__center"></div>
+						</div>
+
+					</div>
+
 				</div>
-				<img src="images/misfotos1.jpg"/>
-				<div class="photo-footer">
-					<span id="descripcion">#Este es un texto de prueba</span>
-					<span id="ubicacion">#Este es un texto de prueba</span>
-					<span id="fecha">12.05.2015</span>
-				</div>
-    		</div>
-  	</div>
+
+			</div>
+			<!--/END PHOTO SWIPE ELEMENTS -->
 	</script>
 	
+	
+	
+	<script type="text/template" id="timeline-item-template">
+		 <!-- icon -->
+        <div class="timeline-icon <%=type%> white-text">
+          <i class="<%=iconIndicator%>"></i>
+        </div>
+        <!-- /icon -->
+
+        <!-- content -->
+        <div class="timeline-content card-panel">
+          <h3><%=titulo%></h3>
+          <p><%=descripcion%></p>
+          <span class="timeline-date"><%=fecha%></span>
+        </div>
+	</script>
+	
+	<script type="text/template" id="timeline-template">
+			<div class="col s12 tab-content-list-title">
+				<span></span>
+				<i class="ya-help"></i>
+			</div>
+			
+			<!-- timeline content -->
+			<div class="timeline col s12 timeline-wrapper">
+	
+			<!-- /time line content -->
+			
+			</div>
+	</script>
 	<!-- /templates!! -->
 </head>
 <body>
@@ -231,25 +321,54 @@
 	            </div>
 		 </div>
 		 
-		 <div class="row ">
+		 <div class="row">
 		   <div class="col s12 m12 tabs-wrapper">
 		      <ul class="tabs z-depth-1 tabs-profile border-top">
 		         <li class="tab col s6 m2 l2 border-right" ><a href="#favoritos" ><i class="mdi-action-favorite"></i> Mis Favoritos </a></li>
 		         <li class="tab col s6 m2 l2 border-right"><a href="#eventos"><i class="tiny2 mdi-action-event"></i>  Mis eventos</a></li>
 		         <li class="tab col s6 m2 l2 border-right"><a href="#cupones"><i class="tiny2 mdi-maps-local-offer"></i>Mis cupones</a></li>
 		         <li class="tab col s6 m2 l2 border-right"><a href="#recompensas"><i class="tiny2 mdi-action-grade"></i>Mis Recompensas</a></li>
-		         <li class="tab col s6 m2 l2 border-right"><a href="#fotos" class="active"><i class="tiny2 mdi-image-camera-alt"></i>Mis fotos</a></li>
-		         <li class="tab col s6 m2 l2  border-right"><a href="#"><i class="tiny2 mdi-maps-store-mall-directory"></i>Mi Timeline</a></li>
-		         <li class="tab col s6 m2 l2"><a href="#"><i class="tiny2 mdi-maps-store-mall-directory"></i>Mi Perfil</a></li>
+		         <li class="tab col s6 m2 l2 border-right"><a href="#fotos"><i class="tiny2 mdi-image-camera-alt"></i>Mis fotos</a></li>
+		         <li class="tab col s6 m2 l2  border-right"><a href="#timeline" ><i class="tiny2 mdi-maps-store-mall-directory"></i>Mi Timeline</a></li>
+		         <li class="tab col s6 m2 l2"><a href="#profile" class="active"><i class="tiny2 mdi-maps-store-mall-directory"></i>Mi Perfil</a></li>
 		      </ul>
 		   </div>
 		</div>
 		
-		<!-- contenido para cada tab!! -->
-<!-- 		<div id="favoritos" class="row sortable"> -->
-			
-<!-- 		</div> -->
-		<!-- div favoritos -->
+		<div id="profile" class="row sortable">
+			<div class="col s12 m6 l6 profile-form">
+				<div class="block-title">	
+					<div class="col s12 tab-content-list-title">
+						<span>Estos son tus datos de perfil y tu perzonalización</span>
+						<i class="ya-help"></i>
+					</div>
+				</div>
+				<form class="col s12 border-left border-right border-bottom">
+					<div class="input-field col s12 m6 l6">
+					  <i class="mdi-image-timer-auto prefix"></i>
+					  <input id="input_text_icon" type="text" value="Cha Niembro" disabled>
+					</div>
+					<div class="input-field col s12 m6 l6">
+					  <i class="mdi-content-mail prefix"></i>
+					  <input id="input_text_icon" type="text" value="cha@doamin.com" disabled>
+					</div>
+					<div class="input-field col s12 m6 l6">
+					  <i class="mdi-communication-call prefix"></i>
+					  <input id="input_text_icon" type="text" value="+52 55 55 96 11" disabled>
+					</div>
+					<div class="input-field col s12 m6 l6">
+					  <i class="mdi-action-perm-contact-cal prefix"></i>
+					  <input class="datepicker" id="input_date" type="date" value=" 20 Dec 1986">
+					</div>
+					<div class="col s2 m6 l6">
+						<a class="btn  fb"><i class="ya-fb"></i>conectado</a>
+					</div>
+					<div class="col s2 m6 l6">
+						<a class="btn tw"><i class="ya-tw"></i>vincular</a>
+					</div>
+				</form>
+			</div>
+		</div>
 	 </div>	
  </section>
 <!-- Main Content -->
@@ -282,6 +401,10 @@
   <!-- Sortable -->
   <script type="text/javascript" src="assets/sortable/Sortable.min.js"></script>
   <!-- Main -->
+  <!-- PhotoSwipe -->
+  <script type="text/javascript" src="assets/PhotoSwipe/photoswipe.min.js"></script>
+  <script type="text/javascript" src="assets/PhotoSwipe/photoswipe-ui-default.min.js"></script>
+
   <script type="text/javascript" src="assets/_con/js/_con.min.js"></script>
   <!-- Google Prettify -->
   <script type="text/javascript" src="assets/google-code-prettify/prettify.js"></script>
@@ -289,6 +412,7 @@
   <script type="text/javascript" src="assets/custom/views/MasterView.js"></script>
   <script type="text/javascript" src="assets/custom/views/SearchResultsView.js"></script>
   <script type="text/javascript" src="assets/custom/views/ProfileView.js"></script>
+
   <script>
   	var view = new ProfileView();
   </script> 

@@ -529,7 +529,30 @@
     		"ubicacion" : "Eje Central 512, Ciudad de México"
     		
     	}
-    	
-    	
+    ],
+    
+    "timeline":[{
+    	"type" : "favorito",
+    	"titulo" : "Favorito",
+    	"descripcion" : "Café Cultural",    	
+    	"fecha" : "18-Julio-2015"
+    },{
+    	"type" : "evento",
+    	"titulo" : "Evento Creado",
+    	"descripcion" : "Cumple de Ram",    	
+    	"fecha" : "18-Julio-2015"
+    },{
+    	"type" : "recompensa",
+    	"titulo" : "Recompensa",
+    	"descripcion" : "Megas Gratis!",    	
+    	"fecha" : "18-Julio-2015"
+    },
+    {
+    	"type" : "rate",
+    	"titulo" : "Calificación",
+    	"descripcion" : "Bellas Artes, Museo",    	
+    	"fecha" : "18-Julio-2015"
+    }
+    
     ]
 }

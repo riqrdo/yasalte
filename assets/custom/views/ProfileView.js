@@ -12,6 +12,13 @@ var ProfileModel = Backbone.Model.extend({
 		guia : "mdi-maps-beenhere"
 	},
 	
+	actionIcons : {
+		favorito : "mdi-action-favorite",
+		evento : "mdi-action-perm-contact-cal",
+		recompensa : "mdi-av-new-releases",
+		rate : "ya-rate",
+	},
+	
 	parse : function(response){
 		var that = this;
 		response.favoritos.forEach(function(item){
@@ -28,6 +35,10 @@ var ProfileModel = Backbone.Model.extend({
 		
 		response.recompensas.forEach(function(item){
 			item.iconIndicator = that.icons[item.type];
+		});
+		
+		response.timeline.forEach(function(item){
+			item.iconIndicator = that.actionIcons[item.type];
 		});
 		return response;
 	}
@@ -85,36 +96,35 @@ var FotoItemView = Backbone.View.extend({
 		return this;
 	},
 	
-	onClicked : function(){
+	onClicked : function(event){
 		this.trigger('itemClicked',this.model);
+		event.stopPropagation();
+		event.preventDefault();
 	}
 });
-
-//var FullFotoView = Backbone.View.extend({
-//	el : '#full-photo',
-//	templateText : '<div class="photo-toolbar">'+
-//						
-//				   '</div>'
-//});
 
 var FotosView = FavoritesView.extend({
 	templateText : $('#template-misfotos').html(),
 	initialize : function(){
 		this.constructor.__super__.initialize.apply(this, []);
 	},
-	
-	events : {
-//		"click #full-photo li>a" : 'openModal'
-	},
+	photoSwipeItems : [],
 	renderList : function(){
 		this.collection.forEach(function(fotosModel){
 			var scope = this;
+			var photoSwipeItem = {
+				src : fotosModel.get('url'),
+				w : 600,
+				h : 600,
+				//msrc : fotosModel.get('thumbUrl'),
+				title : '<span class="descripcion">'+fotosModel.get('descripcion')+'</span>'+
+						'<span class="ubicacion"><i class="mdi-action-room"></i>'+fotosModel.get('ubicacion')+'</span>'+
+						'<span class="fecha">'+fotosModel.get('fecha')+'</i>'
+			};
+			
+			this.photoSwipeItems.push(photoSwipeItem);
 			var photoView = new FotoItemView({model:fotosModel});
 			photoView.on('itemClicked',scope.onImageClicked,scope);
-//			var imgElement = $('<li><a href="#full-photo"><img src="'+fotosModel.get('url')+'" /></a></li>');
-//			imgElement.on('click',function(e){
-//				scope.trigger('onModel')
-//			});
 			$('.fotos-wrapper',scope.$el).append(photoView.$el);
 		},this);
 	},
@@ -123,27 +133,46 @@ var FotosView = FavoritesView.extend({
 		var scope = this;
 		this.setTitle(config.message);
 		$('.datepicker').pickadate();
-		$('.fotos-wrapper li>a').leanModal({
-			  dismissible: true, // Modal can be dismissed by clicking outside of the modal
-		      opacity: .5, // Opacity of modal background
-		      in_duration: 300, // Transition in duration
-		      out_duration: 200, // Transition out duration
-		      complete:scope.onModalClosed // Callback for Modal close
-		});
 	},
 	
-	onImageClicked : function(model){
-		console.log(model);
+	showPhotoSwipe : function(model){
+		var modelIndex = this.collection.indexOf(model);
+		var options = {
+				index : modelIndex
+		};
+		var gallery = new PhotoSwipe( $('.pswp')[0], PhotoSwipeUI_Default, this.photoSwipeItems,options);
+		gallery.init();
 	},
 	
-	onModalClosed : function(e){
-		console.log('SE CIERRA EL MODAL!!');
-		$('#full-photo').empty();
-		$('#full-photo').closeModal();
+	onImageClicked : function(model){			
+		this.showPhotoSwipe(model);
+	},
+});
+
+var TimeLineItemView = FotoItemView.extend({
+	tagName : 'div',
+	className : 'timeline-block',
+	htmlText : $('#timeline-item-template').html(),
+	initialize : function(){
+		this.constructor.__super__.initialize.apply(this, []);
+	},
+	initializePlugins : function(config){
+		this.setTitle(config.message);
+	}
+});
+
+var TimelineView = FavoritesView.extend({
+	templateText : $('#timeline-template').html(),
+	initialize : function(){
+		this.constructor.__super__.initialize.apply(this, []);
 	},
 	
-	onModalOpen : function(e){
-		console.log(e);
+	renderList : function(){
+		var scope = this;
+		this.collection.forEach(function(timelineModel){
+			var view = new TimeLineItemView({model:timelineModel});
+			$('.timeline-wrapper',scope.$el).append(view.$el);
+		},this);
 	}
 });
 
@@ -151,7 +180,6 @@ var ProfileView = Backbone.View.extend({
 	el : '.profile-view',
 	
 	initialize : function(){
-		console.log("Se acaba de crear la vista!!");
 		this.model = new ProfileModel();
 		this.model.on('sync',this.onModelReady,this);
 		this.model.fetch();
@@ -163,6 +191,7 @@ var ProfileView = Backbone.View.extend({
 		this.makeCuponesView();
 		this.makeRecompensasView();
 		this.makeFotosView();
+		this.makeTimelineView();
 		this.initializePlugins();
 		return this;
 	},
@@ -228,6 +257,21 @@ var ProfileView = Backbone.View.extend({
 		this.initializePlugins();
 		this.fotosView.initializePlugins({message:"Estas son las fotos que has tomado"});
 	},
+	
+	makeTimelineView : function(){
+		var scope = this;
+		this.timelineView = new TimelineView({
+			collection : new Backbone.Collection(scope.model.get('timeline')),
+			id:'timeline'
+		});
+		this.fotosView.on('onFotoClicked',function(model){
+			console.log(model.toJSON());
+		},this);
+		this.$el.append(this.timelineView.render().$el);
+		this.initializePlugins();
+		this.timelineView.initializePlugins({message:"Esta es tu actividad en YaSalte!"});
+	},
+	
 	
 	initializePlugins : function(){
 		$('ul.tabs',this.$el).tabs();
