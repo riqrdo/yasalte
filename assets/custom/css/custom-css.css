@@ -318,7 +318,35 @@ Estilos para la seccion Mis Fotos de la vista profile
 #fotos .filters-combo .picker__holder .picker__weekday-display{	background-color : #EA202C!important;}
 #fotos .filters-combo .picker--focused .picker__day--selected, .picker__day--selected, .picker__day--selected{background: #EA202C!important;}
 span.descripcion, span.fecha, span.ubicacion {display : block;}
- 
+
+/**
+*Estilos para la sección "timeline"
+**/
+#timeline .timeline-wrapper{padding-top:2%!important;}
+#timeline .timeline-wrapper .timeline-block .timeline-icon {left:50.5%!important;}
+#timeline .timeline .timeline-block .timeline-icon.favorito{background-color: #f11b23}
+#timeline .timeline .timeline-block .timeline-icon.evento{background-color: #63bd10}
+#timeline .timeline .timeline-block .timeline-icon.recompensa{background-color: #ed1b24}
+#timeline .timeline .timeline-block .timeline-icon.rate{background-color: #fec009}
+#timeline .timeline .timeline-block .timeline-icon.rate i[class^="ya-"], #timeline .timeline .timeline-block .timeline-icon.rate i[class*=" ya-"]{font-size:1.5em;line-height: 1.5}
+
+/**
+estilos para profile tab*
+
+*/
+#profile .profile-form form a.btn.fb{background-color: #3c5a9a!important;text-transform: none!important;}
+#profile .profile-form form a.btn.tw{background-color: #00b1f3!important;text-transform: none!important;}
+#profile .profile-form form a.btn.fb i,#profile .profile-form form a.btn.tw i{float:left}
+#profile .profile-form form a.btn{margin: auto;width: 80%;display: block;overflow: hidden;}
+    
+#profile .profile-form form {width: calc(100% - 1.3em)!important;}
+.border-top{border-top: 2px solid #e6e6e6}
+.border-bottom{border-bottom: 1px solid #e6e6e6;}
+.border-left{border-left: 2px solid #e6e6e6}
+.border-right{border-right: 2px solid #e6e6e6}
+
+
+
 /*modals*/
 
 .modal.yasalte{ border:1px solid #cdcdcd; border-radius:0;width:95%; max-width:370px; background:#fff;}

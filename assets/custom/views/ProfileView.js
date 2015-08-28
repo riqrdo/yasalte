@@ -12,6 +12,13 @@ var ProfileModel = Backbone.Model.extend({
 		guia : "mdi-maps-beenhere"
 	},
 	
+	actionIcons : {
+		favorito : "mdi-action-favorite",
+		evento : "mdi-action-perm-contact-cal",
+		recompensa : "mdi-av-new-releases",
+		rate : "ya-rate",
+	},
+	
 	parse : function(response){
 		var that = this;
 		response.favoritos.forEach(function(item){
@@ -28,6 +35,10 @@ var ProfileModel = Backbone.Model.extend({
 		
 		response.recompensas.forEach(function(item){
 			item.iconIndicator = that.icons[item.type];
+		});
+		
+		response.timeline.forEach(function(item){
+			item.iconIndicator = that.actionIcons[item.type];
 		});
 		return response;
 	}
@@ -136,8 +147,33 @@ var FotosView = FavoritesView.extend({
 	onImageClicked : function(model){			
 		this.showPhotoSwipe(model);
 	},
+});
+
+var TimeLineItemView = FotoItemView.extend({
+	tagName : 'div',
+	className : 'timeline-block',
+	htmlText : $('#timeline-item-template').html(),
+	initialize : function(){
+		this.constructor.__super__.initialize.apply(this, []);
+	},
+	initializePlugins : function(config){
+		this.setTitle(config.message);
+	}
+});
+
+var TimelineView = FavoritesView.extend({
+	templateText : $('#timeline-template').html(),
+	initialize : function(){
+		this.constructor.__super__.initialize.apply(this, []);
+	},
 	
-	
+	renderList : function(){
+		var scope = this;
+		this.collection.forEach(function(timelineModel){
+			var view = new TimeLineItemView({model:timelineModel});
+			$('.timeline-wrapper',scope.$el).append(view.$el);
+		},this);
+	}
 });
 
 var ProfileView = Backbone.View.extend({
@@ -155,6 +191,7 @@ var ProfileView = Backbone.View.extend({
 		this.makeCuponesView();
 		this.makeRecompensasView();
 		this.makeFotosView();
+		this.makeTimelineView();
 		this.initializePlugins();
 		return this;
 	},
@@ -219,6 +256,20 @@ var ProfileView = Backbone.View.extend({
 		this.$el.append(this.fotosView.render().$el);
 		this.initializePlugins();
 		this.fotosView.initializePlugins({message:"Estas son las fotos que has tomado"});
+	},
+	
+	makeTimelineView : function(){
+		var scope = this;
+		this.timelineView = new TimelineView({
+			collection : new Backbone.Collection(scope.model.get('timeline')),
+			id:'timeline'
+		});
+		this.fotosView.on('onFotoClicked',function(model){
+			console.log(model.toJSON());
+		},this);
+		this.$el.append(this.timelineView.render().$el);
+		this.initializePlugins();
+		this.timelineView.initializePlugins({message:"Esta es tu actividad en YaSalte!"});
 	},
 	
 	
