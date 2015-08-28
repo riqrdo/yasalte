@@ -348,7 +348,13 @@ estilos para profile tab*
 .border-bottom{border-bottom: 1px solid #e6e6e6;}
 .border-left{border-left: 2px solid #e6e6e6}
 .border-right{border-right: 2px solid #e6e6e6}
-
+.item-arquetipo{padding:0!important; width:calc(100% - 1.3em)!important;}
+.item-arquetipo .arquetipo-descripcion {display: inline;width: 85%;float: right; padding:1%;}
+.item-arquetipo .arquetipo-descripcion p{margin: 0 0 1% 0;}
+.item-arquetipo img {width: 15%;display: inline;}
+.tags-row {width:100%;}
+.tags-row ul li { display: inline-block; margin: 5px;}
+.tags-row ul{width:calc(100% - 1.3em)!important; margin-top:0!important; padding-top:1%;}
 
 
 /*modals*/
