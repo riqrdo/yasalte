@@ -130,7 +130,6 @@ var SearchResultsView = MasterView.extend({
 //		setTimeout(function(){
 //			that.render();
 //		},2000);
-		
 	},
 	
 	performSearch : function(searchText){

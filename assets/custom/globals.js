@@ -19,7 +19,12 @@ var YaGlobals = {
 	SEARCH_RESULT_VIEW : 'assets/custom/templates/searchResultView.html',
 	CARD_VIEW : 'assets/custom/templates/cardView.html',
 	CARD_RESULT_ITEM_VIEW : 'assets/custom/templates/cardResultItemView.html',
-	
+	PROFILE_TABS_VIEW : 'assets/custom/templates/profileTabsView.html',
+	FAVORITES_VIEW : 'assets/custom/templates/favoritesView.html',
+	MIS_FOTOS_TEMPLATE : 'assets/custom/templates/misFotosView.html',
+	TIMELINE_TEMPLATE : 'assets/custom/templates/timelineView.html',
+	TIMELINE_ITEM_VIEW : 'assets/custom/templates/timelineItemView.html',
+	MY_PROFILE_VIEW : 'assets/custom/templates/myProfileView.html',
 	/**
 	 * Objeto para control de flujo solo temporales
 	 */

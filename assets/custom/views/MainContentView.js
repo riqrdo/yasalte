@@ -6,15 +6,19 @@ var MainContentView = MasterView.extend({
 		'focus input[name="searchInput"]' : 'onSearchFocused',
 		'focusout input[name="searchInput"]' : 'onSearchFocusout',
 		'click .search .mdi-action-search' : 'doSearch',
+		'click .btnOpenProfile' : 'opeProfile'
 	},
+	
 	loginView  :undefined,
 	userMenu : undefined,
 	searchResultsView : undefined,
+	profileView :undefined,
 	
 	initialize : function(){
 		_.bindAll(this,'showRecomendations','onSuccessLogin',
 						'onLoginPressed','onSearchFocused',
-						'onSearchFocusout','doSearch');
+						'onSearchFocusout','doSearch',
+						'openProfile');
 		if(!YaGlobals.tmp.isLogged){
 			this.loginView = new YaLoginView().on('onViewRendered',function(view){
 				$('.sidebar-view',this.$el).append(view.$el);
@@ -42,14 +46,17 @@ var MainContentView = MasterView.extend({
 		this.userMenu = new UserMenuView({
 			model : modelUser
 		});
+		this.userMenu.on('onProfileClicked',function(){
+			this.openProfile();
+		},this);
 		this.userMenu.on('onViewRendered',function(view){
 			$('.sidebar-view',this.$el).replaceWith(view.$el);
 			$('aside.yaybar').addClass('usermenu');
 		},this);
 		$('.image-profile',this.$el).attr('src',modelUser.get('profileImage'));
-		console.log($('#template-menu-logged').html());
 		//Reemplaza el menu del usuario una vez que ya se loggeo
 		$('#user-dropdown').empty().append($('#template-menu-logged').html());
+		$('.btnOpenProfile',this.$el).on('click',this.openProfile);
 	},
 	
 	onLoginPressed : function(event){
@@ -74,8 +81,21 @@ var MainContentView = MasterView.extend({
 		this.searchSuggestView.hide();
 	},
 	
-	doSearch : function(event){
+	hideAllViews : function(){
 		this.$el.addClass('yay-hide');
+		if(this.searchResultsView){
+			this.searchResultsView.hide('slideOutRight');
+		}
+		if(this.searchSuggestView){
+			this.searchSuggestView.hide('slideOutRight');
+		}
+		if(this.profileView){
+			this.profileView.hide('slideOutRight');
+		}
+	},
+	
+	doSearch : function(event){
+		this.hideAllViews();
 		if(this.searchResultsView){
 			if(!this.searchResultsView.isVisible){
 				this.searchResultsView.show('slideInLeft');
@@ -90,5 +110,21 @@ var MainContentView = MasterView.extend({
 				$('.combo-filters select',view.$el).material_select();
 			},this);
 		}		
+	},
+	
+	openProfile : function(){
+		this.hideAllViews();
+		if(this.profileView){
+			if(!this.profileView.isVisible){
+				this.profileView.show('slideInLeft');
+			}
+		}else{
+			this.profileView = new ProfileView();
+			this.profileView.on("onViewRendered",function(view){
+				$('.content-wrap',this.$el).append(view.$el);
+				this.profileView.show('slideInLeft');
+				view.initializePlugins();
+			},this);
+		}	
 	}
 });

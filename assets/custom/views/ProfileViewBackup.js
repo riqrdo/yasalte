@@ -44,11 +44,12 @@ var ProfileModel = Backbone.Model.extend({
 	}
 });
 
-var FavoritesView = MasterView.extend({
+var FavoritesView = Backbone.View.extend({
 	className: "row sortable",
-	templateURL : YaGlobals.FAVORITES_VIEW,
+	templateText : $('#template-favoritos').html(),
 	initialize : function(){
-		this.constructor.__super__.initialize.apply(this, []);
+		this.template = _.template(this.templateText,{});
+		this.$el.append(this.template({id:this.id}));
 	},
 	render: function(){
 		this.renderList();
@@ -73,14 +74,9 @@ var FavoritesView = MasterView.extend({
 	},
 	
 	initializePlugins : function(config){
-		this.setTitle(config.message);
-		$('.dropdown-button',this.$el).dropdown();
-		this.pluginsReady = true;
-	},
-	
-	onViewReady : function(){
-		this.$el.append(this.template({id:this.id}));
-		this.trigger('viewRendered',this);
+			this.setTitle(config.message);
+			$('.dropdown-button',this.$el).dropdown();
+			this.pluginsReady = true;
 	}
 });
 
@@ -107,18 +103,11 @@ var FotoItemView = Backbone.View.extend({
 	}
 });
 
-var FotosView = MasterView.extend({
-	templateURL : YaGlobals.MIS_FOTOS_TEMPLATE, 
-	className: "row sortable",
-//	templateText : $('#template-misfotos').html(),
+var FotosView = FavoritesView.extend({
+	templateText : $('#template-misfotos').html(),
 	initialize : function(){
 		this.constructor.__super__.initialize.apply(this, []);
 	},
-	
-	setTitle : function(message){
-		$(".tab-content-list-title span",this.$el).text(message);
-	},
-	
 	photoSwipeItems : [],
 	renderList : function(){
 		this.collection.forEach(function(fotosModel){
@@ -140,11 +129,6 @@ var FotosView = MasterView.extend({
 		},this);
 	},
 	
-	render: function(){
-		this.renderList();
-		return this;
-	},
-	
 	initializePlugins : function(config){
 		var scope = this;
 		this.setTitle(config.message);
@@ -163,85 +147,42 @@ var FotosView = MasterView.extend({
 	onImageClicked : function(model){			
 		this.showPhotoSwipe(model);
 	},
-	
-	onViewReady : function(){
-		this.$el.append(this.template({id:this.id}));
-		this.trigger('viewRendered',this);
-	}
 });
 
-var TimeLineItemView = MasterView.extend({
+var TimeLineItemView = FotoItemView.extend({
 	tagName : 'div',
 	className : 'timeline-block',
-	templateURL : YaGlobals.TIMELINE_ITEM_VIEW,
-//	htmlText : $('#timeline-item-template').html(),
+	htmlText : $('#timeline-item-template').html(),
 	initialize : function(){
 		this.constructor.__super__.initialize.apply(this, []);
 	},
-	
-//	initializePlugins : function(config){
-//		this.setTitle(config.message);
-//	},
-	
-	render : function(){
-		this.$el.append(this.template(this.model.toJSON()));
-		this.trigger('viewRendered',this);
-		return this;
-	},
-	
-	onViewReady : function(){
-		this.render();
+	initializePlugins : function(config){
+		this.setTitle(config.message);
 	}
 });
 
-var TimelineView = MasterView.extend({
-	templateURL : YaGlobals.TIMELINE_TEMPLATE,
+var TimelineView = FavoritesView.extend({
+	templateText : $('#timeline-template').html(),
 	initialize : function(){
 		this.constructor.__super__.initialize.apply(this, []);
 	},
-	render : function(){
-		this.renderList();
-		return this;
-	},
 	
-	setTitle : function(message){
-			$(".tab-content-list-title span",this.$el).text(message);
-	},
 	renderList : function(){
 		var scope = this;
 		this.collection.forEach(function(timelineModel){
 			var view = new TimeLineItemView({model:timelineModel});
-			view.on('viewRendered',function(view){
-				$('.timeline-wrapper',scope.$el).append(view.$el);
-//				view.initializePlugins({message: 'Esta es tu actividad en YaSalte'});
-			},scope);
+			$('.timeline-wrapper',scope.$el).append(view.$el);
 		},this);
-	},
-	initializePlugins : function(config){
-		this.setTitle(config.message);
-//		$('.dropdown-button',this.$el).dropdown();
-//		this.pluginsReady = true;
-	},
-	onViewReady : function(){
-		this.$el.append(this.template({id:this.id}));
-		this.trigger('viewRendered',this);
 	}
 });
 
-
-var MyProfileView = MasterView.extend({
+var MyProfileView = FavoritesView.extend({
 	/**
 	 * TODO: Implementar la lógica de lectura dinamica aqui!!
 	 * */
-	templateURL : YaGlobals.MY_PROFILE_VIEW,
+	templateText : $('#profile-view-template').html(),
 	initialize : function(){
 		this.constructor.__super__.initialize.apply(this, []);
-	},
-	
-	render : function(){
-		this.$el.append(this.template({id:this.id}));
-		this.trigger('viewRendered',this);
-		return this;
 	},
 	
 	renderList : function(){
@@ -253,17 +194,11 @@ var MyProfileView = MasterView.extend({
 	},
 	initializePlugins : function(){
 		 $('.datepicker').pickadate();
-	},
-	
-	onViewReady : function(){
-		this.render();
 	}
 });
 
-var ProfileView = MasterView.extend({
-	isVisible : false,
-	templateURL : YaGlobals.PROFILE_TABS_VIEW,
-	className : 'profile-view animated',
+var ProfileView = Backbone.View.extend({
+	el : '.profile-view',
 	events : {
 		'click .btn-edit-profile' : 'toggleEditProfile'
 	},
@@ -272,7 +207,7 @@ var ProfileView = MasterView.extend({
 		_.bindAll(this,"toggleEditProfile");
 		this.model = new ProfileModel();
 		this.model.on('sync',this.onModelReady,this);
-		this.constructor.__super__.initialize.apply(this, []);
+		this.model.fetch();
 	},
 	
 	toggleEditProfile : function(){
@@ -305,8 +240,6 @@ var ProfileView = MasterView.extend({
 		this.initializePlugins();
 		return this;
 	},
-	
-	
 	onModelReady : function(){
 		//TODO: Hacer la lógica para las demas colecciones de los listados
 		this.render();
@@ -318,30 +251,19 @@ var ProfileView = MasterView.extend({
 			collection : new Backbone.Collection(scope.model.get('favoritos')),
 			id:'favoritos',
 		});
-		/**
-		 * TODO : AGREGAR EVENTOS DE LA VISTA ANTERIOR 
-		 */
-		this.favoritesView.on('viewRendered',function(view){
-			scope.$el.append(view.render().$el);
-			view.initializePlugins({message:"Esta es tu lista de lugares favoritos"});
-			scope.initializePlugins();
-		},scope);
+		this.$el.append(this.favoritesView.render().$el);
+		this.favoritesView.initializePlugins({message:"Esta es tu lista de lugares favoritos"});
 	},
 	
 	makeEventsView : function(){
 		var scope = this;
 		this.eventsView = new FavoritesView({
 			collection : new Backbone.Collection(scope.model.get('eventos')),
-			id:'eventos',
+			id:'eventos'
 		});
-		/**
-		 * TODO : AGREGAR EVENTOS DE LA VISTA ANTERIOR 
-		 */
-		this.eventsView.on('viewRendered',function(view){
-			scope.$el.append(view.render().$el);
-			view.initializePlugins({message:"Estos son los eventos a los que te han invitado y asistirás"});
-			scope.initializePlugins();
-		},scope);
+		this.$el.append(this.eventsView.render().$el);
+		this.initializePlugins();
+		this.eventsView.initializePlugins({message:"Estos son todos los eventos a los que te han invitado y asistirás"});
 	},
 	
 	
@@ -349,32 +271,22 @@ var ProfileView = MasterView.extend({
 		var scope = this;
 		this.cuponesView = new FavoritesView({
 			collection : new Backbone.Collection(scope.model.get('cupones')),
-			id:'cupones',
+			id:'cupones'
 		});
-		/**
-		 * TODO : AGREGAR EVENTOS DE LA VISTA ANTERIOR 
-		 */
-		this.cuponesView.on('viewRendered',function(view){
-			scope.$el.append(view.render().$el);
-			view.initializePlugins({message:"Estos son tus cupones"});
-			scope.initializePlugins();
-		},scope);
+		this.$el.append(this.cuponesView.render().$el);
+		this.initializePlugins();
+		this.cuponesView.initializePlugins({message:"Estos son todos los cupones que has ganado"});
 	},
 	
 	makeRecompensasView : function(){
 		var scope = this;
 		this.recompensasView = new FavoritesView({
 			collection : new Backbone.Collection(scope.model.get('recompensas')),
-			id:'recompensas',
+			id:'recompensas'
 		});
-		/**
-		 * TODO : AGREGAR EVENTOS DE LA VISTA ANTERIOR 
-		 */
-		this.recompensasView.on('viewRendered',function(view){
-			scope.$el.append(view.render().$el);
-			view.initializePlugins({message:"Estas son tus recompensas"});
-			scope.initializePlugins();
-		},scope);
+		this.$el.append(this.recompensasView.render().$el);
+		this.initializePlugins();
+		this.recompensasView.initializePlugins({message:"Estas son tus recompensas"});
 	},
 	
 	makeFotosView : function(){
@@ -383,19 +295,12 @@ var ProfileView = MasterView.extend({
 			collection : new Backbone.Collection(scope.model.get('fotos')),
 			id:'fotos'
 		});
-//		this.fotosView.on('onFotoClicked',function(model){
-//		},this);
-		
-		
-		this.fotosView.on('viewRendered',function(view){
-			scope.$el.append(view.render().$el);
-			scope.initializePlugins();
-			view.initializePlugins({message:"Estas son las fotos que has tomado"});
-		},scope);
-		
-//		this.$el.append(this.fotosView.render().$el);
-//		this.initializePlugins();
-//		this.fotosView.initializePlugins({message:"Estas son las fotos que has tomado"});
+		this.fotosView.on('onFotoClicked',function(model){
+			console.log(model.toJSON());
+		},this);
+		this.$el.append(this.fotosView.render().$el);
+		this.initializePlugins();
+		this.fotosView.initializePlugins({message:"Estas son las fotos que has tomado"});
 	},
 	
 	makeTimelineView : function(){
@@ -404,41 +309,26 @@ var ProfileView = MasterView.extend({
 			collection : new Backbone.Collection(scope.model.get('timeline')),
 			id:'timeline'
 		});
-		this.timelineView.on('viewRendered',function(view){
-			scope.$el.append(this.timelineView.render().$el);
-			scope.initializePlugins();
-			view.initializePlugins({message:"Esta es tu actividad en YaSalte!"});
-		},scope);
-		
-		
-		
+		this.fotosView.on('onFotoClicked',function(model){
+			console.log(model.toJSON());
+		},this);
+		this.$el.append(this.timelineView.render().$el);
+		this.initializePlugins();
+		this.timelineView.initializePlugins({message:"Esta es tu actividad en YaSalte!"});
 	},
 	
 	makeProfileView : function(){
-		var scope = this;
 		/**
 		 * TODO:Implementar la lectura dinamica en esta vista!
 		 */
 		this.profileView = new MyProfileView({
 			id:'profile'
 		});
-		this.profileView.on('viewRendered',function(view){
-			scope.$el.append(view.$el);
-			view.initializePlugins();
-			scope.initializePlugins();
-		},scope);
-//		this.$el.append(this.profileView.render().$el);
-//		this.profileView.initializePlugins();
+		this.$el.append(this.profileView.render().$el);
+		this.profileView.initializePlugins();
 	},
 	
 	initializePlugins : function(){
 		$('ul.tabs',this.$el).tabs();
-	},
-	
-	onViewReady : function(textTemplate){
-		this.model.fetch();
-		this.$el.append(this.template());
-		this.$el.hide();
-		this.trigger('onViewRendered',this);
 	}
 });
