@@ -1,3 +1,7 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
 .content-wrap{min-height:calc(100vh);width: calc(100% - 60px);margin-left: 60px!important;position: relative;}
 
 footer{ position:absolute; bottom:0; left:0; width: 100%;}
@@ -116,7 +120,7 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 /**
 * AGREGADOS POR CHEPO PARA CARDS  
 */
-.card { padding: 7em 0 0 !important; margin: 10px !important; padding-top: 5em; background-image : url('../images/p4.jpg');}
+.card { padding: 7em 0 0 !important; margin: 10px !important; padding-top: 5em; background-image : url('../images/p4.jpg'); overflow: hidden;}
 .card .indicador{border-radius : 100em;border: 2px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;bottom: 20%}
 .card .likes{display : block;width : 100%;color : #ffffff;padding: 0px 10px;}
 .card .card-title{overflow: hidden; display: block;line-height: 0;padding: 0 0 10px;}
@@ -133,7 +137,7 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 .card.cines .card-title{border-left: 5px solid #E91E63;}
 .card.sitios-interes .card-title{border-left: 5px solid #009688;}
 .card.trendy .card-title{border-left: 5px solid #FFC107;}
-.card.guia .card-title{border-left: 5px solid #212121;}
+.card.guia .card-title{border-left: 5px solid #212121;box-shadow: 0 -24px 40px 0px #000;}
 
 /*
  * Colores de los iconos en cards
@@ -151,8 +155,8 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 .card.guia .indicador{background-color: #212121;}
 
 
-.card .card-title h4 {font-size: 8pt;font-weight: bold;margin:5px;max-width: 80%;}
-.card .card-title span{font-size: 8pt;margin: 5px;display: inline-block;}
+.card .card-title h4 {font-size: .5em;font-weight: bold;margin:5px;max-width: 80%;}
+.card .card-title span{font-size: .5em;margin: 5px;display: inline-block;}
 .card .card-title .navigation{float : right;font-size : 1.5rem;color: #808080;}
 .row.destacados {width: 102%;background-color: #1B1819;padding: 0 3%;}
 
@@ -320,7 +324,7 @@ Estilos para la seccion Mis Fotos de la vista profile
 span.descripcion, span.fecha, span.ubicacion {display : block;}
 
 /**
-*Estilos para la sección "timeline"
+*Estilos para la secci?n "timeline"
 **/
 #timeline .timeline-wrapper{padding-top:2%!important;}
 #timeline .timeline-wrapper .timeline-block .timeline-icon {left:50.5%!important;}
@@ -350,8 +354,9 @@ estilos para profile tab*
 /*modals*/
 
 .modal.yasalte{ border:1px solid #cdcdcd; border-radius:0;width:95%; max-width:370px; background:#fff;}
-.modal.yasalte .page-title{padding:0;margin: -8% -8% 2%;padding: 3% 5% 2%; background:transparent;overflow: hidden;font-size: 1.2em;}
+.modal.yasalte .page-title{padding:0;margin: -8% -8% 2%;padding: 3% 5% 2%; background:transparent;font-size: 1.2em;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 .modal.yasalte .page-title .right{ font-size: 1.4em; line-height: 1em;}
+.modal.ysalte textarea.materialize-textarea:focus:not([readonly]){ border:none; box-shadow:none;}
 
 .modal.login-register{ background:#fafafa;}
 .modal.login-register .modal-footer{ padding:0; height:auto; overflow:hidden;}
@@ -436,6 +441,60 @@ estilos para profile tab*
 .modal.welcome .welcome-content figure{ width:80px; height:80px;margin: 3% auto 6%; overflow:hidden;}
 .modal.welcome .welcome-content figure img{ width:100%; height:auto;}
 .modal.welcome .welcome-content .btn{ width:100%; margin:4% 0;}
+
+.modal.rate .page-title i.fa-star{ border: 2px solid #fff; text-align:center; margin-right:2%; width: 25px; height: 25px; margin: -2px 3px 2px; line-height: 1.4em;}
+.modal.rate .rate-content .rating{ margin: 5% auto;  width: 57%; display:block;}
+.modal.rate .rate-content .rating label{ color:#ff9800}
+.modal.rate .rate-content .rating input:checked~label{ color:#ff9800;}
+.modal.rate .rate-content .rating input:checked~label .fa-star-o:before{ content:"\f005";}
+.modal.rate .rate-content .btn{ width:100%; margin:4% 0; text-transform:inherit;}
+.modal.rate .rate-content i.fa-2x{ padding:2%;}
+.modal.rate .rate-content textarea.materialize-textarea{ border:1px solid #d3d3d3; height: 20px; padding: 2%; width: 96%; min-height: inherit;}
+
+.modal.fav .btn{ width:100%; margin:4% 0; text-transform:inherit;}
+.modal.fav i.fa-2x{ padding: 3%;}
+
+
+.modal.reportar .ion-alert{border: 2px solid #595959; text-align:center; margin-right:2%; width: 25px; height: 25px; margin: -2px 3px 2px; line-height: 3em;display: inline-block;padding: 2px;}
+.modal.reportar .reportar-content{ padding: 5% 8% 0;}
+.modal.reportar .reportar-content label{color:#3b3b3b;}
+.modal.reportar .reportar-content .collection{ border:none}
+.modal.reportar .reportar-content textarea.materialize-textarea{ border:1px solid #d3d3d3; height: 65px; padding: 2%; width: 95%; min-height: inherit;}
+.modal.reportar .reportar-content [type=radio]:not(:checked)+label:before{ border: 1px solid #a2a2a2;}
+.modal.reportar .reportar-content [type=radio].with-gap:checked+label:before{ border: 1px solid #a2a2a2;}
+.modal.reportar .reportar-content [type=radio].with-gap:checked+label:after{border: 1px solid #a2a2a2; background: #a2a2a2;}
+.modal.reportar .reportar-content .select-wrapper{border:1px solid #d3d3d3}
+.modal.reportar .reportar-content .select-wrapper input.select-dropdown{border:none;margin: 0;height: 33px;padding: 0 10% 0 4%;width: 86%;display: block;}
+.modal.reportar .reportar-content .select-wrapper span.caret{right: 4%;top: 39%;}
+.modal.reportar .modal-footer{ padding:0; height:auto; overflow:hidden;}
+.modal.reportar .modal-footer .btn{ margin:0; width:50%; border-radius:0; text-transform:inherit}
+.modal.reportar .modal-footer .btn.red{box-shadow: inset 1px 0 0 #fff;}
+
+
+.modal.evento .circle{border: 2px solid #595959; text-align:center; margin-right:2%; width: 25px; height: 25px; margin: -2px 3px 2px; line-height: 3em;display: inline-block;padding: 2px;}
+.modal.evento .collection .collection-item.avatar {height:auto;padding: 2% 2% 2% 8%;position: relative;}
+.modal.evento .collection .collection-item.avatar i{ position:absolute; left: 2%; top:5%; opacity:.5}
+.modal.evento .evento-content{ padding:3% 8%}
+.modal.evento .evento-content .row{ border: 1px solid #E6E6E6; width: 100%; display: block; margin: 4% 0;}
+.modal.evento .evento-content .col{ padding: 2% .9rem; opacity: .6;}
+.modal.evento .evento-content .col i{ margin: -4px 5% 0; display: inline-block;}
+.modal.evento .evento-content p.evt-name i{ width: 30px; height: 30px; text-align:center; border:none; font-size: 1.5em; padding-top: 4px;}
+.modal.evento .modal-footer{ padding:0; height:auto; overflow:hidden;}
+.modal.evento .modal-footer .btn{ margin:0; width:50%; border-radius:0; text-transform:inherit}
+.modal.evento .modal-footer .btn.red{box-shadow: inset 1px 0 0 #fff;}
+.modal.evento .evento-content .row p{ padding: 0 10%; }
+.modal.evento .evento-content .event-form input,.modal.evento .evento-content .event-form input:focus{ margin:0; border:0;float: left; width: 84%; padding-left:2%; height:2.5em}
+.modal.evento .evento-content .event-form i{float:left;width: 8%;font-size:1.5em;color:#b3b3b3;margin: 2% 0% 0 3%;}
+.modal.evento .evento-content .event-form .col{ padding: 0; opacity:1}
+.modal.evento .evento-content .event-form .col i{ margin: 5%; width: 10%;}
+.modal.evento .evento-content .event-form .col input{ width:70%}
+.modal.evento .evento-content .event-form .search-evt input{ width: 75%;}
+.modal.evento .evento-content .event-form .input-field { margin:0;}
+.modal.evento .evento-content .event-form .input-field span{ padding: 2% 5%; display: block;}
+.modal.evento .evento-content .event-form .btn-flat{float: right; padding: 0% 0%; width: 11%;}
+.modal.evento .evento-content .event-form .btn{ width:100%;}
+.modal.evento .evento-content .event-form textarea.materialize-textarea{ padding: 2%; width: 96%; margin: 0; border: 0;}
+
 
 
 
