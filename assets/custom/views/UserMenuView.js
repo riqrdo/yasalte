@@ -11,7 +11,8 @@ var UserModel = Backbone.Model.extend({
 
 var UserMenuView = MasterView.extend({
 	events : {
-		'click .mnuConfigAccount' : 'openConfigView'
+		'click .mnuConfigAccount' : 'openConfigView',
+		'click .mnuEditProfile' : 'onEditProfileClicked',
 	},
 	tagName : 'ul',
 	className : 'sidebar-view animated ',
@@ -53,4 +54,8 @@ var UserMenuView = MasterView.extend({
 		this.configurationView.show();
 		this.$el.addClass('slideOutLeft');
 	},
+	
+	onEditProfileClicked : function(){
+		this.trigger('onProfileClicked');
+	}
 });

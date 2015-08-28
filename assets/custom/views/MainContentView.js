@@ -46,6 +46,9 @@ var MainContentView = MasterView.extend({
 		this.userMenu = new UserMenuView({
 			model : modelUser
 		});
+		this.userMenu.on('onProfileClicked',function(){
+			this.openProfile();
+		},this);
 		this.userMenu.on('onViewRendered',function(view){
 			$('.sidebar-view',this.$el).replaceWith(view.$el);
 			$('aside.yaybar').addClass('usermenu');
