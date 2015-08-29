@@ -120,44 +120,44 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 /**
 * AGREGADOS POR CHEPO PARA CARDS  
 */
-.card { padding: 7em 0 0 !important; margin: 10px !important; padding-top: 5em; background-image : url('../images/p4.jpg'); overflow: hidden;}
-.card .indicador{border-radius : 100em;border: 2px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;bottom: 20%}
-.card .likes{display : block;width : 100%;color : #ffffff;padding: 0px 10px;}
-.card .card-title{overflow: hidden; display: block;line-height: 0;padding: 0 0 10px;}
+.custom-card { padding: 7em 0 0 !important; margin: 10px !important; padding-top: 5em; background-image : url('../images/p4.jpg'); overflow: hidden;}
+.custom-card .indicador{border-radius : 100em;border: 2px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;bottom: 20%}
+.custom-card .likes{display : block;width : 100%;color : #ffffff;padding: 0px 10px;}
+.custom-card .card-title{overflow: hidden; display: block;line-height: 0;padding: 0 0 10px;}
 /*
  * Bordes de los cards
  */
-.card.restaurant .card-title{border-left: 5px solid #ED1B23;}
-.card.cultura .card-title{border-left: 5px solid #2196F3;}
-.card.cafeteria .card-title{border-left: 5px solid #795548;}
-.card.night-life .card-title{border-left: 5px solid #2196F3;}
-.card.eventos .card-title{border-left: 5px solid #63BD10;}
-.card.recreativo .card-title{border-left: 5px solid #673AB7;}
-.card.promociones .card-title{border-left: 5px solid #F57C00;}
-.card.cines .card-title{border-left: 5px solid #E91E63;}
-.card.sitios-interes .card-title{border-left: 5px solid #009688;}
-.card.trendy .card-title{border-left: 5px solid #FFC107;}
-.card.guia .card-title{border-left: 5px solid #212121;box-shadow: 0 -24px 40px 0px #000;}
+.custom-card.restaurant .card-title{border-left: 5px solid #ED1B23;}
+.custom-card.cultura .card-title{border-left: 5px solid #2196F3;}
+.custom-card.cafeteria .card-title{border-left: 5px solid #795548;}
+.custom-card.night-life .card-title{border-left: 5px solid #2196F3;}
+.custom-card.eventos .card-title{border-left: 5px solid #63BD10;}
+.custom-card.recreativo .card-title{border-left: 5px solid #673AB7;}
+.custom-card.promociones .card-title{border-left: 5px solid #F57C00;}
+.custom-card.cines .card-title{border-left: 5px solid #E91E63;}
+.custom-card.sitios-interes .card-title{border-left: 5px solid #009688;}
+.custom-card.trendy .card-title{border-left: 5px solid #FFC107;}
+.custom-card.guia .card-title{border-left: 5px solid #212121;box-shadow: 0 -24px 40px 0px #000;}
 
 /*
  * Colores de los iconos en cards
  */
-.card.restaurant .indicador{background-color: #ED1B23;}
-.card.cultura .indicador{background-color: #2196F3;}
-.card.cafeteria .indicador{background-color: #795548;}
-.card.night-life .indicador{background-color: #2196F3;}
-.card.eventos .indicador{background-color: #63BD10;}
-.card.recreativo .indicador{background-color: #673AB7;}
-.card.promociones .indicador{background-color: #F57C00;}
-.card.cines .indicador{background-color: #E91E63;}
-.card.sitios-interes .indicador{background-color: #009688;}
-.card.trendy .indicador{background-color: #FFC107;}
-.card.guia .indicador{background-color: #212121;}
+.custom-card.restaurant .indicador{background-color: #ED1B23;}
+.custom-card.cultura .indicador{background-color: #2196F3;}
+.custom-card.cafeteria .indicador{background-color: #795548;}
+.custom-card.night-life .indicador{background-color: #2196F3;}
+.custom-card.eventos .indicador{background-color: #63BD10;}
+.custom-card.recreativo .indicador{background-color: #673AB7;}
+.custom-card.promociones .indicador{background-color: #F57C00;}
+.custom-card.cines .indicador{background-color: #E91E63;}
+.custom-card.sitios-interes .indicador{background-color: #009688;}
+.custom-card.trendy .indicador{background-color: #FFC107;}
+.custom-card.guia .indicador{background-color: #212121;}
 
 
-.card .card-title h4 {font-size: .5em;font-weight: bold;margin:5px;max-width: 80%;}
-.card .card-title span{font-size: .5em;margin: 5px;display: inline-block;}
-.card .card-title .navigation{float : right;font-size : 1.5rem;color: #808080;}
+.custom-card .card-title h4 {font-size: .5em;font-weight: bold;margin:5px;max-width: 80%;}
+.custom-card .card-title span{font-size: .5em;margin: 5px;display: inline-block;}
+.custom-card .card-title .navigation{float : right;font-size : 1.5rem;color: #808080;}
 .row.destacados {width: 102%;background-color: #1B1819;padding: 0 3%;}
 
 .row.destacados .col {padding : 0;}
