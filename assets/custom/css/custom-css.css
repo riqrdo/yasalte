@@ -122,12 +122,12 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 */
 .custom-card { padding: 7em 0 0 !important; margin: 10px !important; padding-top: 5em; background-image : url('../images/p4.jpg'); overflow: hidden;}
 .custom-card .indicador{border-radius : 100em;border: 2px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;bottom: 20%}
-.custom-card .likes{display : block;width : 100%;color : #ffffff;padding: 0px 10px;}
+/* .custom-card .likes{display : block;width : 100%;color : #ffffff;padding: 0px 10px;} */
 .custom-card .card-title{overflow: hidden; display: block;line-height: 0;padding: 0 0 10px;}
 /*
  * Bordes de los cards
  */
-.custom-card.restaurant .card-title{border-left: 5px solid #ED1B23;}
+/*.custom-card.restaurant .card-title{border-left: 5px solid #ED1B23;}
 .custom-card.cultura .card-title{border-left: 5px solid #2196F3;}
 .custom-card.cafeteria .card-title{border-left: 5px solid #795548;}
 .custom-card.night-life .card-title{border-left: 5px solid #2196F3;}
@@ -138,11 +138,54 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 .custom-card.sitios-interes .card-title{border-left: 5px solid #009688;}
 .custom-card.trendy .card-title{border-left: 5px solid #FFC107;}
 .custom-card.guia .card-title{border-left: 5px solid #212121;box-shadow: 0 -24px 40px 0px #000;}
+*/
+.content-wrap.mail-inbox .searchView .page-title{background-color:#1B1819!important;}
+.card.of-h.custom.restaurant .content, .card.of-h.custom.restaurant .card-reveal .title-reveal{border-left: 5px solid #ED1B23;}
+.card.of-h.custom.cultura .content,.card.of-h.custom.cultura .card-reveal .title-reveal{border-left: 5px solid #2196F3;}
+.card.of-h.custom.cafeteria .content,.card.of-h.custom.cafeteria .card-reveal .title-reveal{border-left: 5px solid #795548;}
+.card.of-h.custom.night-life .content,.card.of-h.custom.night-life .card-reveal .title-reveal{border-left: 5px solid #2196F3;}
+.card.of-h.custom.eventos .content,.card.of-h.custom.eventos .card-reveal .title-reveal{border-left: 5px solid #63BD10;}
+.card.of-h.custom.recreativo .content,.card.of-h.custom.recreativo .card-reveal .title-reveal{border-left: 5px solid #673AB7;}
+.card.of-h.custom.promociones .content,.card.of-h.custom.promociones .card-reveal .title-reveal{border-left: 5px solid #F57C00;}
+.card.of-h.custom.cines .content,.card.of-h.custom.cines .card-reveal .title-reveal{border-left: 5px solid #E91E63;}
+.card.of-h.custom.sitios-interes .content,.card.of-h.custom.sitios-interes .card-reveal .title-reveal{border-left: 5px solid #009688;}
+.card.of-h.custom.trendy .content,.card.of-h.custom.trendy .card-reveal .title-reveal{border-left: 5px solid #FFC107;}
+.card.of-h.custom.guia .content,.card.of-h.custom.guia .card-reveal .title-reveal{border-left: 5px solid #212121;}
+.card.of-h.custom .card-image .likes{display: block;width: 100%; color: #ffffff;padding: 0px 10px;position: absolute;bottom: 0;background-color: rgba(0,0,0,0.1);}
+.card.of-h.custom .content .indicador, .card.of-h.custom .card-reveal .indicador{border-radius: 100em;border: 1px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;top: 52%;z-index: 1; width: 13%;height: 25%;}
+.card.of-h.custom .content {padding: 5px!important;}
+.card.of-h.custom .content span.card-title {font-size: 1em;font-weight:bold}
+.card.of-h.custom .content p,.card.of-h.custom .card-reveal p{margin: 0!important;}
+.card.of-h.custom .content i.mdi-navigation-more-vert.right {padding-top: 5%;font-size:1.5em!important;color:#B3B3B3;}
+.card.of-h.custom .card-reveal{height:65%;padding:0!important; overflow-y:visible;}
+.card.of-h.custom .card-reveal .title-reveal span.card-title {font-size: 1em;font-weight:bold}
+.card.of-h.custom .card-reveal .title-reveal{padding:5px!important;margin: 0!important;}
+.card.of-h.custom .card-reveal .indicadores {display : block; overflow:visible;border-top: 1px solid #B2B2B2; padding-top:5%; padding-left: 5%;padding-right: 5%;}
+.card.of-h.custom .card-reveal .indicadores>div i{border-radius: 100em; border: 1px solid #B3B3B3;color:#B3B3B3; font-size: 1em!important;width: 22px;padding: 1px 0px;text-align: center;height: 22px; vertical-align: initial;}
+.card.of-h.custom .card-reveal .indicadores>div i.ya-share{padding:3%;}
+.card.of-h.custom .card-reveal .indicadores>div{padding:0!important;}
+.card.of-h.custom .card-reveal .indicadores>div.right{text-align:right;}
+.card.of-h.custom .card-reveal .indicadores>div.left{text-align:left; padding-left: 1.3rem;}
+.card.of-h.custom .card-reveal .indicador{top: -15%!important; height:37%;}
+
+/**
+ICONOS DE INDICADORES EN LOS CARDS**/
+.card.of-h.custom.restaurant .indicador{background-image: url(../../../images/cat/comida.jpg);background-size: cover;}
+.card.of-h.custom.night-life .indicador{background-image: url(../../../images/cat/night.jpg);background-size: cover;}
+.card.of-h.custom.cultura .indicador{background-image: url(../../../images/cat/cultura.jpg);background-size: cover;}
+.card.of-h.custom.cafeteria .indicador{background-image: url(../../../images/cat/cafe.jpg);background-size: cover;}
+.card.of-h.custom.eventos .indicador{background-image: url(../../../images/cat/evento.jpg);background-size: cover;}
+.card.of-h.custom.recreativo .indicador{background-image: url(../../../images/cat/recreativo.jpg);background-size: cover;}
+.card.of-h.custom.promociones .indicador{background-image: url(../../../images/cat/cupones.jpg);background-size: cover;}
+.card.of-h.custom.cines .indicador{background-image: url(../../../images/cat/cine.jpg);background-size: cover;}
+.card.of-h.custom.sitios-interes .indicador{background-image: url(../../../images/cat/sitios.jpg);background-size: cover;}
+.card.of-h.custom.trendy .indicador{background-image: url(../../../images/cat/trendy.jpg);background-size: cover;}
+.card.of-h.custom.guia .indicador{background-image: url(../../../images/cat/guia.jpg);background-size: cover;}
 
 /*
  * Colores de los iconos en cards
  */
-.custom-card.restaurant .indicador{background-color: #ED1B23;}
+/*.custom-card.restaurant .indicador{background-color: #ED1B23;}
 .custom-card.cultura .indicador{background-color: #2196F3;}
 .custom-card.cafeteria .indicador{background-color: #795548;}
 .custom-card.night-life .indicador{background-color: #2196F3;}
@@ -158,10 +201,12 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 .custom-card .card-title h4 {font-size: .5em;font-weight: bold;margin:5px;max-width: 80%;}
 .custom-card .card-title span{font-size: .5em;margin: 5px;display: inline-block;}
 .custom-card .card-title .navigation{float : right;font-size : 1.5rem;color: #808080;}
+
+*/
 .row.destacados {width: 102%;background-color: #1B1819;padding: 0 3%;}
 
 .row.destacados .col {padding : 0;}
-.searchView{ margin: -4% 0 0 -2%;}
+/*.searchView{ margin: -4% 0 0 -2%;}*/
 .content-wrap.search-result{padding-top: 0;overflow:hidden;padding-right: 0;padding-left: 0;}
 .combo-filters .col .select-wrapper{position:absolute;}
 .combo-filters .col .select-wrapper ul{width:100%!important;}

@@ -32,7 +32,7 @@ var SearchResultModel  = Backbone.Model.extend({
 }); 
 
 var CardView = MasterView.extend({
-	className : 'card',
+	className : 'card of-h custom',
 	templateURL : YaGlobals.CARD_VIEW,
 	initialize : function(){
 		this.constructor.__super__.initialize.apply(this, []);
@@ -41,7 +41,7 @@ var CardView = MasterView.extend({
 	render : function(){
 		this.$el.append(this.template(this.model.toJSON()));
 		this.$el.addClass(this.model.get('type'));
-		this.$el.css('background-image',"url('"+this.model.get('mainImage')+"')");
+//		this.$el.css('background-image',"url('"+this.model.get('mainImage')+"')");
 		return this;
 	},
 	
@@ -102,7 +102,7 @@ var SearchResultsView = MasterView.extend({
 	
 	renderDestacados1 : function(){
 		var that = this;
-		$(".destacados>.col.s12.m6.l3",this.$el).each(function(index,DOMElement){
+		$(".page-title>.row .col.s12.m6.l3",this.$el).each(function(index,DOMElement){
 			var destacadosView = new CardView({model:that.destacadosCollection1.at(index)});
 			/**
 			 * TODO: Agregar eventos necesarios!!
@@ -142,6 +142,16 @@ var SearchResultsView = MasterView.extend({
 		this.$el.append(this.template());
 		this.$el.hide();
 		this.trigger('onViewRendered',this);
-	}
+	},
+	/*
+	show : function(effect){
+		$('.content-wrap').addClass('mail-inbox');
+		this.constructor.__super__.show.apply(this, [effect]);
+	},
+	
+	hide : function(effect){
+		$('.content-wrap').removeClass('mail-inbox');
+		this.constructor.__super__.hide.apply(this, [effect]);
+	}*/
 	
 });
