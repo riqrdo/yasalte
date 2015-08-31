@@ -41,7 +41,6 @@ var CardView = MasterView.extend({
 	render : function(){
 		this.$el.append(this.template(this.model.toJSON()));
 		this.$el.addClass(this.model.get('type'));
-//		this.$el.css('background-image',"url('"+this.model.get('mainImage')+"')");
 		return this;
 	},
 	
@@ -79,6 +78,10 @@ var SearchResultsView = MasterView.extend({
 		this.constructor.__super__.initialize.apply(this, []);
 	},
 	
+	initializePlugins : function(){
+		 $('.dropdown-button').dropdown({});
+	},
+	
 	render : function(){
 		this.destacadosCollection1 = new Backbone.Collection(this.model.get('destacados'));
 		this.searchResults = new Backbone.Collection(this.model.get('searchResults'));
@@ -87,6 +90,7 @@ var SearchResultsView = MasterView.extend({
 		this.renderDestacados1();
 		this.renderSearchresults();
 		this.renderDestacados2();
+		this.initializePlugins();
 		return this;
 	},
 	
@@ -119,7 +123,6 @@ var SearchResultsView = MasterView.extend({
 			var that = this;
 			destacadosView.on('onViewRendered',function(view){
 				$(".filtros-avanzados",that.$el).append(view.render().$el);
-				$('.dropdown-content',that.$el).dropdown();
 			});
 		},this);
 	},
@@ -142,16 +145,5 @@ var SearchResultsView = MasterView.extend({
 		this.$el.append(this.template());
 		this.$el.hide();
 		this.trigger('onViewRendered',this);
-	},
-	/*
-	show : function(effect){
-		$('.content-wrap').addClass('mail-inbox');
-		this.constructor.__super__.show.apply(this, [effect]);
-	},
-	
-	hide : function(effect){
-		$('.content-wrap').removeClass('mail-inbox');
-		this.constructor.__super__.hide.apply(this, [effect]);
-	}*/
-	
+	}	
 });

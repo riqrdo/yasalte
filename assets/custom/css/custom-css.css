@@ -19,6 +19,7 @@ aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{m
 .login-content span{display: block;width: 100%;text-align: center;color: black;font-size: 10px;margin: 5px 0;}
 .login-content .input-field{ border:1px solid #999;}
 .login-content .input-field .prefix~input,.login-content .input-field .prefix~textarea{}
+.login-content .video-indicator {width: calc(100% + 2.6em);margin: -1rem -1.3rem 0 -1.3rem;}
 .menu-footer{ position:fixed; left: 0; bottom: 0; height: 55px;}
 .menu-footer .btn{ position:absolute; top: -35px;}
 .menu-footer p {font-size: .8em;padding: 6px;}
@@ -30,7 +31,7 @@ aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{m
 .login-form div i{float:left;width:9%;margin:0;font-size:1.5em;color:#4d4d4d;margin: 3% 0 0 3%;}
 .login-form a{text-transform:lowercase;text-align:center; color:#666;display: block;text-decoration: underline;font-size: .8em;}
 .waves-effect.waves-dark.btn.gray{background-color: #E6E6E6;}
-.static-sidebar{height: 100%;position: fixed;width: 60px;border-right: solid #E4E4E4;padding-top: 55px;}
+.static-sidebar{height: 100%;position: fixed;width: 60px;border-right: 1px solid #E4E4E4;padding-top: 55px;background-color: #fff;}
 
 .static-sidebar ul {margin: 0;}
 .static-sidebar ul li{display:block;overflow: hidden;}
@@ -127,18 +128,7 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 /*
  * Bordes de los cards
  */
-/*.custom-card.restaurant .card-title{border-left: 5px solid #ED1B23;}
-.custom-card.cultura .card-title{border-left: 5px solid #2196F3;}
-.custom-card.cafeteria .card-title{border-left: 5px solid #795548;}
-.custom-card.night-life .card-title{border-left: 5px solid #2196F3;}
-.custom-card.eventos .card-title{border-left: 5px solid #63BD10;}
-.custom-card.recreativo .card-title{border-left: 5px solid #673AB7;}
-.custom-card.promociones .card-title{border-left: 5px solid #F57C00;}
-.custom-card.cines .card-title{border-left: 5px solid #E91E63;}
-.custom-card.sitios-interes .card-title{border-left: 5px solid #009688;}
-.custom-card.trendy .card-title{border-left: 5px solid #FFC107;}
-.custom-card.guia .card-title{border-left: 5px solid #212121;box-shadow: 0 -24px 40px 0px #000;}
-*/
+
 .content-wrap.mail-inbox .searchView .page-title{background-color:#1B1819!important;}
 .card.of-h.custom.restaurant .content, .card.of-h.custom.restaurant .card-reveal .title-reveal{border-left: 5px solid #ED1B23;}
 .card.of-h.custom.cultura .content,.card.of-h.custom.cultura .card-reveal .title-reveal{border-left: 5px solid #2196F3;}
@@ -170,39 +160,19 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 
 /**
 ICONOS DE INDICADORES EN LOS CARDS**/
-.card.of-h.custom.restaurant .indicador{background-image: url(../../../images/cat/comida.jpg);background-size: cover;}
-.card.of-h.custom.night-life .indicador{background-image: url(../../../images/cat/night.jpg);background-size: cover;}
-.card.of-h.custom.cultura .indicador{background-image: url(../../../images/cat/cultura.jpg);background-size: cover;}
-.card.of-h.custom.cafeteria .indicador{background-image: url(../../../images/cat/cafe.jpg);background-size: cover;}
-.card.of-h.custom.eventos .indicador{background-image: url(../../../images/cat/evento.jpg);background-size: cover;}
-.card.of-h.custom.recreativo .indicador{background-image: url(../../../images/cat/recreativo.jpg);background-size: cover;}
-.card.of-h.custom.promociones .indicador{background-image: url(../../../images/cat/cupones.jpg);background-size: cover;}
-.card.of-h.custom.cines .indicador{background-image: url(../../../images/cat/cine.jpg);background-size: cover;}
-.card.of-h.custom.sitios-interes .indicador{background-image: url(../../../images/cat/sitios.jpg);background-size: cover;}
-.card.of-h.custom.trendy .indicador{background-image: url(../../../images/cat/trendy.jpg);background-size: cover;}
-.card.of-h.custom.guia .indicador{background-image: url(../../../images/cat/guia.jpg);background-size: cover;}
-
-/*
- * Colores de los iconos en cards
- */
-/*.custom-card.restaurant .indicador{background-color: #ED1B23;}
-.custom-card.cultura .indicador{background-color: #2196F3;}
-.custom-card.cafeteria .indicador{background-color: #795548;}
-.custom-card.night-life .indicador{background-color: #2196F3;}
-.custom-card.eventos .indicador{background-color: #63BD10;}
-.custom-card.recreativo .indicador{background-color: #673AB7;}
-.custom-card.promociones .indicador{background-color: #F57C00;}
-.custom-card.cines .indicador{background-color: #E91E63;}
-.custom-card.sitios-interes .indicador{background-color: #009688;}
-.custom-card.trendy .indicador{background-color: #FFC107;}
-.custom-card.guia .indicador{background-color: #212121;}
+.card.of-h.custom.restaurant .indicador, li.result-item.restaurant .card-search-result .indicador{background-image: url(../../../images/cat/comida.jpg);background-size: cover;}
+.card.of-h.custom.night-life .indicador, li.result-item.night-life .card-search-result .indicador{background-image: url(../../../images/cat/night.jpg);background-size: cover;}
+.card.of-h.custom.cultura .indicador, li.result-item.cultura .card-search-result .indicador{background-image: url(../../../images/cat/cultura.jpg);background-size: cover;}
+.card.of-h.custom.cafeteria .indicador, li.result-item.cafeteria .card-search-result .indicador{background-image: url(../../../images/cat/cafe.jpg);background-size: cover;}
+.card.of-h.custom.eventos .indicador, li.result-item.eventos .card-search-result .indicador{background-image: url(../../../images/cat/evento.jpg);background-size: cover;}
+.card.of-h.custom.recreativo .indicador, li.result-item.recreativo .card-search-result .indicador{background-image: url(../../../images/cat/recreativo.jpg);background-size: cover;}
+.card.of-h.custom.promociones .indicador, li.result-item.promociones .card-search-result .indicador{background-image: url(../../../images/cat/cupones.jpg);background-size: cover;}
+.card.of-h.custom.cines .indicador, li.result-item.cines .card-search-result .indicador{background-image: url(../../../images/cat/cine.jpg);background-size: cover;}
+.card.of-h.custom.sitios-interes .indicador, li.result-item.sitios-interes .card-search-result .indicador{background-image: url(../../../images/cat/sitios.jpg);background-size: cover;}
+.card.of-h.custom.trendy .indicador, li.result-item.trendy .card-search-result .indicador{background-image: url(../../../images/cat/trendy.jpg);background-size: cover;}
+.card.of-h.custom.guia .indicador, li.result-item.guia .card-search-result .indicador{background-image: url(../../../images/cat/guia.jpg);background-size: cover;}
 
 
-.custom-card .card-title h4 {font-size: .5em;font-weight: bold;margin:5px;max-width: 80%;}
-.custom-card .card-title span{font-size: .5em;margin: 5px;display: inline-block;}
-.custom-card .card-title .navigation{float : right;font-size : 1.5rem;color: #808080;}
-
-*/
 .row.destacados {width: 102%;background-color: #1B1819;padding: 0 3%;}
 
 .row.destacados .col {padding : 0;}
