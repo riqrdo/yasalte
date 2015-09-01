@@ -12,12 +12,12 @@ var MasterViewTools = function() {
 
 
 var MasterView = Backbone.View.extend({
+	inputEffect : 'slideInUp',
+	outputEffect: 'slideOutDown',
 	initialize : function(){
 		 this.viewTools = new MasterViewTools();
 		 this.viewTools.on('onTemplateLoaded',this.onTemplateLoaded,this);
 		 this.viewTools.getTemplate(this.templateURL);
-//		 YaGlobals.on('onTemplateLoaded',this.onTemplateLoaded,this);
-//		 YaGlobals.getTemplate(this.templateURL);
 	},
 	
 	onTemplateLoaded : function(textTemplate){
@@ -27,30 +27,40 @@ var MasterView = Backbone.View.extend({
 	},
 	
 	show : function(effect){
+		this.inputEffect = (typeof effect === "undefined") ? this.inputEffect : effect;
 		var that = this;
-		this.$el.one('webkitAnimationEnd mozAnimationEnd '+
-					 'MSAnimationEnd oanimationend animationend',
-					 function(event){
-			that.$el.removeClass(effect);
-			event.stopPropagation();
-			that.isVisible = true;
+		this.$el.off('webkitAnimationEnd mozAnimationEnd '+
+				 'MSAnimationEnd oanimationend animationend')
+				.one('webkitAnimationEnd mozAnimationEnd '+
+						 'MSAnimationEnd oanimationend animationend',
+						 function(event){
+					console.log("termina animacion show");
+				that.$el.removeClass(that.inputEffect + " " + that.outputEffect);
+				event.preventDefault();
+				event.stopPropagation();
+				that.isVisible = true;
 		});
-		this.$el.addClass(effect);
 		this.$el.show();
+		this.$el.addClass(this.inputEffect);
 		this.isVisible = true;
 	},
 	
 	hide : function(effect){
+		this.outputEffect = (typeof effect === "undefined") ? this.outputEffect : effect;
 		this.isVisible = false;
 		var that = this;
-		this.$el.one('webkitAnimationEnd mozAnimationEnd '+
-				 'MSAnimationEnd oanimationend animationend',function(){
-			that.$el.hide();
-			that.$el.removeClass(effect);
-			event.stopPropagation();
-			that.isVisible = false;
-		});
-		this.$el.addClass(effect);
+		this.$el.off('webkitAnimationEnd mozAnimationEnd '+
+		 'MSAnimationEnd oanimationend animationend')
+		 .one('webkitAnimationEnd mozAnimationEnd '+
+				 'MSAnimationEnd oanimationend animationend',
+				 function(event){
+			 	console.log("termina animacion hide");
+			 	that.$el.hide();
+			 	that.$el.removeClass(that.inputEffect + " "  + that.outputEffect);
+				event.stopPropagation();
+				that.isVisible = false;
+		 });
+		this.$el.addClass(this.outputEffect);
 	}
 });
 
