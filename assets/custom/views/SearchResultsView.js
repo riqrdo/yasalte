@@ -53,8 +53,13 @@ var CardView = MasterView.extend({
 var CardSearchView = MasterView.extend({
 	className : 'result-item',
 	tagName : 'li',
+	events : {
+		'click .favorite-section i ' : 'onHeartClicked',
+	},
+
 	templateURL : YaGlobals.CARD_RESULT_ITEM_VIEW,
 	initialize : function(){
+//		_.bindAll(this,"onHeartClicked");
 		this.constructor.__super__.initialize.apply(this, []);
 	},
 	
@@ -66,6 +71,10 @@ var CardSearchView = MasterView.extend({
 		this.$el.append(this.template(this.model.toJSON()));
 		this.$el.addClass(this.model.get('type'));
 		return this;
+	},
+	
+	onHeartClicked : function(event){
+		$('.favorite-section i',this.$el).toggleClass('red-text');
 	}
 	
 });

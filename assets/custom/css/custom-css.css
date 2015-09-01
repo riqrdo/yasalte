@@ -65,6 +65,7 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 .yay-toggle div:after,.yay-toggle div:before{ background:#fff;}
 .navbar-top .user{ min-width:inherit;}
 .navbar-top .nav-wrapper>.sp-cancel i, .navbar-top .nav-wrapper>a i, .navbar-top .nav-wrapper>ul i{ font-size:2.2em; color:#fff;}
+.navbar-top .nav-wrapper>ul i.mdi-navigation-more-vert.right{ margin-left:1.5em!important;}
 .navbar-top .user img{ margin-right:0;}
 #user-dropdown i{ color:#42A5F5; font-size: 1.2em; margin-right: 4%;}
 
@@ -128,8 +129,9 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 /*
  * Bordes de los cards
  */
-
-.content-wrap.mail-inbox .searchView .page-title{background-color:#1B1819!important;}
+.card.of-h.custom {max-width: 350px;min-width: 250px;margin: auto;}
+.content-wrap .searchView .page-title{background-color:#1B1819!important;}
+.content-wrap .searchView .row.content{overflow: hidden;display: block;max-width: 100%;margin-right: 0!important;};
 .card.of-h.custom.restaurant .content, .card.of-h.custom.restaurant .card-reveal .title-reveal{border-left: 5px solid #ED1B23;}
 .card.of-h.custom.cultura .content,.card.of-h.custom.cultura .card-reveal .title-reveal{border-left: 5px solid #2196F3;}
 .card.of-h.custom.cafeteria .content,.card.of-h.custom.cafeteria .card-reveal .title-reveal{border-left: 5px solid #795548;}
@@ -142,7 +144,7 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 .card.of-h.custom.trendy .content,.card.of-h.custom.trendy .card-reveal .title-reveal{border-left: 5px solid #FFC107;}
 .card.of-h.custom.guia .content,.card.of-h.custom.guia .card-reveal .title-reveal{border-left: 5px solid #212121;}
 .card.of-h.custom .card-image .likes{display: block;width: 100%; color: #ffffff;padding: 0px 10px;position: absolute;bottom: 0;background-color: rgba(0,0,0,0.1);}
-.card.of-h.custom .content .indicador, .card.of-h.custom .card-reveal .indicador{border-radius: 100em;border: 1px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;top: 52%;z-index: 1; width: 13%;height: 25%;}
+.card.of-h.custom .content .indicador, .card.of-h.custom .card-reveal .indicador{border-radius: 100em;border: 2px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;top: 52%;z-index: 1; width: 13%;height: 25%;}
 .card.of-h.custom .content {padding: 5px!important;}
 .card.of-h.custom .content span.card-title {font-size: 1em;font-weight:bold}
 .card.of-h.custom .content p,.card.of-h.custom .card-reveal p{margin: 0!important;}
@@ -181,7 +183,7 @@ ICONOS DE INDICADORES EN LOS CARDS**/
 .combo-filters .col .select-wrapper{position:absolute;}
 .combo-filters .col .select-wrapper ul{width:100%!important;}
 .combo-filters .col .select-wrapper input{border-bottom:none;}
-.basic-filters{margin-top : 0!important;padding: 0% 3% !important;border-bottom: 2px solid #B2B2B2;}
+.basic-filters{padding: 0% 3% !important;border-bottom: 2px solid #B2B2B2;margin: auto;}
 .result-counter{display: block;margin-top: 1%;font-size: 1.5rem;}
 .row.resultados {padding: 0 3%;}
 .search-suggest ul li.search-result-item {display: block;overflow: hidden;border-left: 5px solid;margin-bottom: 4%;}
@@ -240,8 +242,10 @@ li.border-top{border-top: 2px solid #e6e6e6}
 li.border-bottom{border-bottom: 1px solid #e6e6e6;}
 li.border-left{border-left: 2px solid #e6e6e6}
 li.border-right{border-right: 2px solid #e6e6e6}
-ul.filter-section{display:block; overflow: hidden;border:2px solid #e6e6e6}
-ul.filter-section li{color: #9c9c9c; text-align:center; margin:0!important; padding: 4% 0 !important;}
+ul.filter-section{display:block; overflow: hidden;}
+ul.filter-section li.divider{padding:0!important}
+ul.filter-section li{color: #9c9c9c;margin:0!important; padding: 4% 0 !important;}
+ul.filter-section li:HOVER{background-color:#F5F5F5}
 ul.filter-section li.border-top{border-top: 2px solid #e6e6e6}
 ul.filter-section li.border-bottom{border-bottom: 1px solid #e6e6e6;}
 ul.filter-section li.border-left{border-left: 2px solid #e6e6e6}

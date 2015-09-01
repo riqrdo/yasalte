@@ -1,6 +1,5 @@
 var RecomendationItemView = MasterView.extend({
 	tagName : 'li',
-//	className : '',
 	templateURL : YaGlobals.RECOMENDATION_ITEM,
 	initialize : function(){
 		this.constructor.__super__.initialize.apply(this, []);
@@ -9,7 +8,6 @@ var RecomendationItemView = MasterView.extend({
 	render : function(){
 		this.$el.append(this.template(this.model.toJSON()));
 		this.$el.addClass(this.model.get('className'));
-		console.log(this.model.toJSON());
 		this.trigger('onViewRendered',this);
 		return this;
 	},

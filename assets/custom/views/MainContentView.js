@@ -4,6 +4,7 @@ var MainContentView = MasterView.extend({
 		'click .btn-recomendaciones' : 'showRecomendations',
 		'click .login' : 'onLoginPressed',
 		'focus input[name="searchInput"]' : 'onSearchFocused',
+		'keyup input[name="searchInput"]' : 'onSearchKeyUp',
 		'focusout input[name="searchInput"]' : 'onSearchFocusout',
 		'click .search .mdi-action-search' : 'doSearch',
 		'click .btnOpenProfile' : 'opeProfile'
@@ -18,7 +19,7 @@ var MainContentView = MasterView.extend({
 		_.bindAll(this,'showRecomendations','onSuccessLogin',
 						'onLoginPressed','onSearchFocused',
 						'onSearchFocusout','doSearch',
-						'openProfile');
+						'openProfile','onSearchKeyUp');
 		if(!YaGlobals.tmp.isLogged){
 			this.loginView = new YaLoginView().on('onViewRendered',function(view){
 				$('.sidebar-view',this.$el).append(view.$el);
@@ -79,6 +80,12 @@ var MainContentView = MasterView.extend({
 	
 	onSearchFocusout : function(event){
 		this.searchSuggestView.hide();
+	},
+	
+	onSearchKeyUp : function(event){
+		if(event.keyCode == 13){
+			this.doSearch();
+		}
 	},
 	
 	hideAllViews : function(){
