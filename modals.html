@@ -1,0 +1,695 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>YaSalte.com</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/png" href="assets/_con/images/icon.png">
+  <!-- nanoScroller -->
+  <link rel="stylesheet" type="text/css" href="assets/nanoScroller/nanoscroller.css" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css" />
+
+  <!-- Material Design Icons -->
+  <link rel="stylesheet" type="text/css" href="assets/material-design-icons/css/material-design-icons.min.css" />
+
+  <!-- IonIcons -->
+  <link rel="stylesheet" type="text/css" href="assets/ionicons/css/ionicons.min.css" />
+
+  <!-- WeatherIcons -->
+  <link rel="stylesheet" type="text/css" href="assets/animate.css/animate.css"/>
+
+  <!-- Google Prettify -->
+  <link rel="stylesheet" type="text/css" href="assets/google-code-prettify/prettify.css" />
+  
+  <!-- tags -->
+  <link rel="stylesheet" type="text/css" href="assets/jquery-tags-input/jquery.tagsinput.css" />
+  
+  <!-- Main -->
+  <link rel="stylesheet" type="text/css" href="assets/_con/css/_con.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="assets/custom/css/custom-css.css" />
+  
+   <!-- materialize icons -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- ya icons -->
+   <link rel="stylesheet" type="text/css" href="assets/custom/css/ya_icon.css" />
+  <!--[if lt IE 9]>
+    <script src="assets/html5shiv/html5shiv.min.js"></script>
+  <![endif]-->
+  <!-- templates!! -->
+	
+	<!-- /templates!! -->
+</head>
+<body>
+
+<!-- Main Content -->
+ <section class="content-wrap">
+ 
+ 
+ 
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1">modal alerta de sesion</a>
+<!-- Modal Structure -->
+<div id="modal1" class="modal login-register yasalte">
+  <div class="modal-content">
+  	<div class="page-title">
+    	<a href="#!" class="large right black-text modal-close"><i class="mdi-navigation-close"></i></a>
+    </div>
+    
+    <p class="center-block center-align">
+        Para hacer esta accion requires
+        <br>
+        iniciar sesión.
+    </p>
+    
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close btn grey darken-2 white-text">iniciar sesión</a>
+    <a href="#!" class="modal-action modal-close btn red white-text">Registrarme</a>
+  </div>
+</div>
+
+
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal2">modal iniciar sesion</a>
+<!-- Modal Structure -->
+<div id="modal2" class="modal login yasalte">
+  <div class="modal-content">
+  	<div class="page-title">
+    	<a href="#!" class="black-text modal-close"><i class="fa fa-arrow-left"></i></a>
+        Iniciar sesión 
+    	<a href="#!" class="right black-text modal-close"><i class="mdi-navigation-close"></i></a>
+    </div>
+    
+        <div class="login-content">
+            <a href="#" class="facebook-login waves-effect waves-dark btn indigo">
+                <i class="fa fa-facebook-square"></i> entrar con facebook
+                </a>
+                <span>(no publicaremos sin tu permiso)</span>
+            <form action="#!" class="login-form">
+                <div>
+                    <i class="fa fa-user prefix"></i>
+                    <input id="username-input" type="text" name="username" placeholder="email">
+                  </div>
+                 
+                  <div>
+                    <i class="fa fa-unlock-alt prefix"></i>
+                    <input id="password-input" type="password" name="password" placeholder="contraseña">
+                  </div>
+                  <button class="waves-effect waves-dark btn grey darken-2 white-text">Iniciar Sesión</button>
+                  
+                  <a href="page-forgot-password.html">Olvidé mi usuario y contraseña</a>
+            </form>
+		</div>
+  </div> 
+</div>
+
+
+
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal3">modal registro</a>
+<!-- Modal Structure -->
+<div id="modal3" class="modal register yasalte">
+  <div class="modal-content">
+  	<div class="page-title">
+    	<a href="#!" class="black-text modal-close"><i class="fa fa-arrow-left"></i></a>
+        Registro
+    	<a href="#!" class="right black-text modal-close"><i class="mdi-navigation-close"></i></a>
+    </div>
+        <div class="register-content">
+            <figure class="circle align-center"><i class="mdi-image-photo-camera"></i></figure>
+            <a href="#" class="facebook-login waves-effect waves-dark btn indigo">
+            <i class="fa fa-facebook-square"></i> entrar con facebook
+            </a>
+            <form action="#!" class="register-form">
+            
+                <div class="names">
+                	<span>
+                        <i class="fa fa-user prefix"></i>
+                        <input id="input_fname" type="text" name="nombre" placeholder="Nombre">
+					</span>
+                    <span>
+		                <input id="input_lastname" type="text" name="apellido" placeholder="Apellido">
+        	        </span>
+                </div>
+                <div class="birth-gender">
+                	<span>
+                        <i class="fa fa-calendar"></i>
+                        <input id="birthday-input" type="text" name="nacimiento" placeholder="Fecha de nacimiento">
+					</span>
+                    <span>
+                        <i class="fa fa-transgender"></i>
+                        <input id="sex-input" type="text" name="sex" placeholder="Sexo">
+	                </span>
+                </div>
+                <div class="phone">
+                	<span>
+                        <i class="fa fa-phone"></i>
+                        <b class="small">+52</b>
+                	</span>
+                	<input id="birthday-input" type="text" name="numero" placeholder="55 55 5555">
+                </div>
+                
+                <p class="small center center-align">Ingresa tu email y tu contraseña de acceso</p>
+                
+                <div class="pass">
+                <i class="fa fa-unlock-alt prefix"></i>
+                <input id="password-input" type="password" name="password" placeholder="contraseña">
+                </div>
+                <div class="pass">
+                <i class="fa fa-unlock-alt prefix"></i>
+                <input id="password-input2" type="password" name="password2" placeholder="repite tu contraseña">
+                </div>
+                
+                <button class="waves-effect waves-dark btn grey darken-2 white-text">Iniciar Sesión</button>
+                
+                <p class="small center center-align">Al usar YaSalte, aceptas los <a href="#" class="black-text">Términos</a>, <a href="#" class="black-text">Política de cookies</a> y <a href="#" class="black-text">Política de privacidad</a></p>
+            </form>
+        </div>
+	</div> 
+</div>
+
+
+
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal4">modal personalizacion</a>
+<!-- Modal Structure -->
+<div id="modal4" class="modal personalize yasalte">
+  <div class="modal-content">
+  	<div class="page-title">
+    	<a href="#!" class="black-text modal-close"><i class="fa fa-arrow-left"></i></a>
+        Registro
+    	<a href="#!" class="right black-text modal-close"><i class="mdi-navigation-close"></i></a>
+    </div>
+        <div class="personalize-content">
+            <figure class="circle align-center"><img src="assets/custom/images/default-user.png"></figure>
+            
+             <a href="#!" class="waves-effect waves-dark btn white black-text align-center"><i class="fa fa-user left"></i> Selecciona un perfil</a>
+             
+             <p class="align-center">
+             	Dinos que te gusta para darte recomendaciones
+             </p>
+            
+            <div class="divider"></div> 
+            <div class="tags">
+	            <a href="#!" class="btn tag white black-text align-left">Comida corrida <i class="ion-plus"></i></a>
+	            <a href="#!" class="btn tag white black-text align-left">pizza gay <i class="ion-plus"></i></a>
+	            <a href="#!" class="btn tag white black-text align-left">eventos culturales <i class="ion-plus"></i></a>
+	            <a href="#!" class="btn tag white black-text align-left">antros <i class="ion-plus"></i></a>
+	            <a href="#!" class="btn tag white black-text align-left">tortas <i class="ion-plus"></i></a>
+	            <a href="#!" class="btn tag white black-text align-left">café <i class="ion-plus"></i></a>
+	            <a href="#!" class="btn tag white black-text align-left">películas <i class="ion-plus"></i></a>
+	            <a href="#!" class="btn tag white black-text align-left">comida gourmet <i class="ion-plus"></i></a>
+            </div>
+            <a href="#!" class="btn white black-text align-center ver_mas">ver más</a>
+            <div class="gusto">
+                <span><i class="fa fa-search"></i></span>
+                <input id="gusto" type="text" name="gusto" placeholder="buscar un gusto">
+            </div>
+            <!--input class="input-tag" type="text" name="tags" id="tags" value="Comida corrida,pizza gay,eventos culturales"-->
+			<button class="waves-effect waves-dark btn grey darken-2 white-text">Siguiente</button>
+        </div>
+	</div> 
+</div>
+
+
+
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal5">modal seleccion de perfil</a>
+<!-- Modal Structure -->
+<div id="modal5" class="modal profile-select yasalte">
+  <div class="modal-content">
+  	<div class="page-title">
+    	<a href="#!" class="black-text modal-close"><i class="fa fa-arrow-left"></i></a>
+        Selección de perfil
+    	<a href="#!" class="right black-text modal-close"><i class="mdi-navigation-close"></i></a>
+    </div>
+        <div class="profile-select-content">
+            <figure class="circle align-center"><img src="assets/custom/images/default-user.png"></figure>
+            <p class="align-center exp">Selecciona 2 perfiles que se ajusten a ti</p>
+            
+            <p>
+                <input class="with-gap" name="altenative" type="radio" id="altenative"  />
+                <label for="altenative">Altern-ative</label>
+                <a href="#!" class="btn-floating small grey white-text right">?</a>
+            </p>
+            <p>
+                <input class="with-gap" name="deambiente" type="radio" id="deambiente"  />
+                <label for="deambiente"><em>de</em> Ambiente</label>
+                <a href="#!" class="btn-floating small grey white-text right">?</a>
+            </p>
+            <p>
+                <input class="with-gap" name="godines" type="radio" id="godines"  />
+                <label for="altenative">Gody (godines)</label>
+                <a href="#!" class="btn-floating small grey white-text right">?</a>
+            </p>
+            <p>
+                <input class="with-gap" name="hipster" type="radio" id="hipster"  />
+                <label for="hipster">Hipster*</label>
+                <a href="#!" class="btn-floating small grey white-text right">?</a>
+            </p>
+            <p>
+                <input class="with-gap" name="machinrin" type="radio" id="machinrin"  />
+                <label for="machinrin">Machin-rin</label>
+                <a href="#!" class="btn-floating small grey white-text right">?</a>
+            </p>
+            <p>
+                <input class="with-gap" name="fresa" type="radio" id="fresa"  />
+                <label for="fresa">Fresa</label>
+                <a href="#!" class="btn-floating small grey white-text right">?</a>
+            </p>
+            <p>
+                <input class="with-gap" name="healthy" type="radio" id="healthy"  />
+                <label for="healthy">Healthy</label>
+                <a href="#!" class="btn-floating small grey white-text right">?</a>
+            </p>
+            <p>
+                <input class="with-gap" name="lady" type="radio" id="lady"  />
+                <label for="lady">Lady</label>
+                <a href="#!" class="btn-floating small grey white-text right">?</a>
+            </p>
+            <p>
+                <input class="with-gap" name="explorador" type="radio" id="explorador"  />
+                <label for="explorador">Explorador</label>
+                <a href="#!" class="btn-floating small grey white-text right">?</a>
+            </p>
+            <p>
+                <input class="with-gap" name="x" type="radio" id="x"  />
+                <label for="x">X</label>
+                <a href="#!" class="btn-floating small grey white-text right">?</a>
+            </p>
+			<button class="waves-effect waves-dark btn grey darken-2 white-text">Siguiente</button>
+        </div>
+	</div> 
+</div>
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal6">modal de perfiles</a>
+<!-- Modal Structure -->
+<div id="modal6" class="modal profile-description yasalte">
+  <div class="modal-content">
+  	<div class="page-title">
+    	<a href="#!" class="black-text modal-close"><i class="fa fa-arrow-left"></i></a>
+        Perfiles
+    	<a href="#!" class="right black-text modal-close"><i class="mdi-navigation-close"></i></a>
+    </div>
+        <div class="profile-description-content">
+            <figure class="red darken-1 white-text circle align-center"><i class="fa fa-hand-o-up"></i></figure>
+            <h3 class="align-center exp">Alter-native</h3>
+            
+            <p class="align-center">Son todos aquellos que va en contra del sistema, no les embona nada, no se paran en Starbucks, no toman Coca-Cola, etc. </p>
+            <p class="align-center">Acuden generalemente a lugares "diferentes", "alternativos", le dan estos espacios un toque único y muy atractivo para todos aquellos que no son como ellos o no van con su ideología.</p>
+            
+            <p class="align-center">
+            <input class="with-gap" name="alternative" type="radio" id="alternative"  />
+			<label for="alternative">Seleccionar</label>
+            </p>
+            
+        </div>
+	</div>    
+    <div class="modal-footer profile-description-footer">
+        <div class="btn-group">
+          <a class="btn red darken-1 white-text"><i class="mdi-navigation-arrow-forward"></i></a>
+          <a class="btn red darken-1 white-text">cerrar</a>
+          <a class="btn red darken-1 white-text"> <i class="mdi-navigation-arrow-back"></i></a>
+        </div>
+    </div> 
+</div>
+
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal7">modal bienvenido</a>
+<!-- Modal Structure -->
+<div id="modal7" class="modal welcome yasalte">
+  <div class="modal-content">
+  	<div class="page-title">
+        Bienvenido
+    	<a href="#!" class="right black-text modal-close"><i class="mdi-navigation-close"></i></a>
+    </div>
+        <div class="welcome-content">
+            <figure class="red darken-1 white-text circle align-center"><img src="assets/custom/images/default-user.png"></figure>
+            <p class="align-center">¡Bienvenido a Ya Salte, Cha!<br>
+            descubre los mejores lugares y eventos y gana increibles recompensas
+            </p>
+           <button class="waves-effect waves-dark btn grey darken-2 white-text">OK</button>
+        </div>
+	</div>
+</div>
+
+
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal8">modal rate</a>
+<!-- Modal Structure -->
+<div id="modal8" class="modal rate yasalte">
+  <div class="modal-content">
+  	<div class="page-title white-text orange">
+    	<i class="fa fa-star circle"></i>
+        Cuentanos tu experiencia en Artesanos Pizza
+    </div>
+        <div class="rate-content">
+            <div class="rating">
+              <input type="radio" id="rating-star-5" name="rating-star" value="5">
+              <label for="rating-star-5"><i class="fa fa-star-o"></i></label>
+              <input type="radio" id="rating-star-4" name="rating-star" value="4">
+              <label for="rating-star-4"><i class="fa fa-star-o"></i></label>
+              <input type="radio" id="rating-star-3" name="rating-star" value="3">
+              <label for="rating-star-3"><i class="fa fa-star-o"></i></label>
+              <input type="radio" id="rating-star-2" name="rating-star" value="2">
+              <label for="rating-star-2"><i class="fa fa-star-o"></i></label>
+              <input type="radio" id="rating-star-1" name="rating-star" value="1">
+              <label for="rating-star-1"><i class="fa fa-star-o"></i></label>
+            </div>
+            <div class="input-field">
+              <textarea id="textarea1" class="materialize-textarea" placeholder="Escribe aquí tu comentario..."></textarea>
+            </div>
+            
+			<button class="waves-effect waves-dark btn grey darken-2 white-text">Enviar</button>
+        </div>
+        <!--div class="rate-content">
+            <p align="center"><i class="fa fa-star fa-2x white-text orange circle align-center"></i></p>
+            <p class="align-center">Felicidades has calidicado a Artesanos Pizza</p>
+			<button class="waves-effect waves-dark btn grey darken-2 white-text">Aceptar</button>
+        </div-->
+	</div>
+</div>
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal82">modal rate confimacion</a>
+<!-- Modal Structure -->
+<div id="modal82" class="modal rate yasalte">
+  <div class="modal-content">
+        <div class="rate-content">
+            <p align="center"><i class="fa fa-star fa-2x white-text orange circle align-center"></i></p>
+            <p class="align-center">Felicidades has calidicado a Artesanos Pizza</p>
+			<button class="waves-effect waves-dark btn grey darken-2 white-text">Aceptar</button>
+        </div>
+	</div>
+</div>
+
+
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal9">modal favoritos</a>
+<!-- Modal Structure -->
+<div id="modal9" class="modal fav yasalte">
+  <div class="modal-content">
+        <p align="center"><i class="fa fa-heart fa-2x white-text red circle align-center"></i></p>
+		<p class="align-center">Haz agregado a Artesanos Pizza a tu lista de favoritos</p>
+        <button class="waves-effect waves-dark btn grey darken-2 white-text">Aceptar</button>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal10">modal reportar</a>
+<!-- Modal Structure -->
+<div id="modal10" class="modal reportar yasalte">
+  <div class="modal-content">
+  	<div class="page-title">
+    	<i class="ion-alert circle"></i>
+        Reportar
+    	<a href="#!" class="right black-text modal-close"><i class="mdi-navigation-close"></i></a>
+    </div>
+        <div class="reportar-content">
+        
+            <ul class="collection">
+              <li class="collection-item avatar">
+                <i class="mdi-maps-local-cafe circle white-text brown"></i>
+                <span class="title">Café Express</span>
+                <p>Café</p>
+              </li>
+			</ul>
+            
+	        <select>
+              <option value="0">-- Selecciona motivo --</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+        
+            <div class="input-field">
+              Agrega un comentario
+              <textarea id="textarea1" class="materialize-textarea" placeholder="Escribe aquí tu comentario..."></textarea>
+            </div>
+        </div>
+	</div>
+    
+    <div class="modal-footer">
+    	<a href="#!" class="modal-action modal-close btn red white-text">Reportar</a>
+	    <a href="#!" class="modal-action modal-close btn grey darken-2 white-text">Cancelar</a>
+    </div>
+</div>
+
+
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal11">modal reportar foto</a>
+<!-- Modal Structure -->
+<div id="modal11" class="modal reportar yasalte">
+  <div class="modal-content">
+        <div class="reportar-content">
+        	<p class="align-center">Reportar foto como:</p>
+            
+            <p class="border-bottom">
+                <input class="with-gap" name="nopertinente" type="radio" id="nopertinente"  />
+                <label for="nopertinente">No pertinente / inapropiada</label>
+            </p>
+            <p class="border-bottom">
+                <input class="with-gap" name="fuerafoco" type="radio" id="fuerafoco"  />
+                <label for="fuerafoco">Fuera de foco / baja calidad</label>
+            </p>
+            <p class="border-bottom">
+                <input class="with-gap" name="spam" type="radio" id="spam"  />
+                <label for="spam">Spam / Estafa</label>
+            </p>
+            <p class="border-bottom">
+                <input class="with-gap" name="desnudos" type="radio" id="desnudos"  />
+                <label for="desnudos">Desnudos</label>
+            </p>
+            <p class="border-bottom">
+                <input class="with-gap" name="odio" type="radio" id="odio"  />
+                <label for="odio">Odio / violencia</label>
+            </p>
+            <p class="border-bottom">
+                <input class="with-gap" name="ilegal" type="radio" id="ilegal"  />
+                <label for="ilegal">Actividad ilegal</label>
+            </p>
+        </div>
+	</div>
+    <div class="modal-footer">
+    	<a href="#!" class="modal-action modal-close btn red white-text">Reportar</a>
+	    <a href="#!" class="modal-action modal-close btn grey darken-2 white-text">Cancelar</a>
+    </div>
+</div>
+
+
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal12">modal agregar evento</a>
+<!-- Modal Structure -->
+<div id="modal12" class="modal evento yasalte">
+  <div class="modal-content">
+  
+        <div class="page-title">
+            <i class="ion-ios-calendar-outline circle "></i>
+            Haz agregado a tu calendario
+            <a href="#!" class="right black-text modal-close"><i class="mdi-navigation-close"></i></a>
+        </div>
+        <div class="card guia" style="background-image: url(assets/custom/images/food.jpg);"><span class="likes">100<i class="mdi-action-favorite"></i></span>
+            <div class="card-title white black-text">
+                <i class="mdi-maps-beenhere indicador"></i>
+                <h4>Los mejores antros de Condesa</h4>
+                <span>nuestra selección</span>
+                <i class="mdi-navigation-more-vert navigation"></i>
+            </div>
+        </div>
+		<div class="evento-content">
+            <ul class="collection">
+              <li class="collection-item avatar">
+                <i class="mdi-communication-location-on"></i>
+                <span class="title">Artesanos Pizza</span>
+                <p><b>Calzada del hueso, 23 </b></p>
+                <p>Condesa</p>
+                <p>México, D.F.</p>
+              </li>
+			</ul>
+            <div class="row">
+              <div class="col s6 border-right"><i class="ion-ios-calendar"></i> 07/Jun/2015</div>
+              <div class="col s6"><i class="ion-ios-stopwatch"></i>Test 2</div>
+            </div>
+            <div class="row">
+               <p class="align-center">Aviones, música, y mucho más en un solo lugar, un evento que no te puedes perder.</p>
+            </div>
+        </div>
+	</div>
+    <div class="modal-footer">
+    	<a href="#!" class="modal-action modal-close btn red white-text">invitar amigos</a>
+	    <a href="#!" class="modal-action modal-close btn grey darken-2 white-text">decidir más tarde</a>
+    </div>
+</div>
+
+
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal13">modal crear evento</a>
+<!-- Modal Structure -->
+<div id="modal13" class="modal evento yasalte">
+  <div class="modal-content">
+        <div class="page-title">
+            <i class="ion-ios-calendar-outline circle "></i>
+            Crear evento
+            <a href="#!" class="right black-text modal-close"><i class="mdi-navigation-close"></i></a>
+        </div>
+		<div class="evento-content">
+        	<form class="event-form">
+        		<div class="row">
+                    <i class="ion-ios-calendar"></i>
+                    <input id="event" type="text" name="event" placeholder="Nombre del Evento">
+                </div>
+        		<div class="row search-evt">
+                    <i class="mdi-communication-location-on"></i>
+                    <input id="place" type="text" name="place" placeholder="Lugar">
+                    <button class="btn-flat"><i class="fa fa-search black-text"></i></button>
+                </div>
+                <div class="row">
+                  <div class="col s6 border-right"><i class="ion-ios-calendar"></i><input id="day" type="text"  name="day" placeholder="00/MM/0000"></div>
+                  <div class="col s6"><i class="ion-ios-stopwatch"></i><input id="hour" type="text"  name="hour" placeholder="00:00 hrs"></div>
+                </div>
+                <div class="row">
+                	<div class="input-field">
+                      <span>Agrega un comentario</span>
+                      <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    </div>
+                </div>        
+		        <button class="waves-effect waves-dark btn grey darken-2 white-text">Crear Evento</button>
+			</form> 
+        </div>
+	</div>
+</div>
+
+
+
+
+
+<a class="waves-effect waves-light btn modal-trigger" href="#modal14">modal evento creado</a>
+<!-- Modal Structure -->
+<div id="modal14" class="modal evento yasalte">
+  <div class="modal-content">
+        <div class="page-title">
+            <i class="ion-ios-calendar-outline circle "></i>
+            Crear evento
+            <a href="#!" class="right black-text modal-close"><i class="mdi-navigation-close"></i></a>
+        </div>
+		<div class="evento-content">
+        	<p class="align-center">Felicidades has creado el evento</p>
+            
+            <p class="evt-name">
+            	<i class="ion-ios-calendar green white-text circle"></i>
+                Reunion de amigos
+            </p>
+            
+            <ul class="collection">
+              <li class="collection-item avatar">
+                <i class="mdi-communication-location-on"></i>
+                <span class="title">Artesanos Pizza</span>
+                <p><b>Calzada del hueso, 23 </b></p>
+                <p>Condesa</p>
+                <p>México, D.F.</p>
+              </li>
+			</ul>
+            <div class="row">
+              <div class="col s6 border-right"><i class="ion-ios-calendar"></i> 07/Jun/2015</div>
+              <div class="col s6"><i class="ion-ios-stopwatch"></i>Test 2</div>
+            </div>
+            <div class="row">
+               <p class="align-center">Aviones, música, y mucho más en un solo lugar, un evento que no te puedes perder.</p>
+            </div>
+        </div>
+	</div>
+    <div class="modal-footer">
+    	<a href="#!" class="modal-action modal-close btn red white-text">invitar amigos</a>
+	    <a href="#!" class="modal-action modal-close btn grey darken-2 white-text">decidir más tarde</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+ 
+ </section>
+<!-- Main Content -->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
+  <!-- Backbone JS -->
+  <script type="text/javascript" src="assets/backbone/underscore-min.js"></script>
+  <script type="text/javascript" src="assets/backbone/backbone-min.js"></script>
+  <!-- jQuery RAF (improved animation performance) -->
+  <script type="text/javascript" src="assets/jqueryRAF/jquery.requestAnimationFrame.min.js"></script>
+  <!-- nanoScroller -->
+  <script type="text/javascript" src="assets/nanoScroller/jquery.nanoscroller.min.js"></script>
+  <!-- Materialize -->
+  <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
+  <!-- Simple Weather -->
+  <script type="text/javascript" src="assets/simpleWeather/jquery.simpleWeather.min.js"></script>
+  <!-- Sparkline -->
+  <script type="text/javascript" src="assets/sparkline/jquery.sparkline.min.js"></script>
+  <!-- Flot -->
+  <script type="text/javascript" src="assets/flot/jquery.flot.tooltip.min.js"></script>
+  <!-- d3 -->
+  <script type="text/javascript" src="assets/d3/d3.min.js"></script>
+  <!-- Rickshaw -->
+  <script type="text/javascript" src="assets/rickshaw/rickshaw.min.js"></script>
+  <!-- jvectormap -->
+  <script type="text/javascript" src="assets/jquery-jvectormap/jquery-jvectormap.min.js"></script>
+  <script type="text/javascript" src="assets/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <script type="text/javascript" src="assets/jquery-jvectormap/gdp-data.js"></script>
+  <!-- Sortable -->
+  <script type="text/javascript" src="assets/sortable/Sortable.min.js"></script>
+  <!-- Main -->
+  <script type="text/javascript" src="assets/_con/js/_con.min.js"></script>
+  
+    <!-- tags -->
+	<script type="text/javascript" src="assets/jquery-tags-input/jquery.tagsinput.js"></script>
+  
+  <!-- Google Prettify -->
+  <script type="text/javascript" src="assets/google-code-prettify/prettify.js"></script>
+  <script type="text/javascript" src="assets/custom/globals.js"></script>
+  <script type="text/javascript" src="assets/custom/views/MasterView.js"></script>
+  <script type="text/javascript" src="assets/custom/views/SearchResultsView.js"></script>
+  <script type="text/javascript" src="assets/custom/views/ProfileView.js"></script>
+  <!-- <script>$(document).on('ready',function(){
+	  $('.dropdown-button').dropdown({ constrain_width: true});  
+  });</script> -->
+</body>
+</html>

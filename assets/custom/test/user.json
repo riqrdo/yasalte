@@ -1,0 +1,11 @@
+{
+    "success": "true",
+    "SESSID": "XXXXXXXXX",
+    "lastLogin": "12/05/2015",
+    "user": {
+        "name": "Héctor Daniel Díaz",
+        "profileImage": "assets/_con/images/user.jpg",
+        "profile": "hipster* de ambiente",
+        "points": "1000"
+    }
+}

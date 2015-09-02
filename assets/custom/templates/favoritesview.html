@@ -1,0 +1,104 @@
+<div class="col s12 tab-content-list-title">
+	<span></span>
+	<i class="ya-help"></i>
+</div>
+<div class="col s12 tab-content-list-filters">
+	<div class="col s12 l8 m8 filters-combo">
+		<ul class="filter-list">
+			<li>
+				<div class="div btn-group">
+					  <a href="#!" class="btn transparent dark-text">Ciudad</a>
+					  <a href="#!" class="btn transparent dark-text dropdown-button" 
+					  			   data-activates='ciudad-<%=id%>'>
+					  		<span class="mdi-navigation-expand-more"></span>
+					  </a>
+				</div>
+				<!-- Dropdown Structure -->
+				<ul id='ciudad-<%=id%>' class='dropdown-content'>
+					  <li><a href="#!">M&eacute;xico</a></li>
+					  <li class="divider"></li>
+					  <li><a href="#!">Guadalajara</a></li>
+					  <li class="divider"></li>
+					  <li><a href="#!">Monterrey</a></li>
+					  <li class="divider"></li>
+					  <li><a href="#!">Queretaro</a></li>
+				</ul>
+			</li>
+			<li>	
+				<div class="div btn-group">
+				  <a href="#!" class="btn transparent dark-text">Zona</a>
+				  <a href="#!" class="btn transparent dark-text dropdown-button" 
+				  			   data-activates='zona-<%=id%>'>
+				  		<span class="mdi-navigation-expand-more"></span>
+				  </a>
+				</div>
+				<!-- Dropdown Structure -->
+				<ul id='zona-<%=id%>' class='dropdown-content'>
+				  <li><a href="#!">Centro</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#!">Sur</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#!">Poniente</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#!">Oriente</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="div btn-group">
+				  <a href="#!" class="btn transparent dark-text">Categor&iacute;a</a>
+				  <a href="#!" class="btn transparent dark-text dropdown-button" 
+				  			   data-activates='categoria-<%=id%>'>
+				  		<span class="mdi-navigation-expand-more"></span>
+				  </a>
+				</div>
+				<!-- Dropdown Structure -->
+				<ul id='categoria-<%=id%>' class='dropdown-content'>
+				  <li><a href="#!">Comida</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#!">Night Life</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#!">Eventos</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#!">Cultura</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="div btn-group">
+				  <a href="#!" class="btn transparent dark-text">Sub-Categor&iacute;a</a>
+				  <a href="#!" class="btn transparent dark-text dropdown-button" 
+				  			   data-activates='subcategoria-<%=id%>'>
+				  		<span class="mdi-navigation-expand-more"></span>
+				  </a>
+				</div>
+				<!-- Dropdown Structure -->
+				<ul id='subcategoria-<%=id%>' class='dropdown-content'>
+				  <li><a href="#!">Mexicana</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#!">Argentina</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#!">Espa–ola</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#!">Brasile–a</a></li>
+				</ul>
+			
+			</li>
+		
+		</ul>
+			
+	</div>
+	<!-- widget de busqueda -->
+	<div class="col s12 l4 m4 search-filter">
+			<div class="input-field">
+			  <i class="mdi-action-search prefix"></i>
+			  <input id="input_text_icon" type="text" class="validate">
+			</div>
+	</div>
+</div>
+
+<ul class="col s12 cards-wrapper">
+</ul>
+
+<div class="place-holder empty-section">
+	<i class="ya-info"></i>
+	<span></span>
+</div>
