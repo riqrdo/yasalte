@@ -144,9 +144,16 @@ var SearchResultsView = MasterView.extend({
 //		},2000);
 	},
 	
+	emptyPrevResults : function(){
+		$(".filtros-avanzados .card",this.$el).remove();
+		$(".page-title>.row .col.s12.m6.l3 .card",this.$el).remove();
+		$('.search-suggest>ul li',this.$el).remove();
+	},
+	
 	performSearch : function(searchText){
+			this.emptyPrevResults();
 			this.model = new SearchResultModel();
-			this.model.on('sync',this.onModelReady,this);
+			this.model.on('change',this.onModelReady,this);
 			this.model.fetch();
 	},
 	

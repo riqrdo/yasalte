@@ -3,7 +3,118 @@
     "profileImage": "assets/_con/images/user.jpg",
     "puntos": "1000",
     "favoritos": [
-      
+        {
+            "mainImage": "assets/custom/images/rec.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "recreativo"
+        },
+        {
+            "mainImage": "assets/custom/images/cine.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "cines"
+        },
+        {
+            "mainImage": "assets/custom/images/city.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "sitios-interes"
+        },
+        {
+            "mainImage": "assets/custom/images/food.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "guia"
+        },
+        {
+            "mainImage": "assets/custom/images/rec.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "recreativo"
+        },
+        {
+            "mainImage": "assets/custom/images/cine.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "cines"
+        },
+        {
+            "mainImage": "assets/custom/images/city.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "sitios-interes"
+        },
+        {
+            "mainImage": "assets/custom/images/food.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "guia"
+        },
+        {
+            "mainImage": "assets/custom/images/rec.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "recreativo"
+        },
+        {
+            "mainImage": "assets/custom/images/cine.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "cines"
+        },
+        {
+            "mainImage": "assets/custom/images/city.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "sitios-interes"
+        },
+        {
+            "mainImage": "assets/custom/images/food.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "guia"
+        },
+        {
+            "mainImage": "assets/custom/images/rec.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "recreativo"
+        },
+        {
+            "mainImage": "assets/custom/images/cine.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "cines"
+        },
+        {
+            "mainImage": "assets/custom/images/city.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "sitios-interes"
+        },
+        {
+            "mainImage": "assets/custom/images/food.jpg",
+            "likes": "100",
+            "name": "Los mejores antros de Condesa",
+            "clasificacion": "nuestra selección",
+            "type": "guia"
+        }
     ],
     "fotos": "562",
     "resenas": "152",

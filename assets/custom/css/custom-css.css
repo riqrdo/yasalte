@@ -303,7 +303,9 @@ ul.filter-section li i{font-size:2em;}
 .tab-content-list-filters .search-filter{padding: 0 2rem;border: 0;}
 .tab-content-list-filters .filters-combo .btn-group .btn.transparent.dropdown-button{color:#666666;	padding : 0 1%;}
 #ciudad.dropdown-content li>.sp-cancel, .dropdown-content li>a, .dropdown-content li>span{color: #666666!important;}
-
+.place-holder.empty-section {max-width: 40%;display: block; margin: auto;text-align: center; display:none;}
+.place-holder.empty-section span {display: block; margin: auto;font-size: 3em;text-align: center;color: #606060;padding: 0.5em 1em;}
+.place-holder.empty-section i{font-size: 4em;border-radius: 100em;border: 5px solid #b3b3b3;color: #b3b3b3;margin: auto;}
 /**
 estilando los combos del profile 
 */
