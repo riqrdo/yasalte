@@ -4,6 +4,7 @@ var MainContentView = MasterView.extend({
 		'click .btn-recomendaciones' : 'showRecomendations',
 		'click .login' : 'onLoginPressed',
 		'focus input[name="searchInput"]' : 'onSearchFocused',
+		'keyup input[name="searchInput"]' : 'onSearchKeyUp',
 		'focusout input[name="searchInput"]' : 'onSearchFocusout',
 		'click .search .mdi-action-search' : 'doSearch',
 		'click .btnOpenProfile' : 'opeProfile'
@@ -18,7 +19,7 @@ var MainContentView = MasterView.extend({
 		_.bindAll(this,'showRecomendations','onSuccessLogin',
 						'onLoginPressed','onSearchFocused',
 						'onSearchFocusout','doSearch',
-						'openProfile');
+						'openProfile','onSearchKeyUp');
 		if(!YaGlobals.tmp.isLogged){
 			this.loginView = new YaLoginView().on('onViewRendered',function(view){
 				$('.sidebar-view',this.$el).append(view.$el);
@@ -64,50 +65,55 @@ var MainContentView = MasterView.extend({
 	},
 	
 	onSearchFocused : function(event){
+		console.log("ENTRA A FOCUS IN!");
 		this.$el.addClass('yay-hide');
 		if(this.searchSuggestView){
-			if(!this.searchSuggestView.isVisible)
-				this.searchSuggestView.show();
+				this.searchSuggestView.show('slideInDown');
 		}else{
 			this.searchSuggestView = new SearchSuggestView();
 			this.searchSuggestView.on('onViewRendered',function(view){
-				$('.content-wrap',this.$el).append(view.$el);
-				this.searchSuggestView.show();
+				$('.content-wrap',this.$el).prepend(view.$el);
+				this.searchSuggestView.show('slideInDown');
 			},this);
 		}
 	},
 	
 	onSearchFocusout : function(event){
-		this.searchSuggestView.hide();
+		console.log("entra a focusout");
+		this.searchSuggestView.hide('slideOutUp');
+	},
+	
+	onSearchKeyUp : function(event){
+		if(event.keyCode == 13){
+			this.hideAllViews();
+			this.doSearch();
+			$('input[name="searchInput"]',this.$el).blur();
+		}
+		
 	},
 	
 	hideAllViews : function(){
-		this.$el.addClass('yay-hide');
-		if(this.searchResultsView){
-			this.searchResultsView.hide('slideOutRight');
+		if(typeof this.currentViewInFront !== "undefined"){
+			this.currentViewInFront.hide();
 		}
-		if(this.searchSuggestView){
-			this.searchSuggestView.hide('slideOutRight');
-		}
-		if(this.profileView){
-			this.profileView.hide('slideOutRight');
-		}
+		
 	},
 	
 	doSearch : function(event){
 		this.hideAllViews();
 		if(this.searchResultsView){
 			if(!this.searchResultsView.isVisible){
-				this.searchResultsView.show('slideInLeft');
+				this.searchResultsView.show();
 				this.searchResultsView.performSearch();
+				this.currentViewInFront = this.searchResultsView;
 			}
 		}else{
 			this.searchResultsView = new SearchResultsView();
 			this.searchResultsView.on("onViewRendered",function(view){
 				$('.content-wrap',this.$el).append(view.$el);
-				this.searchResultsView.show('slideInLeft');
+				this.searchResultsView.show();
 				this.searchResultsView.performSearch();
-				$('.combo-filters select',view.$el).material_select();
+				this.currentViewInFront = this.searchResultsView;
 			},this);
 		}		
 	},
@@ -116,14 +122,16 @@ var MainContentView = MasterView.extend({
 		this.hideAllViews();
 		if(this.profileView){
 			if(!this.profileView.isVisible){
-				this.profileView.show('slideInLeft');
+				this.profileView.show();
+				this.currentViewInFront = this.profileView;
 			}
 		}else{
 			this.profileView = new ProfileView();
 			this.profileView.on("onViewRendered",function(view){
 				$('.content-wrap',this.$el).append(view.$el);
-				this.profileView.show('slideInLeft');
+				this.profileView.show();
 				view.initializePlugins();
+				this.currentViewInFront = this.profileView;
 			},this);
 		}	
 	}

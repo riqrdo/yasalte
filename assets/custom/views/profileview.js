@@ -47,7 +47,8 @@ var ProfileModel = Backbone.Model.extend({
 var FavoritesView = MasterView.extend({
 	className: "row sortable",
 	templateURL : YaGlobals.FAVORITES_VIEW,
-	initialize : function(){
+	initialize : function(options){
+		this.options = options;
 		this.constructor.__super__.initialize.apply(this, []);
 	},
 	render: function(){
@@ -59,17 +60,28 @@ var FavoritesView = MasterView.extend({
 		$(".tab-content-list-title span",this.$el).text(message);
 	},
 	
+	setPlaceHolderText : function(){
+		$(".place-holder.empty-section span",this.$el).text(this.options.placeHolderText);
+		$(".place-holder.empty-section",this.$el).show();
+	},
+	
 	renderList : function(){
-		this.collection.forEach(function(favoriteModel){
-			var favoriteCardView = new CardView({model: favoriteModel});
-			var scope = this;
-			//TODO: agregar eventos para la vista click, mouse over etc
-			favoriteCardView.on('onViewRendered',function(view){
-				var liView = $('<li class="col s6 m4 l2"></li>');
-				liView.append(view.render().$el);
-				$('.cards-wrapper',scope.$el).append(liView);
-			},scope); 
-		},this);
+		if(this.collection.size() == 0){
+			console.log(this.placeHolderText);
+			this.setPlaceHolderText();
+		}else{
+			this.collection.forEach(function(favoriteModel){
+				var favoriteCardView = new CardView({model: favoriteModel});
+				var scope = this;
+				//TODO: agregar eventos para la vista click, mouse over etc
+				favoriteCardView.on('onViewRendered',function(view){
+					var liView = $('<li class="col s6 m4 l2"></li>');
+					liView.append(view.render().$el);
+					$('.cards-wrapper',scope.$el).append(liView);
+				},scope); 
+			},this);
+		}
+		
 	},
 	
 	initializePlugins : function(config){
@@ -317,6 +329,7 @@ var ProfileView = MasterView.extend({
 		this.favoritesView = new FavoritesView({
 			collection : new Backbone.Collection(scope.model.get('favoritos')),
 			id:'favoritos',
+			placeHolderText : 'Aún no has agregado favoritos, comienza Ya!'
 		});
 		/**
 		 * TODO : AGREGAR EVENTOS DE LA VISTA ANTERIOR 
@@ -333,6 +346,7 @@ var ProfileView = MasterView.extend({
 		this.eventsView = new FavoritesView({
 			collection : new Backbone.Collection(scope.model.get('eventos')),
 			id:'eventos',
+			placeHolderText : 'Aún no has agregado eventos, comienza Ya!'
 		});
 		/**
 		 * TODO : AGREGAR EVENTOS DE LA VISTA ANTERIOR 
@@ -350,6 +364,7 @@ var ProfileView = MasterView.extend({
 		this.cuponesView = new FavoritesView({
 			collection : new Backbone.Collection(scope.model.get('cupones')),
 			id:'cupones',
+			placeHolderText : 'Aún no tienes cupones, sigue asistiendo a eventos para obtenerlos!'
 		});
 		/**
 		 * TODO : AGREGAR EVENTOS DE LA VISTA ANTERIOR 
@@ -366,6 +381,7 @@ var ProfileView = MasterView.extend({
 		this.recompensasView = new FavoritesView({
 			collection : new Backbone.Collection(scope.model.get('recompensas')),
 			id:'recompensas',
+			placeHolderText : 'Aún no tienes recompenzas, podrás irlas adquiriendo mientras mas compartas!'
 		});
 		/**
 		 * TODO : AGREGAR EVENTOS DE LA VISTA ANTERIOR 

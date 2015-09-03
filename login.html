@@ -44,6 +44,7 @@
   
   <!-- Main -->
   <link rel="stylesheet" type="text/css" href="assets/_con/css/_con.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/_con/css/_con-red.min.css" />
 
   <link rel="stylesheet" type="text/css" href="assets/custom/css/custom-css.css" />
   <link rel="stylesheet" type="text/css" href="assets/custom/css/auxiliar.css" /> 
@@ -89,6 +90,7 @@
 		     <form class="search">
 		      	<i class="mdi-action-search"></i>
 		      	<input type="text" name="searchInput" placeholder="¿de qué traes ganas?"/>
+		      	<input type="text" style="display:none"/>
 		      	<i class="mdi-device-gps-fixed"></i>
 		     </form>
 				
@@ -102,31 +104,37 @@
 <!-- 		     </a> -->
 		     
              <ul class="dots-settings">
-		        <li class="settings">
-					<a class="dropdown-button"  data-activates="settings-dropdown">
-						<i class="mdi-navigation-more-vert right"></i>
-					</a>
-		          <ul id="settings-dropdown" class="dropdown-content">
-		            <li><a href="page-profile.html">Idioma</a>
-		            </li>
-		            <li class="divider"></li>
-		            <li><a href="#!"> Fullscreen</a>
-		            </li>
-		            <li class="divider"></li>
-		            <li><a href="page-sign-in.html"> Compartir</a>
-		            </li>
-		          </ul>
-		        </li>
+		        
 		      </ul>
+		      
+		     
+		      
+		      
 		      <ul>
-		        <li class="user">
-				    <a href="#!" class="dropdown-button"  data-activates="user-dropdown">
-				            <img src="assets/custom/images/default-user.png"  class="circle image-profile">
-				     </a>
-		          <ul id="user-dropdown" class="dropdown-content">
-		          	<li><a href="#" class="login">Inicia Sesi&oacute;n</a></li>
-		          </ul>
-		        </li>
+		      	<li class="user">
+					    <a href="#!" class="dropdown-button"  data-activates="user-dropdown">
+					            <img src="assets/custom/images/default-user.png"  class="circle image-profile">
+					     </a>
+				          <ul id="user-dropdown" class="dropdown-content">
+				          	<li><a href="#" class="login">Inicia Sesi&oacute;n</a></li>
+				          </ul>
+		        	</li>
+			      <li class="settings">
+						<a class="dropdown-button"  data-activates="settings-dropdown">
+							<i class="mdi-navigation-more-vert right"></i>
+						</a>
+						<ul id="settings-dropdown" class="dropdown-content">
+				            <li><a href="page-profile.html">Idioma</a>
+				            </li>
+				            <li class="divider"></li>
+				            <li><a href="#!"> Fullscreen</a>
+				            </li>
+				            <li class="divider"></li>
+				            <li><a href="page-sign-in.html"> Compartir</a>
+				            </li>
+			         	 </ul>
+			        </li>
+			       
 		      </ul>
 		      
 		      
@@ -181,7 +189,7 @@
 	<ul>
 		<li>
 			<a href="#" class="static-sidebar-button grey-text tooltipped" data-position="right" data-delay="50" data-tooltip="Explorar">
-				<i class="ya-exp"></i>
+				<i class="mdi-action-explore"></i>
 			</a>
 		</li>
 		<li>
@@ -212,7 +220,7 @@
 		</li>
 		<li>
 			<a href="#" class="static-sidebar-button grey-text tooltipped btn-recomendaciones" data-position="right" data-delay="50" data-tooltip="Recomendaciones">
-				<i class="ya-rate"></i>
+				<i class="mdi-image-wb-irradescent"></i>
 			</a>
 		</li>
 	</ul>
@@ -280,23 +288,23 @@
   <script type="text/javascript" src="assets/PhotoSwipe/photoswipe-ui-default.min.js"></script>
 
 </body>
-<script type="text/javascript" src="assets/custom/Globals.js"></script>
+<script type="text/javascript" src="assets/custom/globals.js"></script>
 <!-- models -->
-<script type="text/javascript" src="assets/custom/models/RecomendationModel.js"></script>
+<script type="text/javascript" src="assets/custom/models/recomendationmodel.js"></script>
 <!-- Collections -->
-<script type="text/javascript" src="assets/custom/collections/RecomendacionesCollection.js"></script>
+<script type="text/javascript" src="assets/custom/collections/recomendacionescollection.js"></script>
 
-<script type="text/javascript" src="assets/custom/views/MasterView.js"></script>
-<script type="text/javascript" src="assets/custom/views/RecomendationItemView.js"></script>
-<script type="text/javascript" src="assets/custom/views/RecomendationsView.js"></script>
-<script type="text/javascript" src="assets/custom/views/YaLoginView.js"></script>
-<script type="text/javascript" src="assets/custom/views/UserMenuView.js"></script>
-<script type="text/javascript" src="assets/custom/views/ConfigurationView.js"></script>
-<script type="text/javascript" src="assets/custom/views/SearchSuggestView.js"></script>
-<script type="text/javascript" src="assets/custom/views/SearchResultsView.js"></script>
-<script type="text/javascript" src="assets/custom/views/ProfileView.js"></script>
-<script type="text/javascript" src="assets/custom/views/MainContentView.js"></script>
-<script type="text/javascript" src="assets/custom/startLogic.js"></script>
+<script type="text/javascript" src="assets/custom/views/masterview.js"></script>
+<script type="text/javascript" src="assets/custom/views/recomendationitemview.js"></script>
+<script type="text/javascript" src="assets/custom/views/recomendationsview.js"></script>
+<script type="text/javascript" src="assets/custom/views/yaloginview.js"></script>
+<script type="text/javascript" src="assets/custom/views/usermenuview.js"></script>
+<script type="text/javascript" src="assets/custom/views/configurationview.js"></script>
+<script type="text/javascript" src="assets/custom/views/searchsuggestview.js"></script>
+<script type="text/javascript" src="assets/custom/views/searchresultsview.js"></script>
+<script type="text/javascript" src="assets/custom/views/profileview.js"></script>
+<script type="text/javascript" src="assets/custom/views/maincontentview.js"></script>
+<script type="text/javascript" src="assets/custom/startlogic.js"></script>
 
 <!-- templates -->
 <script type="text/template" id="template-menu-logged">

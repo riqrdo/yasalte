@@ -32,7 +32,7 @@ var SearchResultModel  = Backbone.Model.extend({
 }); 
 
 var CardView = MasterView.extend({
-	className : 'card',
+	className : 'card of-h custom',
 	templateURL : YaGlobals.CARD_VIEW,
 	initialize : function(){
 		this.constructor.__super__.initialize.apply(this, []);
@@ -41,7 +41,6 @@ var CardView = MasterView.extend({
 	render : function(){
 		this.$el.append(this.template(this.model.toJSON()));
 		this.$el.addClass(this.model.get('type'));
-		this.$el.css('background-image',"url('"+this.model.get('mainImage')+"')");
 		return this;
 	},
 	
@@ -54,8 +53,13 @@ var CardView = MasterView.extend({
 var CardSearchView = MasterView.extend({
 	className : 'result-item',
 	tagName : 'li',
+	events : {
+		'click .favorite-section i ' : 'onHeartClicked',
+	},
+
 	templateURL : YaGlobals.CARD_RESULT_ITEM_VIEW,
 	initialize : function(){
+//		_.bindAll(this,"onHeartClicked");
 		this.constructor.__super__.initialize.apply(this, []);
 	},
 	
@@ -67,6 +71,10 @@ var CardSearchView = MasterView.extend({
 		this.$el.append(this.template(this.model.toJSON()));
 		this.$el.addClass(this.model.get('type'));
 		return this;
+	},
+	
+	onHeartClicked : function(event){
+		$('.favorite-section i',this.$el).toggleClass('red-text');
 	}
 	
 });
@@ -79,6 +87,10 @@ var SearchResultsView = MasterView.extend({
 		this.constructor.__super__.initialize.apply(this, []);
 	},
 	
+	initializePlugins : function(){
+		 $('.dropdown-button').dropdown({});
+	},
+	
 	render : function(){
 		this.destacadosCollection1 = new Backbone.Collection(this.model.get('destacados'));
 		this.searchResults = new Backbone.Collection(this.model.get('searchResults'));
@@ -87,6 +99,7 @@ var SearchResultsView = MasterView.extend({
 		this.renderDestacados1();
 		this.renderSearchresults();
 		this.renderDestacados2();
+		this.initializePlugins();
 		return this;
 	},
 	
@@ -102,7 +115,7 @@ var SearchResultsView = MasterView.extend({
 	
 	renderDestacados1 : function(){
 		var that = this;
-		$(".destacados>.col.s12.m6.l3",this.$el).each(function(index,DOMElement){
+		$(".page-title>.row .col.s12.m6.l3",this.$el).each(function(index,DOMElement){
 			var destacadosView = new CardView({model:that.destacadosCollection1.at(index)});
 			/**
 			 * TODO: Agregar eventos necesarios!!
@@ -119,7 +132,6 @@ var SearchResultsView = MasterView.extend({
 			var that = this;
 			destacadosView.on('onViewRendered',function(view){
 				$(".filtros-avanzados",that.$el).append(view.render().$el);
-				$('.dropdown-content',that.$el).dropdown();
 			});
 		},this);
 	},
@@ -132,9 +144,16 @@ var SearchResultsView = MasterView.extend({
 //		},2000);
 	},
 	
+	emptyPrevResults : function(){
+		$(".filtros-avanzados .card",this.$el).remove();
+		$(".page-title>.row .col.s12.m6.l3 .card",this.$el).remove();
+		$('.search-suggest>ul li',this.$el).remove();
+	},
+	
 	performSearch : function(searchText){
+			this.emptyPrevResults();
 			this.model = new SearchResultModel();
-			this.model.on('sync',this.onModelReady,this);
+			this.model.on('change',this.onModelReady,this);
 			this.model.fetch();
 	},
 	
@@ -142,6 +161,5 @@ var SearchResultsView = MasterView.extend({
 		this.$el.append(this.template());
 		this.$el.hide();
 		this.trigger('onViewRendered',this);
-	}
-	
+	}	
 });

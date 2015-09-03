@@ -19,6 +19,7 @@ aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{m
 .login-content span{display: block;width: 100%;text-align: center;color: black;font-size: 10px;margin: 5px 0;}
 .login-content .input-field{ border:1px solid #999;}
 .login-content .input-field .prefix~input,.login-content .input-field .prefix~textarea{}
+.login-content .video-indicator {width: calc(100% + 2.6em);margin: -1rem -1.3rem 0 -1.3rem;}
 .menu-footer{ position:fixed; left: 0; bottom: 0; height: 55px;}
 .menu-footer .btn{ position:absolute; top: -35px;}
 .menu-footer p {font-size: .8em;padding: 6px;}
@@ -30,7 +31,7 @@ aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{m
 .login-form div i{float:left;width:9%;margin:0;font-size:1.5em;color:#4d4d4d;margin: 3% 0 0 3%;}
 .login-form a{text-transform:lowercase;text-align:center; color:#666;display: block;text-decoration: underline;font-size: .8em;}
 .waves-effect.waves-dark.btn.gray{background-color: #E6E6E6;}
-.static-sidebar{height: 100%;position: fixed;width: 60px;border-right: solid #E4E4E4;padding-top: 55px;}
+.static-sidebar{height: 100%;position: fixed;width: 60px;border-right: 1px solid #E4E4E4;padding-top: 55px;background-color: #fff;}
 
 .static-sidebar ul {margin: 0;}
 .static-sidebar ul li{display:block;overflow: hidden;}
@@ -64,6 +65,7 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 .yay-toggle div:after,.yay-toggle div:before{ background:#fff;}
 .navbar-top .user{ min-width:inherit;}
 .navbar-top .nav-wrapper>.sp-cancel i, .navbar-top .nav-wrapper>a i, .navbar-top .nav-wrapper>ul i{ font-size:2.2em; color:#fff;}
+.navbar-top .nav-wrapper>ul i.mdi-navigation-more-vert.right{ margin-left:1.5em!important;}
 .navbar-top .user img{ margin-right:0;}
 #user-dropdown i{ color:#42A5F5; font-size: 1.2em; margin-right: 4%;}
 
@@ -120,53 +122,68 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 /**
 * AGREGADOS POR CHEPO PARA CARDS  
 */
-.card { padding: 7em 0 0 !important; margin: 10px !important; padding-top: 5em; background-image : url('../images/p4.jpg'); overflow: hidden;}
-.card .indicador{border-radius : 100em;border: 2px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;bottom: 20%}
-.card .likes{display : block;width : 100%;color : #ffffff;padding: 0px 10px;}
-.card .card-title{overflow: hidden; display: block;line-height: 0;padding: 0 0 10px;}
+.custom-card { padding: 7em 0 0 !important; margin: 10px !important; padding-top: 5em; background-image : url('../images/p4.jpg'); overflow: hidden;}
+.custom-card .indicador{border-radius : 100em;border: 2px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;bottom: 20%}
+/* .custom-card .likes{display : block;width : 100%;color : #ffffff;padding: 0px 10px;} */
+.custom-card .card-title{overflow: hidden; display: block;line-height: 0;padding: 0 0 10px;}
 /*
  * Bordes de los cards
  */
-.card.restaurant .card-title{border-left: 5px solid #ED1B23;}
-.card.cultura .card-title{border-left: 5px solid #2196F3;}
-.card.cafeteria .card-title{border-left: 5px solid #795548;}
-.card.night-life .card-title{border-left: 5px solid #2196F3;}
-.card.eventos .card-title{border-left: 5px solid #63BD10;}
-.card.recreativo .card-title{border-left: 5px solid #673AB7;}
-.card.promociones .card-title{border-left: 5px solid #F57C00;}
-.card.cines .card-title{border-left: 5px solid #E91E63;}
-.card.sitios-interes .card-title{border-left: 5px solid #009688;}
-.card.trendy .card-title{border-left: 5px solid #FFC107;}
-.card.guia .card-title{border-left: 5px solid #212121;box-shadow: 0 -24px 40px 0px #000;}
+.card.of-h.custom {max-width: 350px;min-width: 250px;margin: auto;}
+.content-wrap .searchView .page-title{background-color:#1B1819!important;}
+.content-wrap .searchView .row.content{overflow: hidden;display: block;max-width: 100%;margin-right: 0!important;};
+.card.of-h.custom.restaurant .content, .card.of-h.custom.restaurant .card-reveal .title-reveal{border-left: 5px solid #ED1B23;}
+.card.of-h.custom.cultura .content,.card.of-h.custom.cultura .card-reveal .title-reveal{border-left: 5px solid #2196F3;}
+.card.of-h.custom.cafeteria .content,.card.of-h.custom.cafeteria .card-reveal .title-reveal{border-left: 5px solid #795548;}
+.card.of-h.custom.night-life .content,.card.of-h.custom.night-life .card-reveal .title-reveal{border-left: 5px solid #2196F3;}
+.card.of-h.custom.eventos .content,.card.of-h.custom.eventos .card-reveal .title-reveal{border-left: 5px solid #63BD10;}
+.card.of-h.custom.recreativo .content,.card.of-h.custom.recreativo .card-reveal .title-reveal{border-left: 5px solid #673AB7;}
+.card.of-h.custom.promociones .content,.card.of-h.custom.promociones .card-reveal .title-reveal{border-left: 5px solid #F57C00;}
+.card.of-h.custom.cines .content,.card.of-h.custom.cines .card-reveal .title-reveal{border-left: 5px solid #E91E63;}
+.card.of-h.custom.sitios-interes .content,.card.of-h.custom.sitios-interes .card-reveal .title-reveal{border-left: 5px solid #009688;}
+.card.of-h.custom.trendy .content,.card.of-h.custom.trendy .card-reveal .title-reveal{border-left: 5px solid #FFC107;}
+.card.of-h.custom.guia .content,.card.of-h.custom.guia .card-reveal .title-reveal{border-left: 5px solid #212121;}
+.card.of-h.custom .card-image .likes{display: block;width: 100%; color: #ffffff;padding: 0px 10px;position: absolute;bottom: 0;background-color: rgba(0,0,0,0.1);}
+.card.of-h.custom .content .indicador, .card.of-h.custom .card-reveal .indicador{border-radius: 100em;border: 2px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;top: 52%;z-index: 1; width: 13%;height: 25%;}
+.card.of-h.custom .content {padding: 5px!important;}
+.card.of-h.custom .content span.card-title {font-size: 1em;font-weight:bold}
+.card.of-h.custom .content p,.card.of-h.custom .card-reveal p{margin: 0!important;}
+.card.of-h.custom .content i.mdi-navigation-more-vert.right {padding-top: 5%;font-size:1.5em!important;color:#B3B3B3;}
+.card.of-h.custom .card-reveal{height:65%;padding:0!important; overflow-y:visible;}
+.card.of-h.custom .card-reveal .title-reveal span.card-title {font-size: 1em;font-weight:bold}
+.card.of-h.custom .card-reveal .title-reveal{padding:5px!important;margin: 0!important;}
+.card.of-h.custom .card-reveal .indicadores {display : block; overflow:visible;border-top: 1px solid #B2B2B2; padding-top:5%; padding-left: 5%;padding-right: 5%;}
+.card.of-h.custom .card-reveal .indicadores>div i{border-radius: 100em; border: 1px solid #B3B3B3;color:#B3B3B3; font-size: 1em!important;width: 22px;padding: 1px 0px;text-align: center;height: 22px; vertical-align: initial;}
+.card.of-h.custom .card-reveal .indicadores>div i.ya-share{padding:3%;}
+.card.of-h.custom .card-reveal .indicadores>div{padding:0!important;}
+.card.of-h.custom .card-reveal .indicadores>div.right{text-align:right;}
+.card.of-h.custom .card-reveal .indicadores>div.left{text-align:left; padding-left: 1.3rem;}
+.card.of-h.custom .card-reveal .indicador{top: -15%!important; height:37%;}
 
-/*
- * Colores de los iconos en cards
- */
-.card.restaurant .indicador{background-color: #ED1B23;}
-.card.cultura .indicador{background-color: #2196F3;}
-.card.cafeteria .indicador{background-color: #795548;}
-.card.night-life .indicador{background-color: #2196F3;}
-.card.eventos .indicador{background-color: #63BD10;}
-.card.recreativo .indicador{background-color: #673AB7;}
-.card.promociones .indicador{background-color: #F57C00;}
-.card.cines .indicador{background-color: #E91E63;}
-.card.sitios-interes .indicador{background-color: #009688;}
-.card.trendy .indicador{background-color: #FFC107;}
-.card.guia .indicador{background-color: #212121;}
+/**
+ICONOS DE INDICADORES EN LOS CARDS**/
+.card.of-h.custom.restaurant .indicador, li.result-item.restaurant .card-search-result .indicador{background-image: url(../../../images/cat/comida.jpg);background-size: cover;}
+.card.of-h.custom.night-life .indicador, li.result-item.night-life .card-search-result .indicador{background-image: url(../../../images/cat/night.jpg);background-size: cover;}
+.card.of-h.custom.cultura .indicador, li.result-item.cultura .card-search-result .indicador{background-image: url(../../../images/cat/cultura.jpg);background-size: cover;}
+.card.of-h.custom.cafeteria .indicador, li.result-item.cafeteria .card-search-result .indicador{background-image: url(../../../images/cat/cafe.jpg);background-size: cover;}
+.card.of-h.custom.eventos .indicador, li.result-item.eventos .card-search-result .indicador{background-image: url(../../../images/cat/evento.jpg);background-size: cover;}
+.card.of-h.custom.recreativo .indicador, li.result-item.recreativo .card-search-result .indicador{background-image: url(../../../images/cat/recreativo.jpg);background-size: cover;}
+.card.of-h.custom.promociones .indicador, li.result-item.promociones .card-search-result .indicador{background-image: url(../../../images/cat/cupones.jpg);background-size: cover;}
+.card.of-h.custom.cines .indicador, li.result-item.cines .card-search-result .indicador{background-image: url(../../../images/cat/cine.jpg);background-size: cover;}
+.card.of-h.custom.sitios-interes .indicador, li.result-item.sitios-interes .card-search-result .indicador{background-image: url(../../../images/cat/sitios.jpg);background-size: cover;}
+.card.of-h.custom.trendy .indicador, li.result-item.trendy .card-search-result .indicador{background-image: url(../../../images/cat/trendy.jpg);background-size: cover;}
+.card.of-h.custom.guia .indicador, li.result-item.guia .card-search-result .indicador{background-image: url(../../../images/cat/guia.jpg);background-size: cover;}
 
 
-.card .card-title h4 {font-size: .5em;font-weight: bold;margin:5px;max-width: 80%;}
-.card .card-title span{font-size: .5em;margin: 5px;display: inline-block;}
-.card .card-title .navigation{float : right;font-size : 1.5rem;color: #808080;}
 .row.destacados {width: 102%;background-color: #1B1819;padding: 0 3%;}
 
 .row.destacados .col {padding : 0;}
-.searchView{ margin: -4% 0 0 -2%;}
+/*.searchView{ margin: -4% 0 0 -2%;}*/
 .content-wrap.search-result{padding-top: 0;overflow:hidden;padding-right: 0;padding-left: 0;}
 .combo-filters .col .select-wrapper{position:absolute;}
 .combo-filters .col .select-wrapper ul{width:100%!important;}
 .combo-filters .col .select-wrapper input{border-bottom:none;}
-.basic-filters{margin-top : 0!important;padding: 0% 3% !important;border-bottom: 2px solid #B2B2B2;}
+.basic-filters{padding: 0% 3% !important;border-bottom: 2px solid #B2B2B2;margin: auto;}
 .result-counter{display: block;margin-top: 1%;font-size: 1.5rem;}
 .row.resultados {padding: 0 3%;}
 .search-suggest ul li.search-result-item {display: block;overflow: hidden;border-left: 5px solid;margin-bottom: 4%;}
@@ -225,8 +242,10 @@ li.border-top{border-top: 2px solid #e6e6e6}
 li.border-bottom{border-bottom: 1px solid #e6e6e6;}
 li.border-left{border-left: 2px solid #e6e6e6}
 li.border-right{border-right: 2px solid #e6e6e6}
-ul.filter-section{display:block; overflow: hidden;border:2px solid #e6e6e6}
-ul.filter-section li{color: #9c9c9c; text-align:center; margin:0!important; padding: 4% 0 !important;}
+ul.filter-section{display:block; overflow: hidden;}
+ul.filter-section li.divider{padding:0!important}
+ul.filter-section li{color: #9c9c9c;margin:0!important; padding: 4% 0 !important;}
+ul.filter-section li:HOVER{background-color:#F5F5F5}
 ul.filter-section li.border-top{border-top: 2px solid #e6e6e6}
 ul.filter-section li.border-bottom{border-bottom: 1px solid #e6e6e6;}
 ul.filter-section li.border-left{border-left: 2px solid #e6e6e6}
@@ -284,7 +303,9 @@ ul.filter-section li i{font-size:2em;}
 .tab-content-list-filters .search-filter{padding: 0 2rem;border: 0;}
 .tab-content-list-filters .filters-combo .btn-group .btn.transparent.dropdown-button{color:#666666;	padding : 0 1%;}
 #ciudad.dropdown-content li>.sp-cancel, .dropdown-content li>a, .dropdown-content li>span{color: #666666!important;}
-
+.place-holder.empty-section {max-width: 40%;display: block; margin: auto;text-align: center; display:none;}
+.place-holder.empty-section span {display: block; margin: auto;font-size: 3em;text-align: center;color: #606060;padding: 0.5em 1em;}
+.place-holder.empty-section i{font-size: 4em;border-radius: 100em;border: 5px solid #b3b3b3;color: #b3b3b3;margin: auto;}
 /**
 estilando los combos del profile 
 */
