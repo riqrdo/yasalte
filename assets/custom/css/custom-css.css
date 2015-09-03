@@ -1,14 +1,44 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/*Estilos de los botones en la barra de navegación superior*/
+.navbar-top .user{ float:right;padding: 0 1%;}
+.navbar-top .settings{ float:right;margin-right: 1%;width: 25px;}
+.navbar-top .btn_notifications{ float:right; height: 100%;padding: 0 1%;position: relative;}
+.navbar-top #settings-dropdown{right: 0;left: inherit!important;top: 100%!important;}
+.navbar-top #user-dropdown{right: 0;left: inherit!important;top: 100%!important;}
+.navbar-top .user{ min-width:inherit;}
+.navbar-top .nav-wrapper>.sp-cancel i, .navbar-top .nav-wrapper>a i, .navbar-top .nav-wrapper>ul i{ font-size:2.2em; color:#fff;}
+.navbar-top .nav-wrapper>ul i.mdi-navigation-more-vert.right{ margin-left:1.5em!important;}
+.navbar-top .user img{ margin-right:0;}
+.dots-settings{width: 5%;margin: 0 1% 0 -3%;}
+.btn-open-notifications{   width: 20px; height: 20px; background: #fff; border-radius: 100em;  text-align: center; display: block;margin-top: 100%;}
+.btn-open-notifications i{color: #9d9797!important; height: auto!important;font-size:1.2em!important; line-height: 1.3em!important;}
+#user-dropdown i{ color:#42A5F5; font-size: 1.2em; margin-right: 4%;}
+#user-dropdown.dropdown-content{ width: 20%!important; right: 0; left: inherit!important;}
 
+
+/*se ajusta el contenedor principal */
 .content-wrap{min-height:calc(100vh);width: calc(100% - 60px);margin-left: 60px!important;position: relative;}
+/*ajuste fix para que el footer no estorbe en espacio */
+.content-wrap:after{ height:60px; content:''; width:100%; display:block;}
 
+
+/*se ajusta el footer en posicion absoluta para que siempre este en la parte inferior aun cuando no haya contenido */
 footer{ position:absolute; bottom:0; left:0; width: 100%;}
 
-aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{margin-bottom: 100px;}
 
-#user-dropdown.dropdown-content{ width: 20%!important; right: 0; left: inherit!important;}
+/*ajuste al scroll en los aside para cuando exista un footer en el mismo y no le estorbe al scrollear */
+aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{margin-bottom: 100px;}
+/*estilos del footer dentro de el aside*/
+.menu-footer{ position:fixed; left: 0; bottom: 0; height: 55px;}
+.menu-footer .btn{ position:absolute; top: -35px;}
+.menu-footer p {font-size: .8em;padding: 6px;}
+.menu-footer p a{ color:#555; text-decoration:underline;}
+.menu-footer .waves-effect.waves-dark.btn.grey.dark-text{ box-shadow:none; background: #e6e6e6!important; width:100%; color: #666!important;}
+
+
+/*estilos para formulario de logueo en el aside*/
 .login-content{}
 .login-content h4{ text-align:center; font-size: 1.2em; margin: 7% 0 8%; color:#555;}
 .login-content object{width: 114%;margin: -5% -7% 3%;}
@@ -20,10 +50,7 @@ aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{m
 .login-content .input-field{ border:1px solid #999;}
 .login-content .input-field .prefix~input,.login-content .input-field .prefix~textarea{}
 .login-content .video-indicator {width: calc(100% + 2.6em);margin: -1rem -1.3rem 0 -1.3rem;}
-.menu-footer{ position:fixed; left: 0; bottom: 0; height: 55px;}
-.menu-footer .btn{ position:absolute; top: -35px;}
-.menu-footer p {font-size: .8em;padding: 6px;}
-.menu-footer p a{ color:#555; text-decoration:underline;}
+/*estilos para formulario de registro*/
 .login-form{margin: 10px 0 10px -7%;overflow: hidden;padding: 1% 6% 7%;width: 114%;border-bottom: 1px solid #ddd;}
 .login-form input{margin: 0px;overflow: hidden;border-bottom:0;float: right;width: 85%;height: 2.5em;}
 .login-form button{color:#656565;text-transform:lowercase!important;margin-bottom:10px}
@@ -33,15 +60,14 @@ aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{m
 .waves-effect.waves-dark.btn.gray{background-color: #E6E6E6;}
 .static-sidebar{height: 100%;position: fixed;width: 60px;border-right: 1px solid #E4E4E4;padding-top: 55px;background-color: #fff;}
 
+
+/*estilos para aside de recomendaciones*/
 .static-sidebar ul {margin: 0;}
 .static-sidebar ul li{display:block;overflow: hidden;}
 .static-sidebar ul li a{display:block;overflow: hidden;padding: 12px 0 11px;text-align: center;}
 .static-sidebar ul li a:hover{background-color: red;color:white !important;}
 .static-sidebar-button i{line-height: 1;font-size: 25px;}
 .side-recomendaciones{position:fixed;right:0;max-width:300px;height: calc(100% - 55px);top: 55px;overflow: hidden;background-color: #e6e6e6!important;right: 0;z-index: 23445;-webkit-transform: translate3d(100%, 0, 0);transform: translate3d(100%, 0, 0);}
-
-
-nav ul li.active, nav ul li:hover{ background:transparent}
 .stats-card>i.principal{ font-size: 2.5em; text-align:center; left: 4%; width: 50px; height: 50px; background-color: #ddd; border-radius: 100em; color: #fff; top: 10%; line-height: 1.6em;}
 .stats-card>i.option{ font-size: 1.5em; text-align:center; right: 3%; top: 0; color: #cccccc;}
 .stats-card>i.option.mdi-action-favorite{right: 13%;}
@@ -53,22 +79,18 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 .side-recomendaciones .topbar i{line-height:0}
 .side-recomendaciones .card-panel{border:none;box-shadow:0 0 5px #e8e8e8;margin-bottom: 10px;padding: 15px 10px 15px 70px;border-left-width:5px;border-left-style:solid;overflow: hidden;}
 .side-recomendaciones .stats-card .name,.side-recomendaciones .stats-card span{ margin:0; line-height: initial; float: left; clear: left;}
-
+/*colores por ficha para aside recomendaciones*/
 .side-recomendaciones .restaurant .card-panel{ border-color:#ed1b23;}
 .side-recomendaciones .bar .card-panel{ border-color:#9d07ed;}
 .side-recomendaciones .cafe .card-panel{ border-color:#795548;}
 .restaurant .stats-card>i.principal{ background:#ed1b23;}
 .bar .stats-card>i.principal{ background:#9d07ed;}
 .cafe .stats-card>i.principal{ background:#795548;}
-
-
 .yay-toggle div:after,.yay-toggle div:before{ background:#fff;}
-.navbar-top .user{ min-width:inherit;}
-.navbar-top .nav-wrapper>.sp-cancel i, .navbar-top .nav-wrapper>a i, .navbar-top .nav-wrapper>ul i{ font-size:2.2em; color:#fff;}
-.navbar-top .nav-wrapper>ul i.mdi-navigation-more-vert.right{ margin-left:1.5em!important;}
-.navbar-top .user img{ margin-right:0;}
-#user-dropdown i{ color:#42A5F5; font-size: 1.2em; margin-right: 4%;}
 
+
+
+/* estilos del buscador en barra de navegacion superior*/
 .nav-wrapper form.search{ position:absolute; top: 10%; width:60%; margin-left:-30%; left:50%; height: 80%; background: rgba(255,255,255,.2); color: #fff; overflow: hidden; border: 1px solid rgba(0,0,0,.1); border-radius: 4px;}
 .nav-wrapper form.search input{ top:0; height:100%; position:absolute; width: 90%; margin: 0; font-size: 1.2em; padding: 0 5%;}
 .nav-wrapper form.search input:focus{ background:#fff; color:#666;}
@@ -81,20 +103,18 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 .nav-wrapper form.search .mdi-device-gps-fixed{ right:0; position: absolute; top: 0; font-size: 1.5em; line-height: 200%; display: none;}
 .nav-wrapper form.search .mdi-device-gps-fixed.active{ display:block}
 
-.dots-settings{width: 5%;margin: 0 1% 0 -3%;}
-.btn-open-notifications{ position:absolute; right: 9%; width: 20px; height: 20px; background: #fff; border-radius: 100em; font-size: .5em; text-align: center; top: 33%;}
-.btn-open-notifications i{color: #9d9797!important; height: auto!important; line-height: 1.3em!important;text-indent: 1px;}
 
+/* posicionamiento del boton flotante en la parte inferior derecha*/
 .fixed-action-btn{ bottom: 8%; right:2%}
-
 .icons-bar .mdi-navigation-more-vert{ font-size:3em}
 
+
+/*estilos de menu una vez logueado*/
 .content.user-menu{overflow: hidden;color:#fff;background: #999 url(../images/bg-user.png) no-repeat top left/cover; padding: 25px 15px 20%!important;position:relative;height: 130px;}
 .content.user-menu img{ width: 27%;float:left; margin-right: 8%;}
 .content.user-menu h1{ font-size:1.2em; width: 65%; float:left;margin: 0; clear: none; line-height: normal; margin-top: 5%; color: #fff;}
 .content.user-menu span{ font-size:.9em; width: 65%; float:left;margin: 0; clear: none; line-height: normal; color: #fff;}
 .content.user-menu b{ font-size:.9em; width: 100%; color:#fff;text-align:center; position:absolute; bottom:0; left:0; background: rgba(0,0,0,.3); padding: 3%; font-weight: normal;}
-
 .user-options{}
 .user-options a.yay-sub-toggle{ display: block!important; width:30px; height:30px; text-align:center; font-size:2em; padding: 0!important; position: absolute; top: 75px; right: 2%; color: #fff!important;font-size: 2em!important;}
 .user-options ul{ display:none; width:100%!important; background:transparent!important}
@@ -106,28 +126,31 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 .yaybar.yay-light .nano-content>ul>li>ul>li>a{ padding:15px; color:#666; font-size: 1.2em;}
 .yaybar.yay-light .nano-content>ul>li.red>a{ color:#fff;}
 
+/*estilos de menu de configuracion de usuario*/
 .configuration.slideOutRight,.configuration.slideInRight{position:absolute; top:0}
 .configuration .content{border-bottom:2px solid #ddd}
 .configuration .content h3{ font-size:1.5em; margin:0}
 .configuration .content i.mdi-action-settings{color:#666;margin-top:-3px}
 .configuration .content .close{text-align:center; float:right;color:#f00}
 .configuration .content .close i{color:#999}
-
 .configuration li{ padding:  10px 15px; line-height: normal!important;font-size:1em!important; height: auto!important;}
 .configuration .switch{ margin:-15px -15px 0px; padding:  0;}
 .configuration .switch label{font-size:1em; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;display: block;padding: 5px 10px 5px 0;}
-
 .configuration.slideOutRight .menu-footer,.configuration.slideInRight .menu-footer{ display:none;}
+.configuration .switch label input[type=checkbox]:checked+.lever{ background:#58dc00}
+.configuration .switch label input[type=checkbox]:checked+.lever:after{background: #fff;left: 17px;top: 2px; box-shadow:none}
+.configuration .switch label .lever:after{ background:#fff; box-shadow:none; top: 2px; left: 2px;}
+.configuration .switch label .lever{ background:#999; height:25px}
 
 /**
-* AGREGADOS POR CHEPO PARA CARDS  
+* customizacion de "cards"
 */
 .custom-card { padding: 7em 0 0 !important; margin: 10px !important; padding-top: 5em; background-image : url('../images/p4.jpg'); overflow: hidden;}
 .custom-card .indicador{border-radius : 100em;border: 2px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;bottom: 20%}
 /* .custom-card .likes{display : block;width : 100%;color : #ffffff;padding: 0px 10px;} */
 .custom-card .card-title{overflow: hidden; display: block;line-height: 0;padding: 0 0 10px;}
 /*
- * Bordes de los cards
+ * Bordes de los cards y color de los mismos
  */
 .card.of-h.custom {max-width: 350px;min-width: 250px;margin: auto;}
 .content-wrap .searchView .page-title{background-color:#1B1819!important;}
@@ -160,8 +183,8 @@ nav ul li.active, nav ul li:hover{ background:transparent}
 .card.of-h.custom .card-reveal .indicadores>div.left{text-align:left; padding-left: 1.3rem;}
 .card.of-h.custom .card-reveal .indicador{top: -15%!important; height:37%;}
 
-/**
-ICONOS DE INDICADORES EN LOS CARDS**/
+
+/* imagenes de fondo en los cards */
 .card.of-h.custom.restaurant .indicador, li.result-item.restaurant .card-search-result .indicador{background-image: url(../../../images/cat/comida.jpg);background-size: cover;}
 .card.of-h.custom.night-life .indicador, li.result-item.night-life .card-search-result .indicador{background-image: url(../../../images/cat/night.jpg);background-size: cover;}
 .card.of-h.custom.cultura .indicador, li.result-item.cultura .card-search-result .indicador{background-image: url(../../../images/cat/cultura.jpg);background-size: cover;}
@@ -174,21 +197,27 @@ ICONOS DE INDICADORES EN LOS CARDS**/
 .card.of-h.custom.trendy .indicador, li.result-item.trendy .card-search-result .indicador{background-image: url(../../../images/cat/trendy.jpg);background-size: cover;}
 .card.of-h.custom.guia .indicador, li.result-item.guia .card-search-result .indicador{background-image: url(../../../images/cat/guia.jpg);background-size: cover;}
 
-
+/*sobreposicionamento de los destacados en busqueda*/
 .row.destacados {width: 102%;background-color: #1B1819;padding: 0 3%;}
-
 .row.destacados .col {padding : 0;}
-/*.searchView{ margin: -4% 0 0 -2%;}*/
+
+/*cambio de padding*/
 .content-wrap.search-result{padding-top: 0;overflow:hidden;padding-right: 0;padding-left: 0;}
+
+/*filtros en resultados de busqueda*/
 .combo-filters .col .select-wrapper{position:absolute;}
 .combo-filters .col .select-wrapper ul{width:100%!important;}
 .combo-filters .col .select-wrapper input{border-bottom:none;}
 .basic-filters{padding: 0% 3% !important;border-bottom: 2px solid #B2B2B2;margin: auto;}
+.basic-filters.card-panel.fixed{ position:fixed;top: 60px;width: 90%;z-index: 2;}
 .result-counter{display: block;margin-top: 1%;font-size: 1.5rem;}
+
 .row.resultados {padding: 0 3%;}
 .search-suggest ul li.search-result-item {display: block;overflow: hidden;border-left: 5px solid;margin-bottom: 4%;}
 .card-search-result{margin:0 !important;padding:0 !important;border : 2px solid #f1f1f1;max-width:90%;margin-right: 1%!important;background-color: #fffffd;}
 .result-item {border-left : 5px solid;}
+
+/* "cards" en resultados de busqueda */
 .card-search-result .indicador{font-size: 2em;border-radius : 100em;color: #fff;display: inline-block;margin: 2% 5%;width: 40px;height: 40px;text-align: center;line-height: 1.4em;}
 .card-search-result span.category {color: #000;font-weight: normal;display: block;}
 .card-search-result h4 {display: inline-block;font-weight: bold;font-size: 1em;color: #000;margin : 0!important;padding:0!important;vertical-align: top;}
@@ -211,9 +240,7 @@ li.result-item ul.indicadores li i {display: block;}
 li.result-item ul.indicadores li i.ya-clock-o.open {color: #5baf0e;}
 li.result-item ul.indicadores li i.ya-clock-o.forclose{color: #ff6600;}
 li.result-item ul.indicadores li i.ya-rate {color: #ffc107;}
-/*
- * Colores para los cards search-result-item
- */
+/* colores para "cards" en resultados de busqueda */
 li.result-item.restaurant{border-left-color: #ED1B23!important;}
 li.result-item.restaurant .card-search-result .indicador{background-color:#ED1B23!important;}
 li.result-item.cultura{border-left-color: #2196F3!important;}
@@ -236,8 +263,6 @@ li.result-item.trendy{border-left-color: #FFC107!important;}
 li.result-item.trendy .card-search-result .indicador{background-color:#FFC107!important;}
 li.result-item.guia{border-left-color: #212121!important;}
 li.result-item.guia .card-search-result .indicador{background-color:#212121!important;}
-
-
 li.border-top{border-top: 2px solid #e6e6e6}
 li.border-bottom{border-bottom: 1px solid #e6e6e6;}
 li.border-left{border-left: 2px solid #e6e6e6}
@@ -252,35 +277,31 @@ ul.filter-section li.border-left{border-left: 2px solid #e6e6e6}
 ul.filter-section li.border-right{border-right: 2px solid #e6e6e6;white-space: nowrap; text-overflow:ellipsis; overflow:hidden;}
 ul.filter-section li i{font-size:2em;}
 
-.filtros-avanzados .card {margin-left:0!important;margin-right:0!important; padding-left:0!important; padding-right: 0!important;display:block;}
+/* estilos para los "cards" en el panel izquierdo de resultados de busqueda  */
+.filtros-avanzados .card {margin-left:0!important;margin-right:0!important; padding-left:0!important; padding-right: 0!important;display:block;min-width: inherit!important;max-width: 100%!important;margin-top: 4% !important;}
 
-.content-wrap:after{ height:60px; content:''; width:100%; display:block;}
-
+/* estilos de iconos en la parte superior de sugerencias de busqueda*/
 .icons-search{ margin:0 auto; width:100%;}
 .icons-search li{display:inline-block;}
 .icons-search li{ margin: 0% 2% 0;}
 .icons-search a{ width: 40px; height: 40px; color:#fff; font-size: 2em; text-align:center; display:block; background:#ddd; border-radius:100em; overflow:hidden;}
 .icons-search a i{color:#fff}
 
+/* estilos sugerencias de busqueda*/
 .search-suggest-view .card-panel{ margin-bottom:4%;}
 .search-suggest-view .stats-card .name{ margin: 0 0 0 20%; font-weight:bold; color:#333}
 .search-suggest-view .stats-card span{ margin-left:20%;  color:#333}
 .search-suggest-view .stats-card>i.principal{ width:40px; height:40px; font-size: 2.1em; top: 15%;}
 .search-suggest-view .stats-card>i.option.mdi-action-favorite{right: 4%;top: 30%;}
+/* colores de iconos sugerencias de busqueda*/
 .search-suggest-view .restaurant .card-panel{ border-left:4px solid #ed1b23;}
 .search-suggest-view .bar .card-panel{ border-left:4px solid #9d07ed;}
 .search-suggest-view .cafe .card-panel{ border-left:4px solid #795548;}
-
-
 .search-suggest-view .frecuentes .card-panel{ border-left:none;}
 .search-suggest-view .gua .card-panel{ border-left:4px solid #000;}
 .search-suggest-view .gua .stats-card>i.principal{background:#000}
 
-.configuration .switch label input[type=checkbox]:checked+.lever{ background:#58dc00}
-.configuration .switch label input[type=checkbox]:checked+.lever:after{background: #fff;left: 17px;top: 2px; box-shadow:none}
-.configuration .switch label .lever:after{ background:#fff; box-shadow:none; top: 2px; left: 2px;}
-.configuration .switch label .lever{ background:#999; height:25px}
-.menu-footer .waves-effect.waves-dark.btn.grey.dark-text{ box-shadow:none; background: #e6e6e6!important; width:100%; color: #666!important;}
+
 /**
 * Estilos para el profile
 **/
@@ -378,9 +399,12 @@ estilos para profile tab*
 .tags-row ul{width:calc(100% - 1.3em)!important; margin-top:0!important; padding-top:1%;}
 
 
+.filtros-avanzados .card .card-image img{ width:135%; margin-left:-10%}
+.filtros-avanzados .card.of-h.custom.eventos .indicador,.filtros-avanzados  li.result-item.eventos .card-search-result .indicador{ width: 25px; height: 25px;}
+
 /*modals*/
 
-.modal.yasalte{ border:1px solid #cdcdcd; border-radius:0;width:95%; max-width:370px; background:#fff;}
+.modal.yasalte{ border:1px solid #cdcdcd; border-radius:0;width:95%; max-width:370px; background:#fff; overflow-x: hidden;}
 .modal.yasalte .page-title{padding:0;margin: -8% -8% 2%;padding: 3% 5% 2%; background:transparent;font-size: 1.2em;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 .modal.yasalte .page-title .right{ font-size: 1.4em; line-height: 1em;}
 .modal.ysalte textarea.materialize-textarea:focus:not([readonly]){ border:none; box-shadow:none;}
@@ -521,9 +545,3 @@ estilos para profile tab*
 .modal.evento .evento-content .event-form .btn-flat{float: right; padding: 0% 0%; width: 11%;}
 .modal.evento .evento-content .event-form .btn{ width:100%;}
 .modal.evento .evento-content .event-form textarea.materialize-textarea{ padding: 2%; width: 96%; margin: 0; border: 0;}
-
-
-
-
-            
-@media only screen and (min-width: 601px){}
