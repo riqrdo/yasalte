@@ -190,3 +190,31 @@
   				</ul>
 			</div>
 		</div>
+        
+        <script>
+		setTimeout(function(){// un lugar de esto llamar funcion al terminar la animacion
+		
+			var topFilters = $('.basic-filters.card-panel').offset().top;
+			var headerHgt = $('.navbar-top.red').height();
+			var numFix = topFilters-headerHgt-10;//el 10 es para el margen
+			
+			$(window).on('scroll.tope',function(){
+				var scrolL = $(window).scrollTop();
+				if(scrolL > numFix){
+					$('.basic-filters.card-panel').addClass('fixed');
+					$('.searchView .content').css('padding-top', $('.basic-filters.card-panel').outerHeight()+12 )//el 12 del margen
+				}
+				else{
+					$('.basic-filters.card-panel').removeClass('fixed');
+					$('.searchView .content').removeAttr('style')
+				}
+			});
+		  
+		}, 2000);
+		
+		
+		</script>
+        
+        
+        
+        
