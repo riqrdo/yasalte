@@ -45,7 +45,7 @@ var ProfileModel = Backbone.Model.extend({
 });
 
 var FavoritesView = MasterView.extend({
-	className: "row sortable",
+//	className: "row sortable",
 	templateURL : YaGlobals.FAVORITES_VIEW,
 	initialize : function(options){
 		this.options = options;
@@ -57,7 +57,7 @@ var FavoritesView = MasterView.extend({
 	},
 	
 	setTitle : function(message){
-		$(".tab-content-list-title span",this.$el).text(message);
+		$(".row .title span",this.$el).text(message);
 	},
 	
 	setPlaceHolderText : function(){

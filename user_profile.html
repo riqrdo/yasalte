@@ -1,0 +1,931 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="lt-ie7"> <![endif]-->
+<!--[if IE 7]>     <html class="lt-ie8"> <![endif]-->
+<!--[if IE 8]>     <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+    <!--<![endif]-->
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>YaSalte CMS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="image/ico" href="favicon.ico">
+        <!-- nanoScroller -->
+        <link rel="stylesheet" type="text/css" href="assets/nanoScroller/nanoscroller.css" />
+        <!-- FontAwesome -->
+        <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css" />
+        <!-- Material Design Icons -->
+        <link rel="stylesheet" type="text/css" href="assets/material-design-icons/css/material-design-icons.min.css" />
+        <!-- Google Prettify -->
+        <link rel="stylesheet" type="text/css" href="assets/google-code-prettify/prettify.css" />
+        <!-- Main -->
+        <link rel="stylesheet" type="text/css" href="assets/_con/css/_con.css" />
+        <!-- Yaq Icons -->
+        <link rel="stylesheet" type="text/css" href="assets/custom/css/ya_icon.css" />
+        <!-- Custom  -->
+        <link rel="stylesheet" type="text/css" href="custom2.css" />
+        <!-- Tags -->
+        <link rel="stylesheet" type="text/css" href="assets/jquery-tags-input/jquery.tagsinput.css" />
+        <!-- PhotoSwipe -->
+        <link rel="stylesheet" type="text/css" href="assets/PhotoSwipe/photoswipe.css" />
+        <link rel="stylesheet" type="text/css" href="assets/PhotoSwipe/default-skin/default-skin.css" />
+        <!--[if lt IE 9]>
+          <script src="../../assets/html5shiv/html5shiv.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body class="yay-hide">
+
+      <nav class="navbar-top navbar-dark red">
+                  <div class="nav-wrapper">
+
+                      <!-- Sidebar toggle
+                         <a href="#" class="yay-toggle home black-text">
+                             <i class="mdi-action-view-headline"></i>
+                         </a>
+                          Sidebar toggle -->
+
+                      <a href="#" class="yay-toggle">
+                          <div class="burg1"></div>
+                          <div class="burg2"></div>
+                          <div class="burg3"></div>
+                      </a>
+
+                      <!-- Logo -->
+                      <a href="#!" class="brand-logo">
+                          <img src="images/logo_w.png" alt="YaSalte">
+                      </a>
+                      <!-- /Logo -->
+
+                      <!-- Menu -->
+                      <ul>
+
+                          <li>
+                              <!-- CHAT -->
+                              <a href="#!" class=" z-depth-1 z-depth-2-hover chat-toggle"><i class="mdi-social-notifications"></i></a>
+
+                          </li>
+                      </ul>
+                      <!-- /Menu -->
+
+                  </div>
+              </nav>
+
+        <aside class="yaybar yay-shrink yay-hide-to-small yay-gestures yay-light ">
+
+            <div class="top">
+
+            </div>
+        </aside>
+        <!-- /Yay Sidebar -->
+
+
+        <!-- Main Content -->
+        <section class="content-wrap">
+
+            <div class="parallax-container top mnt-17 mnl-17 mnr-17 mb-17" style=" height: 200px;">
+                <div class="parallax" style="height: 200px;">
+                    <img src="images/bg/black.jpg" style="display: block; transform: translate3d(-50%, 1502px, 0px);">
+                </div>
+            </div>
+
+            <div class="page-title">
+                <a href="profile_editar.html"class=" btn-floating-edit waves-effect waves-light right"><i class="mdi-editor-mode-edit"></i></a>
+
+                <div class="row" style="height: 40px;">
+                    <div class="col s10 m10 l11">
+                        <div class="row">
+
+                            <div class="col l4 m6 s6 ">
+                                <img id="iconlugar" class=" white card-profile-big fix-bis" src="images/cat/userb.jpg">
+
+                                <h4 style="margin-bottom: 0px;margin-top: 0px; margin-left: 95px"> Cha Niembro</h4>
+                            </div>
+
+
+                            <div class="col l1 m1 s1 center-align right rate-fix " >
+                                <h4 style="margin-bottom: 0px;margin-top: -5px;">54</h4>
+                                <li>Reseñas</li>
+                            </div>
+                            <div class="col l2 m2 s1 center-align right rate-fix " >
+                                <h4 style="margin-bottom: 0px;margin-top: -5px;">100</h4>
+                                <li>Fotos</li>
+                            </div>
+                            <div class="col l2 m2 s1 center-align right rate-fix" >
+                                <h4 style="margin-bottom: 0px;margin-top: -5px;">230</h4>
+                                <li>Favoritos</li>
+                            </div>
+                            <div class="col l2 m2 s1 center-align right" >
+                                <h4 style="margin-bottom: 0px;margin-top: -5px;">1000</h4>
+                                <li>Puntos</li>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="row ">
+                <div class="col s12 ">
+                    <ul class="tabs z-depth-1">
+                        <li class="tab full col s3"><a  class="active" href="#favoritos"><i class=" tiny2 mdi-action-favorite"></i>            Mis Favoritos </a></li>
+                        <li class="tab full col s3"><a href="#eventos"><i class="tiny2 mdi-action-event"></i>            Mis Eventos</a></li>
+                        <li class="tab full col s3"><a href="#cupones"><i class="tiny2 mdi-maps-local-offer"></i>         Mis Cupones</a></li>
+                        <li class="tab full col s3"><a href="#recom"><i class="tiny2 mdi-av-new-releases"></i>            Mis Recompensas</a></li>
+                        <li class="tab full col s3"><a href="#fotos"><i class="tiny2 mdi-image-camera-alt"></i>            Mis Fotos</a></li>
+                        <li class="tab full col s3"><a href="#timeline"><i class="tiny2 mdi-editor-format-list-bulleted"></i>            Timeline</a></li>
+                        <li class="tab full col s3 gray" ><a  href="#pefil"><i class="tiny2 mdi-social-person"></i> Perfil</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+            <div id="pefil" >
+                <div class="row">
+                    <div class="col l8 s12">
+                        <div class="card">
+                            <div class="title">
+                                <h5>Datos de perfil</h5>
+                            </div>
+                            <div class="content orders-card">
+                                <div class="row mt-0">
+                                    <div class="col m6 l6 s12 ">
+                                        <ul class="mail-sidebar">
+                                            <li>
+                                                <span><i class="mdi-social-person"></i>   Cha Niembro</span>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <span><i class="ya-mail"></i>  cha.niembro@gmail.com</span>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <div class="alert indigo darken-4  white-text">
+                                                    <i class="fa fa-facebook  white-text"></i>            <span>Conectado</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col m6 l6 s12 ">
+                                        <ul class="mail-sidebar">
+                                            <li>
+                                                <span><i class="ya-tel"></i>   +52  55-57-58-52-10</span>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <span><i class="ya-calendar"></i>   03-Julio_1983</span>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <div class="alert grey lighten-2  grey-text">
+                                                    <i class="fa fa-twitter  grey-text"></i>            <span>Sin vincular</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l4 s12">
+                        <div class="card">
+                            <div class="title">
+                                <h5>Arquetípos</h5>
+                            </div>
+                            <div class="content orders-card">
+                                <div class="row">
+                                    <div class="col s2">
+                                        <img src="images/cat/arq01.jpg " style="width:50px">
+                                    </div>
+                                    <div class="col s10 left-align">
+                                        Hipster
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content orders-card">
+                                <div class="row">
+                                    <div class="col s2">
+                                        <img src="images/cat/arq03.jpg " style="width:50px">
+                                    </div>
+                                    <div class="col s10 left-align">
+                                        Alter-native
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col m12 s12">
+                        <ul class="collapsible bg-white profile-skills " data-collapsible="expandable">
+                            <li>
+                                <div class="collapsible-header active"><i class="mdi-action-label"></i>Tags</div>
+                                <div class="collapsible-body">
+                                    <div class="row">
+
+                                        <div class=" col m12 s12">
+                                            <a class="skill">DF</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- FAVORITOS -->
+            <!-- Stats Panels -->
+            <div id="favoritos">
+
+              <div class="row">
+                                              <div class="col m12">
+                                                <div class="card">
+                                                  <div class="title">
+
+                                                    <h6><b>Titulo</b> <i class="small mdi-action-info-outline right"></i></h6>
+                                                    instrucciones básicas
+                                                  </div>
+                                                  <div class="content">
+                                                    <div class="col m6 left pb-0">
+
+                                                      <select class="browser-default" style="width: 200px;">
+                                                          <option value="" disabled="" selected="">option</option>
+                                                          <option value="1">Option 1</option>
+                                                          <option value="2">Option 2</option>
+                                                          <option value="3">Option 3</option>
+                                                      </select>
+
+                                                    </div>
+                                                    <div class="col m6 pb-0 bis-search">
+                                                          <label class="right">
+                                                            <i class="mdi-action-search prefix">
+                                                            </i>
+                                                            <input type="search">
+                                                          </label>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                            <div class="center">
+                                             <i class="mdi-action-info-outline" style="font-size:6rem;"></i>
+                                              <h2>Aun no tienes eventos publicados crea uno y llega a miles de personas</h2>
+                                              </div>
+
+
+
+
+            </div>
+            <!-- /Stats Panels -->
+            <!-- /FAVORITOS -->
+
+
+            <!-- EVENTOS -->
+            <!-- Vistas -->
+            <div id="eventos" >
+
+            </div>
+
+            <!-- /EVENTOS -->
+            <!-- CUPONES -->
+
+            <div id="cupones" >
+
+            </div>
+            <!-- /cupones -->
+
+            <!--FOTOS-->
+            <div id="fotos">
+
+
+                <div class="row photoswipe-gallery isotope mt-0">
+
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg"  data-size="2880x1800"  data-author="">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg"  data-size="2880x1800"  data-author="">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg"  data-size="2880x1800"  data-author="">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg"  data-size="2880x1800"  data-author="">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800" data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+
+
+                </div>
+                <div class="row photoswipe-gallery isotope mt-0">
+
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg"  data-size="2880x1800"  data-author="">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg"  data-size="2880x1800"  data-author="">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg"  data-size="2880x1800"  data-author="">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg"  data-size="2880x1800"  data-author="">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800" data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>Magna tollit mei te</figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+                    <a class="col s4 m2 l1 item" href="images/gallery-2-gd.jpg" data-size="2880x1800"  data-author="John Doe">
+                        <img src="images/gallery-2.jpg" />
+                        <figure>
+                            <div class="pt-5"><img src="images/cat/comida.jpg" alt="nombre usuario" style="width:20px;" class="circle"><b> Comida Gourmet Internacional</b></div>
+                            <div class="pt-5">#YaTeHaceFalta Caminar por las calles de la ciudad.</div>
+                            <div class="pt-5">15.07.15</div>
+                        </figure>
+                    </a>
+
+
+                </div>
+            </div>
+            <!--/FOTOS-->
+
+            <!--TIMELINE-->
+
+            <div id="timeline">
+
+          <!-- Timeline -->
+                    <div class="timeline timeline-wrapper ">
+                        <!-- Timeline Event -->
+                        <div class="timeline-block">
+                            <!-- icon -->
+                            <div class="timeline-icon green  white-text" >
+                                <i class="mdi-action-perm-contact-cal"></i>
+                            </div>
+                            <!-- /icon -->
+                            <!-- content -->
+                            <div class="timeline-content card-panel">
+                                <h5>Creaste el evento mi cumple </h5>
+                                <span class="timeline-date">Hace 2 dias</span>
+
+                            </div>
+                            <!-- content -->
+                        </div>
+                        <!-- /Timeline Event -->
+                        <!-- Timeline Event -->
+                        <div class="timeline-block">
+                            <!-- icon -->
+                            <div class="timeline-icon blue white-text">
+                                <i class="mdi-maps-location-history"></i>
+                            </div>
+                            <!-- /icon -->
+                            <!-- content -->
+                            <div class="timeline-content card-panel">
+                                <h5>Chekin en "Tortas Niembro"</h5>
+
+                                <span class="timeline-date">Hace 1 semana/span>
+                            </div>
+                            <!-- content -->
+                        </div>
+                        <!-- /Timeline Event -->
+                        <!-- Timeline Event -->
+                        <div class="timeline-block">
+                            <!-- icon -->
+                            <div class="timeline-icon green white-text">
+                                <i class="mdi-action-event"></i>
+                            </div>
+                            <!-- /icon -->
+                            <!-- content -->
+                            <div class="timeline-content card-panel">
+
+                                <h5>Asististe a Llamosas Gay Party</h5>
+                                <span class="timeline-date">14 de Junio del 2015</span>
+                            </div>
+                            <!-- content -->
+                        </div>
+                        <!-- /Timeline Event -->
+                        <!-- Timeline Event -->
+                        <div class="timeline-block">
+                            <!-- icon -->
+                            <div class="timeline-icon amber  white-text">
+                                <i class="mdi-action-grade"></i>
+                            </div>
+                            <!-- /icon -->
+                            <!-- content -->
+                            <div class="timeline-content card-panel">
+
+                                <h5>Calificaste a Tacos de Machito</h5>
+                                <span class="timeline-date">11 de Junio del 2015</span>
+                            </div>
+                            <!-- content -->
+                        </div>
+
+                        <!-- /Timeline Event -->
+                        <div class="timeline-block">
+                            <!-- icon -->
+                            <div class="timeline-icon red white-text">
+                                <i class="mdi-action-favorite "></i>
+                            </div>
+                            <!-- /icon -->
+                            <!-- content -->
+                            <div class="timeline-content card-panel">
+
+                                <h5>Marcaste como favorito a café España</h5>
+                                <span class="timeline-date">11 de Junio del 2015</span>
+                            </div>
+                            <!-- content -->
+                        </div>
+                        <!-- /Timeline Event -->
+                        <div class="timeline-block">
+                            <!-- icon -->
+                            <div class="timeline-icon red white-text">
+                                <i class="ya-share"></i>
+                            </div>
+                            <!-- /icon -->
+                            <!-- content -->
+                            <div class="timeline-content card-panel">
+
+                                <h5>Compartiste Vive Latino 2015</h5>
+                                <span class="timeline-date">11 de Junio del 2015</span>
+                            </div>
+                            <!-- content -->
+                        </div>
+                        <!-- /Timeline Event -->
+                        <div class="timeline-block">
+                            <!-- icon -->
+                            <div class="timeline-icon red white-text">
+                                <i class="mdi-av-new-releases"></i>
+                            </div>
+                            <!-- /icon -->
+                            <!-- content -->
+                            <div class="timeline-content card-panel">
+
+                                <h5>Canjeaste una recompensa</h5>
+                                <span class="timeline-date">11 de Junio del 2015</span>
+                            </div>
+                            <!-- content -->
+                        </div>
+                        <!-- /Timeline Event -->
+                        <div class="timeline-block">
+                            <!-- icon -->
+                            <div class="timeline-icon orange white-text">
+                                <i class="mdi-maps-local-offer"></i>
+                            </div>
+                            <!-- /icon -->
+                            <!-- content -->
+                            <div class="timeline-content card-panel">
+
+                                <h5>Canjeaste un cupón</h5>
+                                <span class="timeline-date">11 de Junio del 2015</span>
+                            </div>
+                            <!-- content -->
+                        </div>
+                        <!-- /Timeline Event -->
+                        <div class="timeline-block">
+                            <!-- icon -->
+                            <div class="timeline-icon red white-text">
+                                <i class="ya-report"></i>
+                            </div>
+                            <!-- /icon -->
+                            <!-- content -->
+                            <div class="timeline-content card-panel">
+
+                                <h5>Hiciste un reporte a <bold>Taqueria El Foyo</bold></h5>
+                                <span class="timeline-date">11 de Junio del 2015</span>
+                            </div>
+                            <!-- content -->
+                        </div>
+                        <!-- /Timeline Event -->
+                        <div class="timeline-block">
+                            <!-- icon -->
+                            <div class="timeline-icon amber lighten-2 white-text">
+                                <img src="images/cat/user.jpg">
+                            </div>
+                            <!-- /icon -->
+                            <!-- content -->
+                            <div class="timeline-content card-panel">
+
+                                <h5>Te diste de alta en YaSalte</h5>
+                                <span class="timeline-date">11 de Junio del 2015</span>
+                            </div>
+                            <!-- content -->
+                        </div>
+                        <!-- /Timeline Event -->
+                    </div>
+                    <!-- /Timeline -->
+
+            </div>
+
+        </section>
+        <!-- /Main Content -->
+
+
+
+
+
+
+
+        <!--
+        Chat
+          .chat-light - light color scheme
+        -->
+        <div class="chat chat-light">
+            <div class="layer-overlay"></div>
+
+            <div class="layer-content">
+
+                <!-- Contacts -->
+                <div class="contacts">
+                    <!-- Top Bar -->
+                    <div class="topbar">
+                        <a href="#!" class="text grey-text text-darken-1">Notificaciones</a>
+                        <a href="#!" class="chat-toggle right"><i class="mdi-navigation-close"></i></a>
+                    </div>
+                    <!-- /Top Bar -->
+
+                    <div class="nano">
+                        <div class="nano-content " >
+
+                          <a href="admin_recom_detalle.html">
+                            <div class="user">
+                                <span class="new notibadge">3</span>
+                                <img src="images/cat/recompensa.jpg" class="circle photo">
+                                <div class="name">Solicitud de recompensa </div>
+                                <div class="status">Play Store</div>
+                            </div>
+                          </a>
+
+                          <a href="admin_tickets.html">
+                            <div class="user">
+                                <span class="new notibadge">20</span></i>
+                                <img src="images/cat/userb.jpg"  class="circle photo">
+                                <div class="name">Reporte de usuarios </div>
+                                <div class="status">Incidencia en información</div>
+                            </div>
+                          </a>
+
+                          <a href="admin_tickets.html">
+                            <div class="user">
+                                <span class="new notibadge">8</span></i>
+                                <img src="images/cat/tickets.jpg"  class="circle photo">
+                                <div class="name">Tickets</div>
+                                <div class="status">Abiertos</div>
+                            </div>
+                          </a>
+
+                          <a href="admin_recom.html#cortesias">
+                            <div class="user">
+                                <span class="new notibadge">20</span></i>
+                                <img src="images/cat/cortesias.jpg"  class="circle photo">
+                                <div class="name">Nuevas Cortesias </div>
+                                <div class="status">Lugares</div>
+                            </div>
+                          </a>
+
+                          <a href="admin_creditos.html">
+                            <div class="user">
+                                <span class="new notibadge">20</span></i>
+                                <img src="images/cat/puntos.jpg"  class="circle photo">
+                                <div class="name">Nuevas Compras </div>
+                                <div class="status">Creditos</div>
+                            </div>
+                          </a>
+
+                          <a href="admin_lugares_aprobacion.html#incidencia">
+                            <div class="user">
+                                <span class="new notibadge">8</span></i>
+                                <img src="images/cat/incidencias.jpg"  class="circle photo">
+                                <div class="name">Incidencias </div>
+                                <div class="status">Lugares</div>
+                            </div>
+                          </a>
+
+                          <a href="admin_lugares_aprobacion.html#aprobacion">
+                            <div class="user">
+                                <span class="new notibadge">8</span></i>
+                                <img src="images/cat/aprobaciones.jpg"  class="circle photo">
+                                <div class="name">Aprobaciones </div>
+                                <div class="status">Lugares</div>
+                            </div>
+                          </a>
+
+                          <a href="admin_lugares_aprobacion.html#asignacion">
+                            <div class="user">
+                                <span class="new notibadge">8</span></i>
+                                <img src="images/cat/asignaciones.jpg"  class="circle photo">
+                                <div class="name">Asignaciones </div>
+                                <div class="status">Lugares</div>
+                            </div>
+                          </a>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /Contacts -->
+
+
+            </div>
+
+        </div>
+        <!-- /Chat -->
+
+
+
+
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
+
+        <!-- jQuery RAF (improved animation performance) -->
+        <script type="text/javascript" src="assets/jqueryRAF/jquery.requestAnimationFrame.min.js"></script>
+
+        <!-- nanoScroller -->
+        <script type="text/javascript" src="assets/nanoScroller/jquery.nanoscroller.min.js"></script>
+
+        <!-- Materialize -->
+        <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
+
+        <!-- Sortable -->
+        <script type="text/javascript" src="assets/sortable/Sortable.min.js"></script>
+
+        <!-- Main -->
+        <script type="text/javascript" src="assets/_con/js/_con.min.js"></script>
+
+        <!-- PhotoSwipe -->
+        <script type="text/javascript" src="assets/PhotoSwipe/photoswipe.min.js"></script>
+        <script type="text/javascript" src="assets/PhotoSwipe/photoswipe-ui-default.min.js"></script>
+
+
+        <!-- Google Prettify -->
+        <script type="text/javascript" src="assets/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="assets/dataTables/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="assets/dataTables/extensions/TableTools/js/dataTables.tableTools.js"></script>
+        <script>
+            $('#tablelugares').DataTable({
+                "bLengthChange": true,
+                "iDisplayLength": 10,
+                "aLengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "all"]
+                ],
+                "columns":
+                        [
+                            {"data": "Id"},
+                            {"data": "Negocio"},
+                            {"data": "Categoria"},
+                            {"data": "Zona"},
+                            {"data": "Subzona"},
+                            {"data": "Asignación"},
+                            {"data": "Status"},
+                            {"data": "opciones",
+                                "orderable": false}
+                        ],
+                "order": [[0, 'desc']]
+
+            });
+        </script>
+
+        <script>
+            $('#tableventos').DataTable({
+                "bLengthChange": true,
+                "iDisplayLength": 10,
+                "aLengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "all"]
+                ],
+                "columns":
+                        [
+                            {"data": "Id"},
+                            {"data": "Tipo"},
+                            {"data": "Nombre del evento"},
+                            {"data": "Lugar"},
+                            {"data": "Fecha inicio"},
+                            {"data": "Fecha Final"},
+                            {"data": "Asistentes"},
+                            {"data": "Status"},
+                            {"data": "opciones",
+                                "orderable": false}
+
+                        ],
+                "order": [[0, 'desc']]
+
+            });
+        </script>
+
+        <script>
+            $('#tablecupones').DataTable({
+                "bLengthChange": true,
+                "iDisplayLength": 10,
+                "aLengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "all"]
+                ],
+                "columns":
+                        [
+                            {"data": "Id"},
+                            {"data": "Tipo"},
+                            {"data": "Nombre de Cupon"},
+                            {"data": "Lugar"},
+                            {"data": "Expiran"},
+                            {"data": "Totales"},
+                            {"data": "Disponibles"},
+                            {"data": "Status"},
+                            {"data": "Opciones", "orderable": false}
+                        ],
+                "order": [[0, 'desc']]
+            });
+        </script>
+        <script>
+            $('#tablelistas').DataTable({
+                "bLengthChange": true,
+                "iDisplayLength": 10,
+                "aLengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "all"]
+                ],
+                "columns":
+                        [
+                            {"data": "Id"},
+                            {"data": "Recompensas"},
+                            {"data": "Usuarios"},
+                            {"data": "Disponibles"},
+                            {"data": "Canjeados"},
+                            {"data": "Status"},
+                            {"data": "opciones",
+                                "orderable": false}
+                        ],
+                "order": [[0, 'desc']]
+            });
+        </script>
+
+    </body>
+
+</html>
