@@ -58,6 +58,7 @@ var MainContentView = MasterView.extend({
 		//Reemplaza el menu del usuario una vez que ya se loggeo
 		$('#user-dropdown').empty().append($('#template-menu-logged').html());
 		$('.btnOpenProfile',this.$el).on('click',this.openProfile);
+		$('.notify-button',this.$el).addClass('chat-toggle');
 	},
 	
 	onLoginPressed : function(event){
