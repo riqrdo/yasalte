@@ -324,9 +324,12 @@ ul.filter-section li i{font-size:2em;}
 .tab-content-list-filters .search-filter{padding: 0 2rem;border: 0;}
 .tab-content-list-filters .filters-combo .btn-group .btn.transparent.dropdown-button{color:#666666;	padding : 0 1%;}
 #ciudad.dropdown-content li>.sp-cancel, .dropdown-content li>a, .dropdown-content li>span{color: #666666!important;}
-.place-holder.empty-section {max-width: 40%;display: block; margin: auto;text-align: center; display:none;}
-.place-holder.empty-section span {display: block; margin: auto;font-size: 3em;text-align: center;color: #606060;padding: 0.5em 1em;}
-.place-holder.empty-section i{font-size: 4em;border-radius: 100em;border: 5px solid #b3b3b3;color: #b3b3b3;margin: auto;}
+.place-holder.empty-section {/*max-width: 40%;display: block; margin: auto;text-align: center; */display:none;}
+.place-holder.empty-section span {/*display: block; margin: auto;font-size: 3em;text-align: center;color: #606060;padding: 0.5em 1em;*/}
+
+.cards-wrapper {padding: 0 1.3rem 1.3rem 0; display: block;overflow: hidden; margin: auto;width: auto;}
+.cards-wrapper li{display: inline;float: left;padding: 0 1.3rem 1.3rem 0;margin: auto;}
+.table-wrapper {margin: 0 auto;display: table;}
 /**
 estilando los combos del profile 
 */
@@ -356,8 +359,10 @@ Estilos para la seccion Mis Fotos de la vista profile
 #fotos .filters-combo .input-field {padding-bottom : 0 !important;}
 #fotos .filters-combo .input-field .datepicker{	max-width: 90%;border: 1px solid #cccccc;}
 #fotos .filters-combo .input-field span{position: absolute;height: calc(100% - 27%);vertical-align: middle;line-height: 3em;border-right: 1px solid #cccccc;border-bottom: 1px solid #cccccc;border-top: 1px solid #cccccc;}
-#fotos .fotos-wrapper li{margin:0 1% 2%!important; display: inline-block; max-width : 10%; overflow:hidden; max-height:200px;}
-#fotos .fotos-wrapper li>a{display:block;overflow: hidden;}
+#fotos .fotos-wrapper li{/*margin:0 1% 2%!important; display: inline-block; max-width : 10%; overflow:hidden; max-height:200px;*/}
+*#fotos .fotos-wrapper { padding-right:0!important;}
+/*#fotos .fotos-wrapper li>a{display:block;overflow: hidden;}*/
+#fotos .fotos-wrapper li>a{display:block;overflow: hidden;max-height: 137px;}
 #fotos .fotos-wrapper li img{margin-left: -50%;margin-top: -100%;}
 #fotos .fotos-wrapper li img:hover{cursor: zoom-in;transition: opacity 0.4s;-webkit-transition: opacity 0.4s;-webkit-transition: opacity 0.4s;will-change: left, top, width, height;opacity: 0.8;}
 #fotos .filters-combo .picker__holder .picker__date-display{background-color : #EA202C!important;}

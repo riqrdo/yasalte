@@ -5,8 +5,8 @@
     "favoritos": [
       
     ],
-    "fotos": "562",
-    "resenas": "152",
+    "fotosCounter": "562",
+    "resenasCounter": "152",
     "eventos": [
         {
             "mainImage": "assets/custom/images/calendar.jpg",
@@ -417,7 +417,76 @@
     		"fecha" : "02.05.2015",
     		"ubicacion" : "Eje Central 512, Ciudad de México"
     		
+    	},{
+    		"url" : "images/misfotos1.jpg",
+    		"descripcion" : "#YaTeHaceFalta centro historico de la ciudad de mexico",
+    		"fecha" : "02.05.2015",
+    		"ubicacion" : "Eje Central 512, Ciudad de México"
+    		
+    	},
+    	{
+    		"url" : "images/misfotos2.jpg",
+    		"descripcion" : "#YaTeHaceFalta centro historico de la ciudad de mexico",
+    		"fecha" : "02.05.2015",
+    		"ubicacion" : "Eje Central 512, Ciudad de México"
+    		
+    	},
+    	{
+    		"url" : "images/misfotos3.jpg",
+    		"descripcion" : "#YaTeHaceFalta centro historico de la ciudad de mexico",
+    		"fecha" : "02.05.2015",
+    		"ubicacion" : "Eje Central 512, Ciudad de México"
+    		
+    	},
+    	{
+    		"url" : "images/misfotos4.jpg",
+    		"descripcion" : "#YaTeHaceFalta centro historico de la ciudad de mexico",
+    		"fecha" : "02.05.2015",
+    		"ubicacion" : "Eje Central 512, Ciudad de México"
+    		
+    	},
+    	{
+    		"url" : "images/misfotos5.jpg",
+    		"descripcion" : "#YaTeHaceFalta centro historico de la ciudad de mexico",
+    		"fecha" : "02.05.2015",
+    		"ubicacion" : "Eje Central 512, Ciudad de México"
+    		
+    	},{
+    		"url" : "images/misfotos1.jpg",
+    		"descripcion" : "#YaTeHaceFalta centro historico de la ciudad de mexico",
+    		"fecha" : "02.05.2015",
+    		"ubicacion" : "Eje Central 512, Ciudad de México"
+    		
+    	},
+    	{
+    		"url" : "images/misfotos2.jpg",
+    		"descripcion" : "#YaTeHaceFalta centro historico de la ciudad de mexico",
+    		"fecha" : "02.05.2015",
+    		"ubicacion" : "Eje Central 512, Ciudad de México"
+    		
+    	},
+    	{
+    		"url" : "images/misfotos3.jpg",
+    		"descripcion" : "#YaTeHaceFalta centro historico de la ciudad de mexico",
+    		"fecha" : "02.05.2015",
+    		"ubicacion" : "Eje Central 512, Ciudad de México"
+    		
+    	},
+    	{
+    		"url" : "images/misfotos4.jpg",
+    		"descripcion" : "#YaTeHaceFalta centro historico de la ciudad de mexico",
+    		"fecha" : "02.05.2015",
+    		"ubicacion" : "Eje Central 512, Ciudad de México"
+    		
+    	},
+    	{
+    		"url" : "images/misfotos5.jpg",
+    		"descripcion" : "#YaTeHaceFalta centro historico de la ciudad de mexico",
+    		"fecha" : "02.05.2015",
+    		"ubicacion" : "Eje Central 512, Ciudad de México"
+    		
     	}
+    	
     ],
     
     "timeline":[{
