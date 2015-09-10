@@ -51,7 +51,7 @@ var CardView = MasterView.extend({
 });
 
 var CardSearchView = MasterView.extend({
-	className : 'result-item',
+	className : 'result-item card-panel z-depth-1',
 	tagName : 'li',
 	events : {
 		'click .favorite-section i ' : 'onHeartClicked',
