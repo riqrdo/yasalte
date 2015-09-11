@@ -54,7 +54,7 @@ var CardSearchView = MasterView.extend({
 	className : 'result-item card-panel z-depth-1',
 	tagName : 'li',
 	events : {
-		'click .favorite-section i ' : 'onHeartClicked',
+		'click .card-search-result .likes' : 'onHeartClicked',
 	},
 
 	templateURL : YaGlobals.CARD_RESULT_ITEM_VIEW,
@@ -74,7 +74,7 @@ var CardSearchView = MasterView.extend({
 	},
 	
 	onHeartClicked : function(event){
-		$('.favorite-section i',this.$el).toggleClass('red-text');
+		$('.card-search-result .likes',this.$el).toggleClass('red-text');
 	}
 	
 });

@@ -212,6 +212,7 @@ aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{m
 .content-wrap.search-result{padding-top: 0;overflow:hidden;padding-right: 0;padding-left: 0;}
 
 /*filtros en resultados de busqueda*/
+.searchView .combo-filters, .searchView .result-filters{ margin-top: 1.5%;}
 .combo-filters .col .select-wrapper{position:absolute;}
 .combo-filters .col .select-wrapper ul{width:100%!important;}
 .combo-filters .col .select-wrapper input{border-bottom:none;}

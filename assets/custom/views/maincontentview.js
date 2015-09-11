@@ -8,7 +8,9 @@ var MainContentView = MasterView.extend({
 		'focusout input[name="searchInput"]' : 'onSearchFocusout',
 		'click .search .mdi-action-search' : 'doSearch',
 		'click .btnOpenProfile' : 'opeProfile',
-		'click .static-sidebar .mdi-editor-insert-invitation' : 'openEventsInProfile',
+		'click .static-sidebar ul li a i.mdi-editor-insert-invitation' : 'openProfileWithActiveTab',
+		'click .static-sidebar ul li a i.mdi-maps-local-offer': 'openProfileWithActiveTab',
+		'click .static-sidebar ul li a i.mdi-av-new-releases': 'openProfileWithActiveTab'
 	},
 	
 	loginView  :undefined,
@@ -21,7 +23,7 @@ var MainContentView = MasterView.extend({
 		_.bindAll(this,'showRecomendations','onSuccessLogin',
 						'onLoginPressed','onSearchFocused',
 						'onSearchFocusout','doSearch',
-						'openProfile','onSearchKeyUp','openEventsInProfile');
+						'openProfile','onSearchKeyUp','openProfileWithActiveTab');
 		if(!YaGlobals.tmp.isLogged){
 			this.loginView = new YaLoginView().on('onViewRendered',function(view){
 				$('.sidebar-view',this.$el).append(view.$el);
@@ -120,6 +122,7 @@ var MainContentView = MasterView.extend({
 	},
 	
 	doSearch : function(event){
+		this.currentViewInFront = undefined;
 		this.hideAllViews();
 		if(this.searchResultsView){
 			if(!this.searchResultsView.isVisible){
@@ -139,15 +142,16 @@ var MainContentView = MasterView.extend({
 		}		
 	},
 	
-	openProfile : function(){
+	openProfile : function(activeTab){
 		this.hideAllViews();
 		if(this.profileView){
 			if(!this.profileView.isVisible){
 				this.profileView.show();
+				this.profileView.switchToTab(activeTab);
 				this.currentViewInFront = this.profileView;
 			}
 		}else{
-			this.profileView = new ProfileView();
+			this.profileView = new ProfileView(activeTab);
 			this.profileView.on("onViewRendered",function(view){
 				$('.content-wrap',this.$el).append(view.$el);
 				this.profileView.show();
@@ -157,10 +161,36 @@ var MainContentView = MasterView.extend({
 		}	
 	},
 	
-	openEventsInProfile : function(){
+	openProfileWithActiveTab : function(event){
+		var $element = $(event.currentTarget);
+		var activeTab = '';
+		console.log($element.attr('class'));
+		switch($element.attr('class')){
+			case 'mdi-editor-insert-invitation':
+				activeTab = 'eventos';
+			break;
+			case 'mdi-maps-local-offer':
+				activeTab = 'cupones';
+			break;
+			case 'mdi-av-new-releases':
+				activeTab = 'recompensas';
+			break;
+			
+			default : 
+				activeTab = 'eventos';
+				break;
+		}
 		if(YaGlobals.tmp.isLogged){
-			this.openProfile();
-			this.profileView.switchToTab('eventos');
+			if((!this.currentViewInFront instanceof ProfileView) || (this.profileView == undefined)) {
+				this.openProfile(activeTab);	
+			}else{
+//				if(this.profileView == undefined){
+//					this.openProfile('eventos');
+//				}else{
+					this.currentViewInFront.switchToTab(activeTab);
+//				}
+				
+			}
 		}else{
 			console.log("Arroja el dialogo de 'para ver esto necesitas loggearte");
 		}
