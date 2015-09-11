@@ -289,7 +289,8 @@ var ProfileView = MasterView.extend({
 		'click .btn-edit-profile' : 'toggleEditProfile'
 	},
 	isEditing: false,
-	initialize : function(){
+	initialize : function(activeTab){
+		this.activeTab = activeTab;
 		_.bindAll(this,"toggleEditProfile");
 		this.model = new ProfileModel();
 		this.model.on('sync',this.onModelReady,this);
@@ -462,6 +463,9 @@ var ProfileView = MasterView.extend({
 	
 	initializePlugins : function(){
 		$('ul.tabs',this.$el).tabs();
+		if(this.activeTab != undefined){
+			this.switchToTab(this.activeTab);
+		}
 	},
 	
 	onViewReady : function(textTemplate){
