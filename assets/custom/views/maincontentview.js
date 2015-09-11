@@ -7,7 +7,8 @@ var MainContentView = MasterView.extend({
 		'keyup input[name="searchInput"]' : 'onSearchKeyUp',
 		'focusout input[name="searchInput"]' : 'onSearchFocusout',
 		'click .search .mdi-action-search' : 'doSearch',
-		'click .btnOpenProfile' : 'opeProfile'
+		'click .btnOpenProfile' : 'opeProfile',
+		'click .static-sidebar .mdi-editor-insert-invitation' : 'openEventsInProfile',
 	},
 	
 	loginView  :undefined,
@@ -20,7 +21,7 @@ var MainContentView = MasterView.extend({
 		_.bindAll(this,'showRecomendations','onSuccessLogin',
 						'onLoginPressed','onSearchFocused',
 						'onSearchFocusout','doSearch',
-						'openProfile','onSearchKeyUp');
+						'openProfile','onSearchKeyUp','openEventsInProfile');
 		if(!YaGlobals.tmp.isLogged){
 			this.loginView = new YaLoginView().on('onViewRendered',function(view){
 				$('.sidebar-view',this.$el).append(view.$el);
@@ -35,6 +36,7 @@ var MainContentView = MasterView.extend({
 		this.notificationsView = new NotificationsView();
 		
 	},
+	
 	
 	render : function(){
 		return this;
@@ -62,6 +64,7 @@ var MainContentView = MasterView.extend({
 		$('#user-dropdown').empty().append($('#template-menu-logged').html());
 		$('.btnOpenProfile',this.$el).on('click',this.openProfile);
 		$('.notify-button',this.$el).addClass('chat-toggle');
+		this.logged = true;
 	},
 	
 	onLoginPressed : function(event){
@@ -73,11 +76,13 @@ var MainContentView = MasterView.extend({
 		this.$el.addClass('yay-hide');
 		if(this.searchSuggestView){
 				this.searchSuggestView.show('slideInDown');
+				this.hiddeCurrentViewInFront();
 		}else{
 			this.searchSuggestView = new SearchSuggestView();
 			this.searchSuggestView.on('onViewRendered',function(view){
 				$('.content-wrap',this.$el).prepend(view.$el);
 				this.searchSuggestView.show('slideInDown');
+				this.hiddeCurrentViewInFront();
 			},this);
 		}
 	},
@@ -85,6 +90,16 @@ var MainContentView = MasterView.extend({
 	onSearchFocusout : function(event){
 		console.log("entra a focusout");
 		this.searchSuggestView.hide('slideOutUp');
+		if(this.currentViewInFront){
+			this.currentViewInFront.show('slideInUp');
+		}
+	},
+	
+	
+	hiddeCurrentViewInFront : function(){
+		if(this.currentViewInFront){
+			this.currentViewInFront.hide('slideOutDown');
+		}
 	},
 	
 	onSearchKeyUp : function(event){
@@ -97,6 +112,7 @@ var MainContentView = MasterView.extend({
 	},
 	
 	hideAllViews : function(){
+		this.$el.addClass('yay-hide');
 		if(typeof this.currentViewInFront !== "undefined"){
 			this.currentViewInFront.hide();
 		}
@@ -116,6 +132,7 @@ var MainContentView = MasterView.extend({
 			this.searchResultsView.on("onViewRendered",function(view){
 				$('.content-wrap',this.$el).append(view.$el);
 				this.searchResultsView.show();
+				$('form.search i').removeClass('active');
 				this.searchResultsView.performSearch();
 				this.currentViewInFront = this.searchResultsView;
 			},this);
@@ -138,5 +155,14 @@ var MainContentView = MasterView.extend({
 				this.currentViewInFront = this.profileView;
 			},this);
 		}	
-	}
+	},
+	
+	openEventsInProfile : function(){
+		if(YaGlobals.tmp.isLogged){
+			this.openProfile();
+			this.profileView.switchToTab('eventos');
+		}else{
+			console.log("Arroja el dialogo de 'para ver esto necesitas loggearte");
+		}
+	},
 });

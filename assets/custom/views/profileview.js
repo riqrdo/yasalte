@@ -265,8 +265,15 @@ var MyProfileView = MasterView.extend({
 //		},this);
 	},
 	initializePlugins : function(){
-		 $('.datepicker').pickadate();
+//		 $('.datepicker').pickadate();
 		  $('.collapsible').collapsible();
+		  $('.pikaday').pikaday({i18n :{
+			  	previousMonth : 'Mes Anterior',
+			    nextMonth     : 'Mes siguiente',
+			    months        : ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+			    weekdays      : ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+			    weekdaysShort : ['Dom','Lun','Mar','Mie','Jue','Vie','Sab']
+		  }});
 	},
 	
 	onViewReady : function(){
@@ -289,7 +296,12 @@ var ProfileView = MasterView.extend({
 		this.constructor.__super__.initialize.apply(this, []);
 	},
 	
+	switchToTab : function(idTab){
+		$('ul.tabs').tabs('select_tab', idTab);
+	},
+	
 	toggleEditProfile : function(){
+		$('ul.tabs').tabs('select_tab', 'profile');
 		if(!this.isEditing){
 			$('input[name="nombre"]',this.$el).removeAttr('disabled');
 			$('input[name="telefono"]',this.$el).removeAttr('disabled');
@@ -297,6 +309,7 @@ var ProfileView = MasterView.extend({
 			$('input[name="birthday"]',this.$el).removeAttr('disabled');
 			this.isEditing = true;
 			$('.btn-edit-profile i').removeClass().addClass('ya-lock');
+			$('input[name="nombre"]',this.$el).focus();
 		}else{
 			$('input[name="nombre"]',this.$el).attr('disabled','disabled');
 			$('input[name="telefono"]',this.$el).attr('disabled','disabled');
@@ -445,8 +458,6 @@ var ProfileView = MasterView.extend({
 			view.initializePlugins();
 			scope.initializePlugins();
 		},scope);
-//		this.$el.append(this.profileView.render().$el);
-//		this.profileView.initializePlugins();
 	},
 	
 	initializePlugins : function(){
