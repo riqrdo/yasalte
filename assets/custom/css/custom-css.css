@@ -4,7 +4,7 @@
 /*Estilos de los botones en la barra de navegación superior*/
 .navbar-top .user{ float:right;padding: 0 1%;}
 .navbar-top .settings{ float:right;margin-right: 1%;width: 25px;}
-.navbar-top .btn_notifications{ float:right; height: 100%;padding: 0 1%;position: relative;}
+.navbar-top .btn_notifications{ float:right; height: 100%;padding: 0;position: relative;}
 .navbar-top #settings-dropdown{right: 0;left: inherit!important;top: 100%!important;}
 .navbar-top #user-dropdown{right: 0;left: inherit!important;top: 100%!important;}
 .navbar-top .user{ min-width:inherit;}
@@ -49,7 +49,7 @@ aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{m
 .login-content span{display: block;width: 100%;text-align: center;color: black;font-size: 10px;margin: 5px 0;}
 .login-content .input-field{ border:1px solid #999;}
 .login-content .input-field .prefix~input,.login-content .input-field .prefix~textarea{}
-.login-content .video-indicator {width: calc(100% + 2.6em);margin: -1rem -1.3rem 0 -1.3rem;}
+.login-content .video-indicator {width: 240px;margin: -15px 0 1em -15px;height: 122px;}
 /*estilos para formulario de registro*/
 .login-form{margin: 10px 0 10px -7%;overflow: hidden;padding: 1% 6% 7%;width: 114%;border-bottom: 1px solid #ddd;}
 .login-form input{margin: 0px;overflow: hidden;border-bottom:0;float: right;width: 85%;height: 2.5em;}
@@ -69,10 +69,13 @@ aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{m
 .static-sidebar-button i{line-height: 1;font-size: 25px;}
 .side-recomendaciones{position:fixed;right:0;max-width:300px;height: calc(100% - 55px);top: 55px;overflow: hidden;background-color: #e6e6e6!important;right: 0;z-index: 23445;-webkit-transform: translate3d(100%, 0, 0);transform: translate3d(100%, 0, 0);}
 .stats-card>i.principal{ font-size: 2.5em; text-align:center; left: 4%; width: 50px; height: 50px; background-color: #ddd; border-radius: 100em; color: #fff; top: 10%; line-height: 1.6em;}
-.stats-card>i.option{ font-size: 1.5em; text-align:center; right: 3%; top: 0; color: #cccccc;}
-.stats-card>i.option.mdi-action-favorite{right: 13%;}
+.stats-card>i.option{ font-size: 1.5em; text-align:center; right: 3%; top: 0; color: #cccccc;width: 40px;height: 40px;border-radius: 100em;}
+.stats-card>i.option.mdi-action-favorite{right: 15%;top: 18%;}
+.stats-card>i.option.mdi-action-favorite:hover{color:#ed1b23;cursor:pointer; background:#fcdfde}
+.stats-card>i.option.mdi-action-favorite:before{line-height: 1px;position: absolute;top: 49%;left: 25%;}
 .side-recomendaciones ul{width: 95%;}
 .side-recomendaciones ul li{width:100%;border:none;}
+.side-recomendaciones ul li:hover,.side-recomendaciones ul li.active{ background:none}
 .side-recomendaciones .topbar{padding:15px;line-height: normal;border-bottom:1px solid #cbcbcb;margin-bottom:10px}
 .side-recomendaciones .text{font-size: 1.2em;color: #333!important;}
 .side-recomendaciones .close{font-size: 1.4em;color: #888!important;margin-right: 4%;}
@@ -149,6 +152,10 @@ aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{m
 .custom-card .indicador{border-radius : 100em;border: 2px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;bottom: 20%}
 /* .custom-card .likes{display : block;width : 100%;color : #ffffff;padding: 0px 10px;} */
 .custom-card .card-title{overflow: hidden; display: block;line-height: 0;padding: 0 0 10px;}
+
+.card .card-image{ position:relative;}
+.card .card-image:after{ position:absolute; bottom:0; left:0; height: 30px; right:0;  content:''; display:block;z-index: 0;box-shadow: inset 0 -25px 15px -10px rgba(0,0,0,.8);z-index: 1;}
+
 /*
  * Bordes de los cards y color de los mismos
  */
@@ -166,11 +173,11 @@ aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{m
 .card.of-h.custom.sitios-interes .content,.card.of-h.custom.sitios-interes .card-reveal .title-reveal{border-left: 5px solid #009688;}
 .card.of-h.custom.trendy .content,.card.of-h.custom.trendy .card-reveal .title-reveal{border-left: 5px solid #FFC107;}
 .card.of-h.custom.guia .content,.card.of-h.custom.guia .card-reveal .title-reveal{border-left: 5px solid #212121;}
-.card.of-h.custom .card-image .likes{display: block;width: 100%; color: #ffffff;padding: 0px 10px;position: absolute;bottom: 0;background-color: rgba(0,0,0,0.1);}
+.card.of-h.custom .card-image .likes{display: block;width: 100%; color: #ffffff;padding: 0px 10px;position: absolute;bottom: 0;background-color: rgba(0,0,0,0.1);z-index: 2;text-align: left;}
 .card.of-h.custom .content .indicador, .card.of-h.custom .card-reveal .indicador{border-radius: 100em;border: 2px solid #fff;color: white;font-size: 1.5em;position: absolute;right: 10px;top: 52%;z-index: 1; width: 13%;height: 25%;}
-.card.of-h.custom .content {padding: 5px!important;}
-.card.of-h.custom .content span.card-title {font-size: 1em;font-weight:bold}
-.card.of-h.custom .content p,.card.of-h.custom .card-reveal p{margin: 0!important;}
+.card.of-h.custom .content {padding: 5px!important;z-index: 4;}
+.card.of-h.custom .content span.card-title {font-size: 1em;font-weight:bold;text-align: left;display: block;}
+.card.of-h.custom .content p,.card.of-h.custom .card-reveal p{margin: 0!important;display: block;text-align: left;}
 .card.of-h.custom .content i.mdi-navigation-more-vert.right {padding-top: 5%;font-size:1.5em!important;color:#B3B3B3;}
 .card.of-h.custom .card-reveal{height:65%;padding:0!important; overflow-y:visible;}
 .card.of-h.custom .card-reveal .title-reveal span.card-title {font-size: 1em;font-weight:bold}
@@ -209,13 +216,15 @@ aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{m
 .combo-filters .col .select-wrapper ul{width:100%!important;}
 .combo-filters .col .select-wrapper input{border-bottom:none;}
 .basic-filters{padding: 0% 3% !important;/* border-bottom: 2px solid #B2B2B2; */margin: auto;}
-.basic-filters.card-panel.fixed{ position:fixed;top: 60px;width: 90%;z-index: 2;}
+.basic-filters.card-panel.fixed{ position:fixed;top: 60px;width: 92.7%;z-index: 2;}
 .result-counter{display: block;margin-top: 1%;font-size: 1.5rem;}
 
 .row.resultados {padding: 0 3%;}
 .search-suggest ul li.search-result-item {display: block;overflow: hidden;border-left: 5px solid;margin-bottom: 4%;}
 .card-search-result{margin:0 !important;padding:0 !important;background-color: #fffffd;}
 .result-item {border-left : 5px solid;}
+
+.search-suggest-view .stats-card>i.option.mdi-action-favorite:hover{ cursor:pointer; color:#ed1b23;}
 
 /* "cards" en resultados de busqueda */
 .card-search-result .indicador{font-size: 2em;border-radius : 100em;color: #fff;display: inline-block;margin: 2% 5%;width: 40px;height: 40px;text-align: center;line-height: 1.4em;}
@@ -289,7 +298,7 @@ ul.filter-section li i{font-size:2em;}
 
 /* estilos sugerencias de busqueda*/
 .search-suggest-view .card-panel{ margin-bottom:4%;}
-.search-suggest-view .stats-card .name{ margin: 0 0 0 20%; font-weight:bold; color:#333}
+.search-suggest-view .stats-card .name{ margin: 0 0 0 20%; font-weight:bold; color:#333;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 .search-suggest-view .stats-card span{ margin-left:20%;  color:#333}
 .search-suggest-view .stats-card>i.principal{ width:40px; height:40px; font-size: 2.1em; top: 15%;}
 .search-suggest-view .stats-card>i.option.mdi-action-favorite{right: 4%;top: 30%;}
@@ -297,9 +306,10 @@ ul.filter-section li i{font-size:2em;}
 .search-suggest-view .restaurant .card-panel{ border-left:4px solid #ed1b23;}
 .search-suggest-view .bar .card-panel{ border-left:4px solid #9d07ed;}
 .search-suggest-view .cafe .card-panel{ border-left:4px solid #795548;}
-.search-suggest-view .frecuentes .card-panel{ border-left:none;}
+.search-suggest-view .frecuentes .card-panel{ border-left:none;height: 72px;}
 .search-suggest-view .gua .card-panel{ border-left:4px solid #000;}
 .search-suggest-view .gua .stats-card>i.principal{background:#000}
+
 
 
 /**
@@ -327,8 +337,8 @@ ul.filter-section li i{font-size:2em;}
 .place-holder.empty-section {/*max-width: 40%;display: block; margin: auto;text-align: center; */display:none;}
 .place-holder.empty-section span {/*display: block; margin: auto;font-size: 3em;text-align: center;color: #606060;padding: 0.5em 1em;*/}
 
-.cards-wrapper {padding: 0 1.3rem 1.3rem 0; display: block;overflow: hidden; margin: auto;width: auto;}
-.cards-wrapper li{display: inline;float: left;padding: 0 1.3rem 1.3rem 0;margin: auto;}
+.cards-wrapper {padding: 0 1.3rem 1.3rem 0; display: block;overflow: hidden; margin: auto;width: auto;text-align: center;}
+.cards-wrapper li{display: inline-block;/* float: left; */padding: 0 1.3rem 1.3rem 0;margin: auto;}
 .table-wrapper {margin: 0 auto;display: table;}
 /**
 estilando los combos del profile 
