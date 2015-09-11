@@ -239,6 +239,9 @@ aside.yaybar.login .nano>.nano-content,aside.yaybar.config .nano>.nano-content{m
 .card-search-result .indicadores li i{font-size: 2em;}
 .card-search-result .direccion{margin: 0;padding: 0;}
 .card-search-result .direccion h4{margin: 0;padding: 0;}
+.card-search-result { position:relative}
+.card-search-result .likes{ position:absolute; right:0;height: 100%;width: 5%;text-align: center;}
+.card-search-result .likes i{ width: 25px; height: 25px; border-radius:100em;display: block;margin: 0 auto;line-height: 2em;}
 .search-suggest li{margin-bottom : 1em;display: block;overflow: hidden;}
 li.result-item .favorite-section{border: 2px solid #f1f1f1;position: relative;text-align: center;vertical-align: middle;background-color: #fffffd;}
 li.result-item .favorite-section{margin: 0;padding: 0;}
@@ -415,7 +418,9 @@ estilos para profile tab*
 
 
 .filtros-avanzados .card .card-image img{ width:135%; margin-left:-10%}
+.filtros-avanzados{ width: 210px!important;}
 .filtros-avanzados .card.of-h.custom.eventos .indicador,.filtros-avanzados  li.result-item.eventos .card-search-result .indicador{ width: 25px; height: 25px;}
+.search-suggest{ width: calc(100% - 210px - 1.3rem)!important;margin-left: 1.3rem!important;padding-right: 0!important;}
 
 /*modals*/
 
