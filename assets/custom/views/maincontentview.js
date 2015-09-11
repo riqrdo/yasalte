@@ -14,6 +14,7 @@ var MainContentView = MasterView.extend({
 	userMenu : undefined,
 	searchResultsView : undefined,
 	profileView :undefined,
+	notificationsView : undefined,
 	
 	initialize : function(){
 		_.bindAll(this,'showRecomendations','onSuccessLogin',
@@ -31,6 +32,8 @@ var MainContentView = MasterView.extend({
 		this.recomendationsView = new RecomendationsView().on('onViewRendered',function(viewRecom){
 			$('.content-wrap',this.$el).append(viewRecom.$el);
 		},this);
+		this.notificationsView = new NotificationsView();
+		
 	},
 	
 	render : function(){
@@ -58,6 +61,7 @@ var MainContentView = MasterView.extend({
 		//Reemplaza el menu del usuario una vez que ya se loggeo
 		$('#user-dropdown').empty().append($('#template-menu-logged').html());
 		$('.btnOpenProfile',this.$el).on('click',this.openProfile);
+		$('.notify-button',this.$el).addClass('chat-toggle');
 	},
 	
 	onLoginPressed : function(event){

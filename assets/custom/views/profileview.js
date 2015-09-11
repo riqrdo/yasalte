@@ -45,7 +45,7 @@ var ProfileModel = Backbone.Model.extend({
 });
 
 var FavoritesView = MasterView.extend({
-	className: "row sortable",
+//	className: "row sortable",
 	templateURL : YaGlobals.FAVORITES_VIEW,
 	initialize : function(options){
 		this.options = options;
@@ -57,11 +57,11 @@ var FavoritesView = MasterView.extend({
 	},
 	
 	setTitle : function(message){
-		$(".tab-content-list-title span",this.$el).text(message);
+		$(".row .title span",this.$el).text(message);
 	},
 	
 	setPlaceHolderText : function(){
-		$(".place-holder.empty-section span",this.$el).text(this.options.placeHolderText);
+		$(".place-holder.empty-section h2",this.$el).text(this.options.placeHolderText);
 		$(".place-holder.empty-section",this.$el).show();
 	},
 	
@@ -75,7 +75,7 @@ var FavoritesView = MasterView.extend({
 				var scope = this;
 				//TODO: agregar eventos para la vista click, mouse over etc
 				favoriteCardView.on('onViewRendered',function(view){
-					var liView = $('<li class="col s6 m4 l2"></li>');
+					var liView = $('<li class=""></li>');
 					liView.append(view.render().$el);
 					$('.cards-wrapper',scope.$el).append(liView);
 				},scope); 
@@ -98,6 +98,7 @@ var FavoritesView = MasterView.extend({
 
 var FotoItemView = Backbone.View.extend({
 	tagName : 'li',
+	className : 'col s4 m2 l1 item',
 	htmlText : '<a href="#full-photo"><img src="<%=url%>" /></a>',
 	events : {
 		'click' : 'onClicked'
@@ -265,6 +266,7 @@ var MyProfileView = MasterView.extend({
 	},
 	initializePlugins : function(){
 		 $('.datepicker').pickadate();
+		  $('.collapsible').collapsible();
 	},
 	
 	onViewReady : function(){
