@@ -423,6 +423,9 @@ estilos para profile tab*
 .filtros-avanzados .card.of-h.custom.eventos .indicador,.filtros-avanzados  li.result-item.eventos .card-search-result .indicador{ width: 25px; height: 25px;}
 .search-suggest{ width: calc(100% - 210px - 1.3rem)!important;margin-left: 1.3rem!important;padding-right: 0!important;}
 
+#profile #input_text.pikaday{margin-left: 3rem;width: 92%;width: -webkit-calc(100% - 3rem);width: calc(100% - 3rem);}
+#profile .input-field .ya-calendar{    position: absolute;width: 3rem;font-size: 2rem;-webkit-transition: color .2s;transition: color .2s;}
+
 /*modals*/
 
 .modal.yasalte{ border:1px solid #cdcdcd; border-radius:0;width:95%; max-width:370px; background:#fff; overflow-x: hidden;}
